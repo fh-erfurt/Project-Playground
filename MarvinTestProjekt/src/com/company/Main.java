@@ -20,15 +20,30 @@ public class Main {
 
         spielplatz.SetAnzahlKinder(10);
         spielplatz.SetBezeichnung("Erster Spielplatz");
-        spielplatz.SetStatus(Status.GutBesucht);
+        spielplatz.SetStatus(Status.Voll);
 
         System.out.println("Der erste Spielplatz wurde angelegt:");
         System.out.println("Name: " + spielplatz.GetBezeichnung());
         System.out.println("Anzahl anwesender Kinder: " + spielplatz.GetAnzahlKinder());
         System.out.println("Aktueller Status: " + spielplatz.GetStatus());
 
+        switch(spielplatz.GetStatus())
+        {
+            case GutBesucht:
+                System.out.println("Der Spielplatz ist wirklich gut besucht, schnell bevor er zu voll wird!");
+                break;
+            case Ueberfuellt:
+                System.out.println("Hier solltest du auf gar keinen Fall hin!!!");
+                break;
+            case Offen:
+                System.out.println("Schnell hin, da ist nix los!");
+                break;
+            case Voll:
+                System.out.println("Der Spielplatz ist voll...aber immerhin hat dein Kind Spielkameraden :D");
+                break;
 
-        
+        }
+
 
     }
 }
