@@ -6,6 +6,7 @@ bei mark hats auch geklappt
 
 Marvin testet jetzt mal ein commit.
 
+<<<<<<< HEAD
 
 
 
@@ -13,3 +14,6 @@ Marvin testet jetzt mal ein commit.
 
 Fabian hat es auch endlich geschafft
 yxsfsdfsdf
+=======
+Ok dein Commit hat funktioniert ;-) mfg Mark
+>>>>>>> 45e201ec0ed7c78642a4aab232e1c549589ee6b5
