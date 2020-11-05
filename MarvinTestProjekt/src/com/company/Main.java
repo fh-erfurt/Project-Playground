@@ -33,7 +33,5 @@ public class Main {
             case Offen -> System.out.println("Schnell hin, da ist nix los!");
             case Voll -> System.out.println("Der Spielplatz ist voll...aber immerhin hat dein Kind Spielkameraden :D");
         }
-
-//        Ich probiere was über intelliJ
     }
 }
