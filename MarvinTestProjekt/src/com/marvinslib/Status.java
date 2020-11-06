@@ -1,4 +1,4 @@
-package com.company;
+package com.marvinslib;
 
 public enum Status {
     Offen,
