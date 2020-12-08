@@ -1,0 +1,39 @@
+@startuml
+class Spielplatz {
+  +ID
+  -Bezeichnung
+  -AnzahlKinder
+  -Status
+  -Standort
+  +Geraete
+  +GetGeraete()
+}
+
+class Standort{
+-Strassenname
+-Hausnummer
+-Postleitzahl
+-Stadtname
+}
+
+class Geraet{
+-Spielplatz
+-Bezeichnung
+-GeraeteStatus
+-Bezeichnung
+}
+
+class Profil{
+-Nutzername
+-Passwort
+-Email
+-EigeneKinder
+-List<Spielplatz>SpielplatzFavoriten
+-Aufenthaltsort
+-Freunde
+}
+
+Spielplatz "1" *-- Standort
+Profil "1" o-- Standort
+Geraet "1" *-- "many" Spielplatz
+@enduml

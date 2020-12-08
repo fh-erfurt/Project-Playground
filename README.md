@@ -1,6 +1,5 @@
-#Projekt Playground
-
-##Projektbeschreibung
+# Projekt Playground
+## Projektbeschreibung
 
 ###1. Das Programm richtet sich an die Mütter und Väter, die einen angenehmen Spielplatz für ihre Kinder suchen. Die Eltern können sich direkt untereinander vernetzen.
 
