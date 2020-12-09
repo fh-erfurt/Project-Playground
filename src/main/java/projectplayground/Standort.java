@@ -7,42 +7,42 @@ public class Standort {
     {
 
     }
-    private String Strassenname;
-    private int Hausnummer;
-    private int Postleitzahl;
-    private String Stadtname;
+    private String strassenname;
+    private int hausnummer;
+    private int postleitzahl;
+    private String stadtname;
 
 
     public String getStrassenname() {
-        return Strassenname;
+        return strassenname;
     }
 
     public void setStrassenname(String strassenname) {
-        Strassenname = strassenname;
+        this.strassenname = strassenname;
     }
 
     public int getHausnummer() {
-        return Hausnummer;
+        return hausnummer;
     }
 
     public void setHausnummer(int hausnummer) {
-        Hausnummer = hausnummer;
+        this.hausnummer = hausnummer;
     }
 
     public int getPostleitzahl() {
-        return Postleitzahl;
+        return postleitzahl;
     }
 
     public void setPostleitzahl(int postleitzahl) {
-        Postleitzahl = postleitzahl;
+        this.postleitzahl = postleitzahl;
     }
 
 
     public String getStadtname() {
-        return Stadtname;
+        return stadtname;
     }
 
     public void setStadtname(String stadtname) {
-        Stadtname = stadtname;
+        this.stadtname = stadtname;
     }
 }

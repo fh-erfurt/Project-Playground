@@ -6,49 +6,49 @@ import java.util.UUID;
 
 public class Spielplatz {
     public Spielplatz() {
-        this.Geraete = new ArrayList<Geraet>();
+        this.geraete = new ArrayList<Geraet>();
     }
 
     public UUID ID;
-    private String Bezeichnung;
-    private int AnzahlKinder;
-    private Status Status;
-    private Standort Standort;
-    private String Information;
-    public List<Geraet> Geraete;
+    private String bezeichnung;
+    private int anzahlKinder;
+    private Status status;
+    private Standort standort;
+    private String information;
+    public List<Geraet> geraete;
     // TO DO: Bilder
 
 
     public void setBezeichnung(String Bezeichnung) {
-        this.Bezeichnung = Bezeichnung;
+        this.bezeichnung = Bezeichnung;
     }
 
     public String getBezeichnung() {
-        return this.Bezeichnung;
+        return this.bezeichnung;
     }
 
     public Status getStatus() {
-        return this.Status;
+        return this.status;
     }
 
     public void setStatus(Status Status) {
-        this.Status = Status;
+        this.status = Status;
     }
 
     public void setAnzahlKinder(int AnzahlKinder) {
-        this.AnzahlKinder = AnzahlKinder;
+        this.anzahlKinder = AnzahlKinder;
     }
 
     public int getAnzahlKinder() {
-        return this.AnzahlKinder;
+        return this.anzahlKinder;
     }
 
     public Standort getStandort() {
-        return Standort;
+        return standort;
     }
 
     public void setStandort(Standort standort) {
-        Standort = standort;
+        this.standort = standort;
     }
 
     public UUID getID() {
@@ -60,10 +60,10 @@ public class Spielplatz {
     }
 
     public String getInformation() {
-        return Information;
+        return information;
     }
 
     public void setInformation(String information) {
-        Information = information;
+        this.information = information;
     }
 }

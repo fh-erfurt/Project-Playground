@@ -2,40 +2,40 @@ package projectplayground;
 import java.util.UUID;
 
 public class Geraet {
-    private UUID SpielplatzID;
-    private String Bezeichnung;
-    private GeraeteStatus GeraeteStatus;
-    private String Beschreibung;
+    private UUID spielplatzID;
+    private String bezeichnung;
+    private GeraeteStatus geraeteStatus;
+    private String beschreibung;
 
     public GeraeteStatus getGeraeteStatus() {
-        return GeraeteStatus;
+        return geraeteStatus;
     }
 
     public void setGeraeteStatus(GeraeteStatus geraeteStatus) {
-        GeraeteStatus = geraeteStatus;
+        this.geraeteStatus = geraeteStatus;
     }
 
     public UUID getSpielplatzID() {
-        return SpielplatzID;
+        return spielplatzID;
     }
 
     public void setSpielplatzID(UUID spielplatzID) {
-        SpielplatzID = spielplatzID;
+        this.spielplatzID = spielplatzID;
     }
 
     public String getBezeichnung() {
-        return Bezeichnung;
+        return bezeichnung;
     }
 
     public void setBezeichnung(String bezeichnung) {
-        Bezeichnung = bezeichnung;
+        this.bezeichnung = bezeichnung;
     }
 
     public String getBeschreibung() {
-        return Beschreibung;
+        return beschreibung;
     }
 
     public void setBeschreibung(String beschreibung) {
-        Beschreibung = beschreibung;
+        this.beschreibung = beschreibung;
     }
 }

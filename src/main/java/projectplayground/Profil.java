@@ -4,74 +4,74 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Profil {
-    private String Benutzername;
-    private String Passwort;
-    private String Email;
-    private int EigeneKinder;
-    private Standort Aufenthaltsort;
-    private List<Spielplatz> SpielplatzFavoriten;
-    private List<Profil> Freunde;
+    private String benutzername;
+    private String passwort;
+    private String email;
+    private int eigeneKinder;
+    private Standort aufenthaltsort;
+    private List<Spielplatz> spielplatzFavoriten;
+    private List<Profil> freunde;
 
 
     public Profil() {
-        this.SpielplatzFavoriten = new ArrayList<Spielplatz>();
-        this.Freunde = new ArrayList<Profil>();
+        this.spielplatzFavoriten = new ArrayList<Spielplatz>();
+        this.freunde = new ArrayList<Profil>();
     }
 
     public String getBenutzername() {
-        return Benutzername;
+        return benutzername;
     }
 
     public void setBenutzername(String benutzername) {
-        Benutzername = benutzername;
+        this.benutzername = benutzername;
     }
 
     public String getPasswort() {
-        return Passwort;
+        return passwort;
     }
 
     public void setPasswort(String passwort) {
-        Passwort = passwort;
+        this.passwort = passwort;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
 
     public List<Spielplatz> getSpielplatzFavoriten() {
-        return SpielplatzFavoriten;
+        return spielplatzFavoriten;
     }
 
     public void setSpielplatzFavoriten(List<Spielplatz> spielplatzFavoriten) {
-        SpielplatzFavoriten = spielplatzFavoriten;
+        this.spielplatzFavoriten = spielplatzFavoriten;
     }
 
     public int getEigeneKinder() {
-        return EigeneKinder;
+        return eigeneKinder;
     }
 
     public void setEigeneKinder(int eigeneKinder) {
-        EigeneKinder = eigeneKinder;
+        this.eigeneKinder = eigeneKinder;
     }
 
     public Standort getAufenthaltsort() {
-        return Aufenthaltsort;
+        return aufenthaltsort;
     }
 
     public void setAufenthaltsort(Standort aufenthaltsort) {
-        Aufenthaltsort = aufenthaltsort;
+        this.aufenthaltsort = aufenthaltsort;
     }
 
     public List<Profil> getFreunde() {
-        return Freunde;
+        return freunde;
     }
 
     public void setFreunde(List<Profil> freunde) {
-        Freunde = freunde;
+        this.freunde = freunde;
     }
 }
