@@ -1,47 +1,65 @@
 @startuml
 class Spielplatz {
   +ID
-  -Bezeichnung
-  -AnzahlKinder
-  -Status
-  -Standort
-  +Geraete
-  +GetGeraete()
+  -bezeichnung
+  -anzahlKinder
+  -status
+  -standort
+  +geraete
+  +getGeraete()
 }
 
 class Standort{
--Strassenname
--Hausnummer
--Postleitzahl
--Stadtname
+-strassenname
+-hausnummer
+-postleitzahl
+-stadtname
 }
 
 class Geraet{
--Spielplatz
--Bezeichnung
--GeraeteStatus
+-spielplatz
+-bezeichnung
+-geraeteStatus
+}
+enum GeraeteStatus{
+ inTakt,
+ dreckig,
+ kaputt,
+}
+enum Status{
+ offen,
+ gutBesucht,
+ voll,
+ ueberfuellt
+}
+enum Zugriff{
+ administration,
+ benutzer
 }
 
 class Profil{
--Nutzername
--Passwort
--Email
--EigeneKinder
--List<Spielplatz>SpielplatzFavoriten
--Aufenthaltsort
--Freunde
--Zugriff
+-benutzername
+-passwort
+-email
+-zugriff
 }
+
 class Benutzer{
--Zugriff
+-eigeneKinder
+-List<Spielplatz>spielplatzFavoriten
+-aufenthaltsort
+-freunde
 }
+
 class Admin{
--Zugriff
 }
 
 Profil <|--Benutzer
 Profil <|--Admin
 Spielplatz "1" *-- Standort
+Spielplatz "1" *-- Status
 Profil "1" o-- Standort
+Zugriff <|-- Profil
 Geraet "1" *-- "many" Spielplatz
+Geraet "1" *-- "many" GeraeteStatus
 @enduml
