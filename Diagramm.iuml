@@ -1,30 +1,66 @@
 @startuml
 class Spielplatz {
-  +ID
-  -bezeichnung
-  -anzahlKinder
-  -status
-  -standort
-  +geraete
-  +getGeraete()
+  +ID:UUID
+  -bezeichnung:String
+  -anzahlKinder:int
+  -status:Status
+  -standort:Standort
+  -information:String
+  +List<Geraet> geraete
+  +List<Benutzer> angemeldeteBenutzer
+
+  +Spielplatz()
+  +getBezeichnung():String
+  +setBezeichnung(String Bezeichnung)
+  +getStatus():Status
+  +setStatus(Status Status)
+  +getAnzahlKinder():int
+  +setAnzahlKinder(int AnzahlKinder)
+  +getStandort():Standort
+  +setStandort(Standort standort)
+  +getID():UUID
+  +setID(UUID ID)
+  +getInformation():String
+  +setInformation(String information)
 }
 
 class Standort{
--strassenname
--hausnummer
--postleitzahl
--stadtname
+ -strassenname:String
+ -hausnummer:int
+ -postleitzahl:int
+ -stadtname:String
+
+ +getStrassenname():String
+ +setStrassenname(String strassenname)
+ +getHausnummer():int
+ +setHausnummer(int hausnummer)
+ +getPostleitzahl():int
+ +setPostleitzahl(int postleitzahl)
+ +getStadtname():String
+ +setStadtname(String stadtname)
 }
 
 class Geraet{
--spielplatz
--bezeichnung
--geraeteStatus
+-spielplatzID:UUID
+-bezeichnung:String
+-geraeteStatus:GeraeteStatus
+-beschreibung:String
+
++Geraet(UUID spielplatzID, String bezeichnung, GeraeteStatus status, String beschreibung)
++getGeraeteStatus():GeraeteStatus
++setGeraeteStatus(GeraeteStatus geraeteStatus)
++getSpielplatzID():UUID
++setSpielplatzID(UUID spielplatzID)
++getBezeichnung():String
++setBezeichnung(String bezeichnung)
++getBeschreibung():String
++setBeschreibung(String beschreibung)
 }
 enum GeraeteStatus{
  inTakt,
  dreckig,
  kaputt,
+ zuPruefen
 }
 enum Status{
  offen,
@@ -33,33 +69,66 @@ enum Status{
  ueberfuellt
 }
 enum Zugriff{
- administration,
+ administrator,
+ moderator,
  benutzer
 }
 
 class Profil{
--benutzername
--passwort
--email
--zugriff
+#benutzername:String
+#passwort:String
+#email:String
+#zugriff:Zugriff
+
++getBenutzername():String
++setBenutzername(String benutzername)
++getPasswort():String
++setPasswort(String passwort)
++getEmail():String
++setEmail(String email)
 }
 
 class Benutzer{
--eigeneKinder
--List<Spielplatz>spielplatzFavoriten
--aufenthaltsort
--freunde
+#eigeneKinder:int
+#aufenthaltsort:Standort
+#List<Spielplatz>spielplatzFavoriten
+#List<Benutzer> freunde
+#aktuellerSpielplatz:UUID;
+
++Benutzer()
++Benutzer(String benutzername, String email, String passwort, int anzahlKinder)
++getSpielplatzFavoriten():List<Spielplatz>
++setSpielplatzFavoriten(List<Spielplatz> spielplatzFavoriten)
++getEigeneKinder():int
++setEigeneKinder(int eigeneKinder)
++getAufenthaltsort():Standort
++setAufenthaltsort(Standort aufenthaltsort)
++getFreunde():List<Benutzer>
++setFreunde(List<Benutzer> freunde)
++freundHinzufuegen(Benutzer neuerFreund)
++freundEntfernen(Benutzer freund)
++spielplatzFavoritHinzufuegen(Spielplatz neuerSpielplatz)
++spielplatzFavoritEntfernen(Spielplatz spielplatz)
++getAktuellenSpielplatz(List<Spielplatz> alleSpielplaetze):Spielplatz
++geraetMelden(String geraetName, List<Spielplatz> alleSpielplaetze)
 }
 
 class Admin{
++Admin(String benutzername, String passwort, String email)
+}
+
+class Moderator{
++Moderator(String benutzername, String email, String passwort, int anzahlKinder, Standort aufenthaltsort)
++geraeteStatusAendern(Geraet geraet, GeraeteStatus neuerGeraeteStatus)
 }
 
 Profil <|--Benutzer
 Profil <|--Admin
+Benutzer <|--Moderator
 Spielplatz "1" *-- Standort
 Spielplatz "1" *-- Status
 Profil "1" o-- Standort
 Zugriff <|-- Profil
-Geraet "1" *-- "many" Spielplatz
-Geraet "1" *-- "many" GeraeteStatus
+Geraet "1" *-- Spielplatz
+Geraet "1" *-- GeraeteStatus
 @enduml

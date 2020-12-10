@@ -1,10 +1,10 @@
 package projectplayground;
 
 public enum GeraeteStatus {
-    InTakt,
-    Dreckig,
-    Kaputt,
-    ZuPruefen
+    inTakt,
+    dreckig,
+    kaputt,
+    zuPruefen
 }
 
 // TODO: vllt andere Bezeichnungen überlegen

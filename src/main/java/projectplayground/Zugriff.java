@@ -1,7 +1,7 @@
 package projectplayground;
 
 public enum Zugriff {
-    administration,
+    administrator,
     moderator,
     benutzer
 }

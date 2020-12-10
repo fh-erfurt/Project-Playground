@@ -37,7 +37,6 @@ public class Standort {
         this.postleitzahl = postleitzahl;
     }
 
-
     public String getStadtname() {
         return stadtname;
     }
