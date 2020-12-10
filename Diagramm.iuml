@@ -20,7 +20,6 @@ class Geraet{
 -Spielplatz
 -Bezeichnung
 -GeraeteStatus
--Bezeichnung
 }
 
 class Profil{
@@ -31,8 +30,17 @@ class Profil{
 -List<Spielplatz>SpielplatzFavoriten
 -Aufenthaltsort
 -Freunde
+-Zugriff
+}
+class Benutzer{
+-Zugriff
+}
+class Admin{
+-Zugriff
 }
 
+Profil <|--Benutzer
+Profil <|--Admin
 Spielplatz "1" *-- Standort
 Profil "1" o-- Standort
 Geraet "1" *-- "many" Spielplatz
