@@ -1,10 +1,12 @@
 package projectplayground;
 
 public enum GeraeteStatus {
-    inTakt,
-    dreckig,
-    kaputt,
-    zuPruefen
+    inTaktesGeraet,
+    verschmutztesGeraet,
+    kaputtesGeraet,
+    verletzungsgefahr
 }
 
+
 // TODO: vllt andere Bezeichnungen überlegen
+//TODO: finde so passen die Bezeichnungen besser, Absprache

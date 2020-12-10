@@ -4,7 +4,10 @@ public enum Status {
     offen,
     gutBesucht,
     voll,
-    ueberfuellt
+    ueberfuellt,
+    leichtVerschmutzt,
+    starkVerschmutzt,
+
 }
 
 

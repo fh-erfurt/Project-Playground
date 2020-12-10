@@ -21,7 +21,9 @@ public class Moderator extends Benutzer
         geraet.setGeraeteStatus(neuerGeraeteStatus);
     }
 
+    public void geraetehinzufuegen(Geraet geraet) {
 
+    }
     // TODO: Gerät hinzufügen, Gerät entfernen
     // TODO: Spielplatz hinzufügen, Spielplatzdaten verwalten, Spielplatz entfernen
 
