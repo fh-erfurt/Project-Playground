@@ -60,7 +60,7 @@ public class Benutzer extends Profil {
     }
     public void freundEntfernen(Benutzer freund)
     {
-//        this.freunde.fin
+        this.freunde.remove(freund);
     }
 }
 
