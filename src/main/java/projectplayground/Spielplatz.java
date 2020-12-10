@@ -16,7 +16,8 @@ public class Spielplatz {
     private Standort standort;
     private String information;
     public List<Geraet> geraete;
-    // TO DO: Bilder
+    public List<Benutzer> angemeldeteBenutzer;
+    // TODO: Bilder
 
 
     public void setBezeichnung(String Bezeichnung) {

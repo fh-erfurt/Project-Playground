@@ -7,6 +7,14 @@ public class Geraet {
     private GeraeteStatus geraeteStatus;
     private String beschreibung;
 
+    public Geraet(UUID spielplatzID, String bezeichnung, GeraeteStatus status, String beschreibung)
+    {
+        this.spielplatzID = spielplatzID;
+        this.bezeichnung = bezeichnung;
+        this.geraeteStatus = status;
+        this.beschreibung = beschreibung;
+    }
+
     public GeraeteStatus getGeraeteStatus() {
         return geraeteStatus;
     }
@@ -38,4 +46,5 @@ public class Geraet {
     public void setBeschreibung(String beschreibung) {
         this.beschreibung = beschreibung;
     }
+
 }

@@ -34,4 +34,6 @@ public abstract class Profil {
         this.email = email;
     }
 
+    // TODO: Profil verwalten
+
 }

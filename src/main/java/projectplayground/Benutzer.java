@@ -2,20 +2,28 @@ package projectplayground;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class Benutzer extends Profil {
 
-    private int eigeneKinder;
-    private Standort aufenthaltsort;
-    private List<Spielplatz> spielplatzFavoriten;
-    private List<Benutzer> freunde;
+    protected int eigeneKinder;
+    protected Standort aufenthaltsort;
+    protected List<Spielplatz> spielplatzFavoriten;
+    protected List<Benutzer> freunde;
+    protected UUID aktuellerSpielplatz;
 
-    public Benutzer(String benutzername, String email, String passwort, int anzahlKinder, Standort aufenthaltsort) {
+
+    public Benutzer()
+    {
+
+    }
+
+    public Benutzer(String benutzername, String email, String passwort, int anzahlKinder)
+    {
         this.benutzername = benutzername;
         this.email = email;
         this.passwort = passwort;
         this.eigeneKinder = anzahlKinder;
-        this.aufenthaltsort = aufenthaltsort;
         this.zugriff = Zugriff.benutzer;
         this.spielplatzFavoriten = new ArrayList<Spielplatz>();
         this.freunde = new ArrayList<Benutzer>();
@@ -63,7 +71,32 @@ public class Benutzer extends Profil {
         this.freunde.remove(freund);
     }
 
-    public void spielplatzHinzufuegen(Spielplatz neuerSpielplatz) {this.spielplatzFavoriten.add(neuerSpielplatz); }
-    public void spielplatzEntfernen(Spielplatz Spielplatz) {this.spielplatzFavoriten.remove(Spielplatz); }
+    public void spielplatzFavoritHinzufuegen(Spielplatz neuerSpielplatz)
+    {
+        this.spielplatzFavoriten.add(neuerSpielplatz);
+    }
+
+    public void spielplatzFavoritEntfernen(Spielplatz spielplatz)
+    {
+        this.spielplatzFavoriten.remove(spielplatz);
+    }
+
+    public Spielplatz getAktuellenSpielplatz(List<Spielplatz> alleSpielplaetze) // TODO: Parameter entfernen, wird durch globale Spielplatzliste obsolet
+    {
+        for (Spielplatz spielplatz: alleSpielplaetze)
+        {
+            if(spielplatz.getID() == this.aktuellerSpielplatz)
+                return spielplatz;
+        }
+        return null;
+    }
+
+    public void geraetMelden(String geraetName, List<Spielplatz> alleSpielplaetze)
+    {
+    //        Spielplatz spielplatz = this.getAktuellenSpielplatz()
+    }
+
+    // TODO: Am Spielplatz anmelden (mit Kinderanzahl) / abmelden
+    // TODO: Freunde hinzufügen, entfernen, verwalten
 }
 
