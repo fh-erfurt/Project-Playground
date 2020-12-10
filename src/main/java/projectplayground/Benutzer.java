@@ -60,7 +60,10 @@ public class Benutzer extends Profil {
     }
     public void freundEntfernen(Benutzer freund)
     {
-//        this.freunde.fin
+        this.freunde.remove(freund);
     }
+
+    public void spielplatzHinzufuegen(Spielplatz neuerSpielplatz) {this.spielplatzFavoriten.add(neuerSpielplatz); }
+    public void spielplatzEntfernen(Spielplatz Spielplatz) {this.spielplatzFavoriten.remove(Spielplatz); }
 }
 
