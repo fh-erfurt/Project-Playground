@@ -8,11 +8,17 @@ public class Benutzer extends Profil {
     private int eigeneKinder;
     private Standort aufenthaltsort;
     private List<Spielplatz> spielplatzFavoriten;
-    private List<Profil> freunde;
+    private List<Benutzer> freunde;
 
-    public Benutzer() {
+    public Benutzer(String benutzername, String email, String passwort, int anzahlKinder, Standort aufenthaltsort) {
+        this.benutzername = benutzername;
+        this.email = email;
+        this.passwort = passwort;
+        this.eigeneKinder = anzahlKinder;
+        this.aufenthaltsort = aufenthaltsort;
+        this.zugriff = Zugriff.benutzer;
         this.spielplatzFavoriten = new ArrayList<Spielplatz>();
-        this.freunde = new ArrayList<Profil>();
+        this.freunde = new ArrayList<Benutzer>();
     }
 
     public List<Spielplatz> getSpielplatzFavoriten() {
@@ -39,12 +45,22 @@ public class Benutzer extends Profil {
         this.aufenthaltsort = aufenthaltsort;
     }
 
-    public List<Profil> getFreunde() {
+    public List<Benutzer> getFreunde() {
         return freunde;
     }
 
-    public void setFreunde(List<Profil> freunde) {
+    public void setFreunde(List<Benutzer> freunde) {
         this.freunde = freunde;
+    }
+
+
+    public void freundHinzufuegen(Benutzer neuerFreund)
+    {
+        this.freunde.add(neuerFreund);
+    }
+    public void freundEntfernen(Benutzer freund)
+    {
+//        this.freunde.fin
     }
 }
 

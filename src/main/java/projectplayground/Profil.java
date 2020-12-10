@@ -3,11 +3,11 @@ package projectplayground;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Profil {
-    private String benutzername;
-    private String passwort;
-    private String email;
-    private Zugriff zugriff;
+public abstract class Profil {
+    protected String benutzername;
+    protected String passwort;
+    protected String email;
+    protected Zugriff zugriff;
 
 
     public String getBenutzername() {
