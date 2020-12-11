@@ -20,13 +20,17 @@ public class Benutzer extends Profil {
 
     public Benutzer(String benutzername, String email, String passwort, int anzahlKinder)
     {
+        if(anzahlKinder>0){
         this.benutzername = benutzername;
         this.email = email;
         this.passwort = passwort;
         this.eigeneKinder = anzahlKinder;
         this.zugriff = Zugriff.benutzer;
         this.spielplatzFavoriten = new ArrayList<Spielplatz>();
-        this.freunde = new ArrayList<Benutzer>();
+        this.freunde = new ArrayList<Benutzer>();}
+        else{
+            System.out.println("Es muss mindestens ein Kind angegeben werden");
+        }
     }
 
     public List<Spielplatz> getSpielplatzFavoriten() {
@@ -81,7 +85,7 @@ public class Benutzer extends Profil {
         this.spielplatzFavoriten.remove(spielplatz);
     }
 
-    public Spielplatz getAktuellenSpielplatz(List<Spielplatz> alleSpielplaetze) // TODO: Parameter entfernen, wird durch globale Spielplatzliste obsolet
+    public Spielplatz getAktuellenSpielplatz(List<Spielplatz> alleSpielplaetze)
     {
         for (Spielplatz spielplatz: alleSpielplaetze)
         {
@@ -108,7 +112,5 @@ public class Benutzer extends Profil {
     }
 
     // TODO: Am Spielplatz anmelden (mit Kinderanzahl) / abmelden
-    // TODO: Freunde hinzufügen, entfernen, verwalten
-    // TODO: Anzahl der Kinder eines Benutzers > 0
 }
 
