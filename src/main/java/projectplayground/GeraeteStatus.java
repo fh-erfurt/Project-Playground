@@ -4,7 +4,8 @@ public enum GeraeteStatus {
     inTaktesGeraet,
     verschmutztesGeraet,
     kaputtesGeraet,
-    verletzungsgefahr
+    verletzungsgefahr,
+    zuPruefen
 }
 
 

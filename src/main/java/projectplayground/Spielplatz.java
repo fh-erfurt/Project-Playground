@@ -68,4 +68,14 @@ public class Spielplatz {
     public void setInformation(String information) {
         this.information = information;
     }
+
+    public Geraet getGeraet(String geraeteName)
+    {
+        for (Geraet geraet: this.geraete)
+        {
+            if(geraet.getBezeichnung().equals(geraeteName))
+                return geraet;
+        }
+        return null;
+    }
 }

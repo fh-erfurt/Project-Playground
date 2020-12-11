@@ -99,10 +99,16 @@ public class Benutzer extends Profil {
 
     public void geraetMelden(String geraetName, List<Spielplatz> alleSpielplaetze)
     {
-    //        Spielplatz spielplatz = this.getAktuellenSpielplatz()
+            Spielplatz spielplatz = this.getAktuellenSpielplatz(alleSpielplaetze);
+            Geraet geraet = spielplatz.getGeraet(geraetName);
+            if (geraet != null)
+                geraet.setGeraeteStatus(GeraeteStatus.zuPruefen);
+            else
+                System.out.println("Gerät nicht vorhanden.");
     }
 
     // TODO: Am Spielplatz anmelden (mit Kinderanzahl) / abmelden
     // TODO: Freunde hinzufügen, entfernen, verwalten
+    // TODO: Anzahl der Kinder eines Benutzers > 0
 }
 

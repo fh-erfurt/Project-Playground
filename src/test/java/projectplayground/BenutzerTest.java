@@ -13,6 +13,9 @@ class BenutzerTest {
 
     List<Spielplatz> spielplatzListe = new ArrayList<Spielplatz>();
     Benutzer marvin = new Benutzer("marvin", "test@gmx.de", "qwertz", 1);
+    Benutzer mark = new Benutzer("mark", "mark@gmx.de", "12345", 2);
+    Benutzer fabian = new Benutzer("fabian", "seebär@gmx.de", "6789", 1);
+
 
 
     @BeforeEach
@@ -38,10 +41,7 @@ class BenutzerTest {
         spielplatz.setBezeichnung("BELLA barrierefreier Spielplatz");
         spielplatz.setStatus(Status.voll);
 
-
-
         spielplatzListe.add(spielplatz);
-
         marvin.setAktuellerSpielplatz(spielplatz.getID());
     }
 
@@ -55,5 +55,9 @@ class BenutzerTest {
 
     @Test
     void geraetMelden() {
+//        System.out.println("Benutzer meldet Gerät 'Schaukel' auf seinem aktuellen Spielplatz.");
+        marvin.geraetMelden("Schaukel", spielplatzListe);
+        Geraet geaendertesGeraet = marvin.getAktuellenSpielplatz(spielplatzListe).getGeraet("Schaukel");
+        System.out.println("Schaukelstatus: " + geaendertesGeraet.getGeraeteStatus());
     }
 }
