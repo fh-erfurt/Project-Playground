@@ -1,9 +1,12 @@
 @startuml
+skinparam shadowing false
+
 class Spielplatz {
   +ID:UUID
   -bezeichnung:String
   -anzahlKinder:int
   -status:Status
+  -sauberkeit:SauberkeitStatus
   -standort:Standort
   -information:String
   +List<Geraet> geraete
@@ -57,16 +60,21 @@ class Geraet{
 +setBeschreibung(String beschreibung)
 }
 enum GeraeteStatus{
- inTakt,
- dreckig,
- kaputt,
- zuPruefen
+    inTaktesGeraet,
+    verschmutztesGeraet,
+    kaputtesGeraet,
+    verletzungsgefahr
 }
 enum Status{
  offen,
  gutBesucht,
  voll,
  ueberfuellt
+}
+enum SauberkeitStatus{
+    sauber,
+    leichtVerschmutzt,
+    starkVerschmutzt
 }
 enum Zugriff{
  administrator,
@@ -125,10 +133,12 @@ class Moderator{
 Profil <|--Benutzer
 Profil <|--Admin
 Benutzer <|--Moderator
-Spielplatz "1" *-- Standort
-Spielplatz "1" *-- Status
+Spielplatz "1" *-- "1" Standort
+Spielplatz "1" *-- "1" Status
+Spielplatz "1" *-- "1" SauberkeitStatus
+Spielplatz "1" --{ "0..n" Benutzer
 Profil "1" o-- Standort
-Zugriff <|-- Profil
-Geraet "1" *-- Spielplatz
-Geraet "1" *-- GeraeteStatus
+Zugriff "1" --* "1" Profil
+Geraet "0..n" }-- "1" Spielplatz
+Geraet "1" *-- "1" GeraeteStatus
 @enduml

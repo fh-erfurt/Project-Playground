@@ -6,7 +6,15 @@
 
     <groupId>projectplayground</groupId>
     <artifactId>Project-Playground</artifactId>
-    <version>1.0.0.0</version>
+    <version>1.0.0.1</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>

@@ -91,6 +91,12 @@ public class Benutzer extends Profil {
         return null;
     }
 
+    public void setAktuellerSpielplatz(UUID spielplatzID)
+    {
+        //TODO erweitern siehe Spielplatzanmeldung
+        this.aktuellerSpielplatz = spielplatzID;
+    }
+
     public void geraetMelden(String geraetName, List<Spielplatz> alleSpielplaetze)
     {
     //        Spielplatz spielplatz = this.getAktuellenSpielplatz()

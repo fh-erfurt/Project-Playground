@@ -13,6 +13,7 @@ public class Spielplatz {
     private String bezeichnung;
     private int anzahlKinder;
     private Status status;
+    private SauberkeitStatus sauberkeit;
     private Standort standort;
     private String information;
     public List<Geraet> geraete;
