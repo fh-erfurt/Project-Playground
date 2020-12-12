@@ -17,6 +17,19 @@ public class Moderator extends Benutzer
         this.freunde = new ArrayList<>();
     }
 
+
+    // TODO: Gerät hinzufügen, Gerät entfernen //Fabian
+    public void geraetHinzufuegen(List<Geraet> alleGeraete, Geraet geraet){
+        alleGeraete.add(geraet);
+    }
+
+    public void geraetEntfernen(List<Geraet> alleGeraete, Geraet geraet){
+        alleGeraete.remove(geraet);
+    }
+    
+    
+    // stand schon da
+    
     public void geraeteStatusAendern(Geraet geraet, GeraeteStatus neuerGeraeteStatus)
     {
         geraet.setGeraeteStatus(neuerGeraeteStatus);
@@ -31,8 +44,10 @@ public class Moderator extends Benutzer
     public void spielplatzEntfernen(List<Spielplatz> alleSpielplaetze, Spielplatz spielplatz){
         alleSpielplaetze.remove(spielplatz);
     }
-    // TODO: Gerät hinzufügen, Gerät entfernen //Fabian
+    
     // TODO: Spielplatzdaten verwalten
-
-
+    public void spielplatzVerwalten(Spielplatz spielplatz, SpielplatzVerwalten neuerSpielplatzEintrag)
+    {
+        geraet.setSpielplatzVerwalten(neuerSpielplatzEintrag);
+    }
 }
