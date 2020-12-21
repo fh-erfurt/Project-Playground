@@ -23,9 +23,9 @@ public abstract class Profil {
     }
 
     public void setPasswort(String passwort) {
-        if(zugriff.equals(Zugriff.administrator)){
+        if (zugriff.equals(Zugriff.administrator)) {
             this.passwort = passwort;
-        }else{
+        } else {
             System.out.println("Keinen Zugriff");
         }
     }
@@ -38,14 +38,19 @@ public abstract class Profil {
         this.email = email;
     }
 
-    public void PasswortAendern(Profil profil,String altesPasswort){
-        if(profil.passwort.equals(altesPasswort)){
-            profil.passwort=altesPasswort;
-        }else{
+    public void PasswortAendern(Profil profil, String altesPasswort) {
+        if (profil.passwort.equals(altesPasswort)) {
+            profil.passwort = altesPasswort;
+        } else {
             System.out.println("Falsches Passwort");
         }
-
     }
+
+    //TODO: remove Profil -> Admin
+    public void removeProfil(Profil profil, String benutzername) {
+        this.benutzername = null;
+    }
+
 
     // TODO: Profil verwalten
     // TODO: Anmelden
