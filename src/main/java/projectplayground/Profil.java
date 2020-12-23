@@ -2,6 +2,7 @@ package projectplayground;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public abstract class Profil {
     protected String benutzername;
@@ -41,8 +42,13 @@ public abstract class Profil {
     public void PasswortAendern(Profil profil, String altesPasswort) {
         if (profil.passwort.equals(altesPasswort)) {
             profil.passwort = altesPasswort;
+            System.out.println("Passwort stimmt und kann geändert werden");
+            System.out.println("Bitte neues Passwort eingeben ...");
+            Scanner scan = new Scanner(System.in);
+            String newPw = scan.nextLine();
+            this.passwort = newPw;
         } else {
-            System.out.println("Falsches Passwort");
+            System.out.println("Falsches Passwort, kann nicht geandert werden");
         }
     }
 
@@ -52,7 +58,7 @@ public abstract class Profil {
     }
 
 
-    // TODO: Profil verwalten
+    // TODO: Profil verwalten -> Passwort ändern per Benutzereingabe hinzugefügt
     // TODO: Anmelden
     // TODO: Email,Passwort vergessen
 
