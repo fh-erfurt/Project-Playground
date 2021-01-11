@@ -27,8 +27,11 @@ public class Admin extends Profil {
     public void geraeteLoeschen(List<Geraet> geraete, Geraet geraet){
         geraete.remove(geraet);
     }
+    //TODO: Benutzer entfernen will mal hoffen das passt so irgendwie
+    public void removeProfil(List<Benutzer> benutzers, Benutzer benutzer) {this.benutzername=null;}
 
-    // TODO: Benutzer entfernen
     // TODO: E-mail sperren
+    public void emailSperren(Profil profil) {setEmail(null);}
     // TODO: Profil zurücksetzen (PW zurücksetzen)
+    public void zuruekSetzen(Profil profil) {profil.setEmail(null);profil.setPasswort(null);profil.setBenutzername(null);}
 }
