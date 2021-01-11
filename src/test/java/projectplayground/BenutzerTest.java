@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BenutzerTest {
 
-    List<Spielplatz> spielplatzListe = new ArrayList<Spielplatz>();
+    List<Spielplatz> spielplatzListe = new ArrayList<>();
     Benutzer marvin = new Benutzer("marvin", "test@gmx.de", "qwertz", 1);
     Benutzer mark = new Benutzer("mark", "mark@gmx.de", "12345", 2);
     Benutzer fabian = new Benutzer("fabian", "seebär@gmx.de", "6789", 1);
@@ -42,7 +42,7 @@ class BenutzerTest {
         spielplatz.setStatus(Status.voll);
 
         spielplatzListe.add(spielplatz);
-        marvin.setAktuellerSpielplatz(spielplatz.getID());
+        marvin.setAktuellenSpielplatz(spielplatz.getID());
     }
 
     @Test
@@ -60,4 +60,5 @@ class BenutzerTest {
         Geraet geaendertesGeraet = marvin.getAktuellenSpielplatz(spielplatzListe).getGeraet("Schaukel");
         System.out.println("Schaukelstatus: " + geaendertesGeraet.getGeraeteStatus());
     }
+
 }

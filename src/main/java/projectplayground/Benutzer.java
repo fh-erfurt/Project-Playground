@@ -95,7 +95,7 @@ public class Benutzer extends Profil {
         return null;
     }
 
-    public void setAktuellerSpielplatz(UUID spielplatzID)
+    public void setAktuellenSpielplatz(UUID spielplatzID)
     {
         //TODO erweitern siehe Spielplatzanmeldung
         this.aktuellerSpielplatz = spielplatzID;

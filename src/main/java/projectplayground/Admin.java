@@ -21,10 +21,10 @@ public class Admin extends Profil {
     public void passwortZuruecksetzen(Profil profil){
             profil.setPasswort(null);
     }
-    public void SpielplatzLoeschen(List<Spielplatz> spielplatzListe,Spielplatz spielplatz){
+    public void spielplatzLoeschen(List<Spielplatz> spielplatzListe,Spielplatz spielplatz){
         spielplatzListe.remove(spielplatz);
     }
-    public void GeraeteLoeschen(List<Geraet> geraete, Geraet geraet){
+    public void geraeteLoeschen(List<Geraet> geraete, Geraet geraet){
         geraete.remove(geraet);
     }
 
