@@ -25,6 +25,7 @@ class Spielplatz {
   +setID(UUID ID)
   +getInformation():String
   +setInformation(String information)
+  +getGeraet(String geraeteName):Geraet
 }
 
 class Standort{
@@ -82,7 +83,7 @@ enum Zugriff{
  benutzer
 }
 
-class Profil{
+abstract class Profil{
 #benutzername:String
 #passwort:String
 #email:String
@@ -94,6 +95,7 @@ class Profil{
 +setPasswort(String passwort)
 +getEmail():String
 +setEmail(String email)
++PasswortAendern(Profil profil,String altesPasswort)
 }
 
 class Benutzer{
@@ -118,11 +120,17 @@ class Benutzer{
 +spielplatzFavoritHinzufuegen(Spielplatz neuerSpielplatz)
 +spielplatzFavoritEntfernen(Spielplatz spielplatz)
 +getAktuellenSpielplatz(List<Spielplatz> alleSpielplaetze):Spielplatz
++setAktuellenSpielplatz(UUID spielplatzID)
 +geraetMelden(String geraetName, List<Spielplatz> alleSpielplaetze)
 }
 
 class Admin{
 +Admin(String benutzername, String passwort, String email)
++benutzerZuModerator(Benutzer benutzer):Moderator
++moderatorZuBenutzer(Moderator moderator):Benutzer
++passwortZuruecksetzen(Profil profil)
++spielplatzLoeschen(List<Spielplatz> spielplatzListe,Spielplatz spielplatz)
++geraeteLoeschen(List<Geraet> geraete, Geraet geraet)
 }
 
 class Moderator{

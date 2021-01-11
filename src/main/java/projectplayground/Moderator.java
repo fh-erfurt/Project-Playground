@@ -42,4 +42,8 @@ public class Moderator extends Benutzer
     }
     
     // TODO: Spielplatzdaten verwalten
+  /*  public void spielplatzVerwalten(Spielplatz spielplatz, SpielplatzVerwalten neuerSpielplatzEintrag)
+    {
+        geraet.setSpielplatzVerwalten(neuerSpielplatzEintrag);
+    }*/
 }
