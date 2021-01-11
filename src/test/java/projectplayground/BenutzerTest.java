@@ -55,7 +55,6 @@ class BenutzerTest {
 
     @Test
     void geraetMelden() {
-//        System.out.println("Benutzer meldet Gerät 'Schaukel' auf seinem aktuellen Spielplatz.");
         marvin.geraetMelden("Schaukel", spielplatzListe);
         Geraet geaendertesGeraet = marvin.getAktuellenSpielplatz(spielplatzListe).getGeraet("Schaukel");
         System.out.println("Schaukelstatus: " + geaendertesGeraet.getGeraeteStatus());

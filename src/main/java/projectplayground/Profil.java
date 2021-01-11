@@ -38,7 +38,7 @@ public abstract class Profil {
         this.email = email;
     }
 
-    public void PasswortAendern(Profil profil,String altesPasswort){
+    public void passwortAendern(Profil profil,String altesPasswort){
         if(profil.passwort.equals(altesPasswort)){
             profil.passwort=altesPasswort;
         }else{

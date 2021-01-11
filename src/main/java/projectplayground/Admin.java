@@ -11,11 +11,11 @@ public class Admin extends Profil {
         this.email = email;
     }
     public Moderator benutzerZuModerator(Benutzer benutzer){
-        Moderator neuerModerator=new Moderator(benutzer.benutzername,benutzer.email,benutzer.passwort,benutzer.eigeneKinder,benutzer.aufenthaltsort);
+        Moderator neuerModerator = new Moderator(benutzer.benutzername,benutzer.email,benutzer.passwort,benutzer.eigeneKinder,benutzer.aufenthaltsort);
         return neuerModerator;
     }
     public Benutzer moderatorZuBenutzer(Moderator moderator){
-        Benutzer neuerBenutzer=new Benutzer(moderator.benutzername,moderator.email,moderator.passwort,moderator.eigeneKinder);
+        Benutzer neuerBenutzer = new Benutzer(moderator.benutzername,moderator.email,moderator.passwort,moderator.eigeneKinder);
         return neuerBenutzer;
     }
     public void passwortZuruecksetzen(Profil profil){

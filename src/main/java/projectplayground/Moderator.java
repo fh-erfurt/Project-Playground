@@ -18,26 +18,22 @@ public class Moderator extends Benutzer
     }
 
 
-    // TODO: Gerät hinzufügen, Gerät entfernen //Fabian
-    public void geraetHinzufuegen(List<Geraet> alleGeraete, Geraet geraet){
-        alleGeraete.add(geraet);
+    // TODO: Gerät hinzufügen, Gerät entfernen
+    public void geraetHinzufuegen(Spielplatz spielplatz, Geraet geraet)
+    {
+        spielplatz.geraete.add(geraet);
     }
 
-    public void geraetEntfernen(List<Geraet> alleGeraete, Geraet geraet){
-        alleGeraete.remove(geraet);
+    public void geraetEntfernen(Spielplatz spielplatz, Geraet geraet)
+    {
+        spielplatz.geraete.remove(geraet);
     }
-    
-    
-    // stand schon da
-    
+
     public void geraeteStatusAendern(Geraet geraet, GeraeteStatus neuerGeraeteStatus)
     {
         geraet.setGeraeteStatus(neuerGeraeteStatus);
     }
 
-    public void geraetehinzufuegen(Geraet geraet) {
-
-    }
     public void spielplatzHinzufuegen(List<Spielplatz> alleSpielplaetze, Spielplatz spielplatz){
         alleSpielplaetze.add(spielplatz);
     }
@@ -46,8 +42,4 @@ public class Moderator extends Benutzer
     }
     
     // TODO: Spielplatzdaten verwalten
-    public void spielplatzVerwalten(Spielplatz spielplatz, SpielplatzVerwalten neuerSpielplatzEintrag)
-    {
-        geraet.setSpielplatzVerwalten(neuerSpielplatzEintrag);
-    }
 }
