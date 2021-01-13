@@ -8,12 +8,12 @@ public class Geraet {
     private String beschreibung;
     private int kapazitaetGeraet;
 
-    //TODO Interfaces für Gerätetypen
 
     public Geraet()
     {
 
     }
+
     public Geraet(UUID spielplatzID, String bezeichnung, GeraeteStatus status, String beschreibung, int kapazitaetGeraet)
     {
         this.spielplatzID = spielplatzID;

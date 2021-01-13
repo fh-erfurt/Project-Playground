@@ -10,6 +10,17 @@ public class Spielplatz {
         this.angemeldeteBenutzer = new ArrayList<Benutzer>();
     }
 
+    public Spielplatz(String bezeichnung, Status status, SauberkeitStatus sauberkeit, String information, int anzahlKinder)
+    {
+        this.bezeichnung = bezeichnung;
+        this.status = status;
+        this.sauberkeit = sauberkeit;
+        this.information = information;
+        this.anzahlKinder = anzahlKinder;
+        this.geraete = new ArrayList<Geraet>();
+        this.angemeldeteBenutzer = new ArrayList<Benutzer>();
+    }
+
     public UUID ID;
     private String bezeichnung;
     private Status status;
@@ -20,7 +31,6 @@ public class Spielplatz {
     private int kapazitaetSpielplatz;
     public List<Geraet> geraete;
     public List<Benutzer> angemeldeteBenutzer;
-    // TODO: Bilder
 
 
     public void setBezeichnung(String Bezeichnung) {
@@ -79,6 +89,14 @@ public class Spielplatz {
         this.information = information;
     }
 
+    public int getKapazitaetSpielplatz() {
+        return kapazitaetSpielplatz;
+    }
+
+    public void setKapazitaetSpielplatz(int kapazitaetSpielplatz) {
+        this.kapazitaetSpielplatz = kapazitaetSpielplatz;
+    }
+
     public Geraet getGeraet(String geraeteName)
     {
         for (Geraet geraet: this.geraete)
@@ -91,42 +109,48 @@ public class Spielplatz {
 
     public void pruefeStatus()
     {
-        if(this.anzahlKinder/(double)this.kapazitaetSpielplatz*100 < 40) // bis 40%
+        try
         {
-            this.setStatus(Status.offen);
+            if (this.anzahlKinder / (double) this.kapazitaetSpielplatz * 100 < 40) // bis 40%
+            {
+                this.setStatus(Status.offen);
+            }
+            else if (this.anzahlKinder / (double) this.kapazitaetSpielplatz * 100 < 90) // bis 90%
+            {
+                this.setStatus(Status.gutBesucht);
+            }
+            else if (this.anzahlKinder / (double) this.kapazitaetSpielplatz * 100 <= 100) // bis 100%
+            {
+                this.setStatus(Status.voll);
+            }
+            else // > 100%
+            {
+                this.setStatus(Status.ueberfuellt);
+            }
+            System.out.println("Der Status des Spielplatz ist nun: " + this.getStatus());
         }
-        else if(this.anzahlKinder/(double)this.kapazitaetSpielplatz*100 < 90) // bis 90%
+        catch(Exception ex)
         {
-            this.setStatus(Status.gutBesucht);
+            System.out.println(ex.getMessage());
         }
-        else if(this.anzahlKinder/(double)this.kapazitaetSpielplatz*100 <= 100) // bis 100%
-        {
-            this.setStatus(Status.voll);
-        }
-        else // > 100%
-        {
-            this.setStatus(Status.ueberfuellt);
-        }
-        System.out.println("Der Status des Spielplatz ist nun: " + this.getStatus());
-    }
-
-    public int getKapazitaetSpielplatz() {
-        return kapazitaetSpielplatz;
-    }
-
-    public void setKapazitaetSpielplatz(int kapazitaetSpielplatz) {
-        this.kapazitaetSpielplatz = kapazitaetSpielplatz;
     }
 
     public void aktualisiereSpielplatzKapazitaet()
     {
-        int kapazitaet = 0;
-        for (int i=0; i < this.geraete.size(); i++)
+        try
         {
-            Geraet geraet = this.geraete.get(i);
-            kapazitaet += geraet.getKapazitaetGeraet();
+            int aktuelleKapazitaet = 0;
+            for (int i = 0; i < this.geraete.size(); i++)
+            {
+                Geraet geraet = this.geraete.get(i);
+                aktuelleKapazitaet += geraet.getKapazitaetGeraet();
+            }
+            this.setKapazitaetSpielplatz(aktuelleKapazitaet);
         }
-        this.setKapazitaetSpielplatz(kapazitaet);
+        catch(Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
     }
 
 }

@@ -2,7 +2,7 @@ package projectplayground;
 import java.security.SecureRandom;
 public class Passwort {
 
-    public String passwortGenerator(){
+    public static String passwortGenerator(){
         final String allowedChars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         SecureRandom random = new SecureRandom();
         StringBuilder pass = new StringBuilder(6);

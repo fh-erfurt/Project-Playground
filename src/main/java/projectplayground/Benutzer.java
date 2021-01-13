@@ -16,11 +16,14 @@ public class Benutzer extends Profil {
 
     public Benutzer()
     {
-
+        this.spielplatzFavoriten = new ArrayList<Spielplatz>();
+        this.freunde = new ArrayList<Benutzer>();
     }
+
     public Benutzer(String benutzername, String email, String passwort, int anzahlKinder)
     {
-        if(anzahlKinder>0){
+        if(anzahlKinder>0)
+        {
             this.benutzername = benutzername;
             this.email = email;
             this.passwort = passwort;
@@ -28,22 +31,27 @@ public class Benutzer extends Profil {
             this.zugriff = Zugriff.benutzer;
             this.spielplatzFavoriten = new ArrayList<Spielplatz>();
             this.freunde = new ArrayList<Benutzer>();}
-        else{
+        else
+        {
             System.out.println("Es muss mindestens ein Kind angegeben werden");
         }
     }
+
     public Benutzer(String benutzername, String email, String passwort, int anzahlKinder, Standort aufenthaltsort)
     {
-        if(anzahlKinder>0){
-        this.benutzername = benutzername;
-        this.email = email;
-        this.passwort = passwort;
-        this.eigeneKinder = anzahlKinder;
-        this.zugriff = Zugriff.benutzer;
-        this.aufenthaltsort = aufenthaltsort;
-        this.spielplatzFavoriten = new ArrayList<Spielplatz>();
-        this.freunde = new ArrayList<Benutzer>();}
-        else{
+        if(anzahlKinder>0)
+        {
+            this.benutzername = benutzername;
+            this.email = email;
+            this.passwort = passwort;
+            this.eigeneKinder = anzahlKinder;
+            this.zugriff = Zugriff.benutzer;
+            this.aufenthaltsort = aufenthaltsort;
+            this.spielplatzFavoriten = new ArrayList<Spielplatz>();
+            this.freunde = new ArrayList<Benutzer>();
+        }
+        else
+        {
             System.out.println("Es muss mindestens ein Kind angegeben werden");
         }
     }
@@ -163,12 +171,19 @@ public class Benutzer extends Profil {
 
     public void geraetMelden(String geraetName, List<Spielplatz> alleSpielplaetze)
     {
+        try
+        {
             Spielplatz spielplatz = this.getAktuellenSpielplatz(alleSpielplaetze);
             Geraet geraet = spielplatz.getGeraet(geraetName);
             if (geraet != null)
                 geraet.setGeraeteStatus(GeraeteStatus.zuPruefen);
             else
                 System.out.println("Gerät nicht vorhanden.");
+        }
+        catch(Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
     }
 
 }

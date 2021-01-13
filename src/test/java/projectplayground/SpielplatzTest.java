@@ -59,4 +59,10 @@ class SpielplatzTest {
         System.out.println("Anzahl der Kinder vorort: " + spielplatz.getAnzahlKinder());
         spielplatz.pruefeStatus();
     }
+
+    @Test
+    void aktualisiereSpielplatzKapazitaet()
+    {
+        //TODO aktualisiereSpielplatzKapazitaet() testen
+    }
 }
