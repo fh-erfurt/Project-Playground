@@ -98,20 +98,21 @@ public abstract class Profil {
     }
     // TODO: Email,Passwort vergessen
 
-    public void passwortVergessen(List<Benutzer> benutzerListe)
+    public void passwortVergessen(List<Profil> profilListe)
     {
         try
         {
-            for (Benutzer benutzer : benutzerListe)
+            for (Profil profil : profilListe)
             {
-                if (benutzer.getBenutzername().equals(this.getBenutzername()))
+                if (profil.getBenutzername().equals(this.getBenutzername()))
                 {
                     String neuesPasswort = Passwort.passwortGenerator();
 
-                    benutzer.setPasswort(neuesPasswort);
-                    Mail.versendeEmailPasswortVergessen(benutzer, neuesPasswort);
+                    profil.setPasswort(neuesPasswort);
+                    Mail.versendeEmailPasswortVergessen(profil, neuesPasswort);
                     return;
                 }
+                //Keine Antwort an nicht vorhandenen Benutzernamen aus Sicherheitsaspekten
             }
         }
         catch(Exception ex)

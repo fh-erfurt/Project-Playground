@@ -15,9 +15,9 @@ class ProfilTest {
     Benutzer marvin = new Benutzer("marvin", "marvin.ruppert@fh-erfurt.de", "qwertz", 1, testStandort);
     Benutzer mark = new Benutzer("mark", "mark@gmx.de", "12345", 2,testStandort);
     Benutzer fabian = new Benutzer("fabian", "seebär@gmx.de", "6789", 1,testStandort);
-    Moderator katja = new Moderator("katja", "katja@gmx.de", "12345", 0 , testStandort);
+    Moderator katja = new Moderator("katja", "marvinruppert2@gmx.de", "12345", 0 , testStandort);
 
-    List<Benutzer> benutzerListe = new ArrayList<Benutzer>();
+    List<Profil> benutzerListe = new ArrayList<Profil>();
 
 
 
@@ -28,6 +28,7 @@ class ProfilTest {
         benutzerListe.add(marvin);
         benutzerListe.add(mark);
         benutzerListe.add(fabian);
+        benutzerListe.add(katja);
     }
 
     @Test
@@ -41,5 +42,8 @@ class ProfilTest {
     @Test
     void passwortVergessen() {
         marvin.passwortVergessen(benutzerListe);
+        System.out.println("Versende Email an Katja");
+        katja.passwortVergessen(benutzerListe);
+        System.out.println("Versenden erfolgreich");
     }
 }

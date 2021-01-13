@@ -15,7 +15,7 @@ import javax.mail.internet.MimeMessage;
 
 
 public class Mail {
-    public static void versendeEmailPasswortVergessen(Benutzer benutzer, String neuesPasswort)
+    public static void versendeEmailPasswortVergessen(Profil profil, String neuesPasswort)
     {
         final String username = "projectplayground2021@gmail.com";
         final String password = "Versandmail2021";
@@ -24,7 +24,7 @@ public class Mail {
         props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.port", "587");
+        props.put("mail.smtp.port", "25");
 
         Session session = Session.getInstance(props,
                 new javax.mail.Authenticator() {
@@ -37,9 +37,9 @@ public class Mail {
         {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(username));
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(benutzer.getEmail()));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(profil.getEmail()));
             message.setSubject("Ihr neues Passwort für die ProjectPlaygroundApp");
-            message.setText("Sehr geehrte/r " + benutzer.getBenutzername() + ","
+            message.setText("Sehr geehrte/r " + profil.getBenutzername() + ","
                     + "\n\nsie haben ihr Passwort vergessen und eine Passwortzurücksetzung angefordert."
                     + "\n\nDazu haben wir Ihnen ein neues Passwort generiert und Ihr Passwort auf dieses festgelegt."
                     + "\n\nBitte ändern Sie Ihr Passwort nach dem Login für die optimale Sicherheit."
