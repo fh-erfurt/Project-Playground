@@ -31,23 +31,21 @@ public abstract class Profil {
         }
     }
 
-    public String getEmail() {
+    public String getEmail()
+    {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(String email)
+    {
         this.email = email;
     }
 
-    public void passwortAendern(Profil profil, String altesPasswort) {
+    public void passwortAendern(Profil profil, String altesPasswort, String neuesPasswort) {
         if (profil.passwort.equals(altesPasswort))
         {
-            profil.passwort = altesPasswort;
             System.out.println("Passwort stimmt und kann geändert werden");
-            System.out.println("Bitte neues Passwort eingeben ...");
-            Scanner scan = new Scanner(System.in);
-            String newPw = scan.nextLine();
-            this.passwort = newPw;
+            profil.passwort = neuesPasswort;
         }
         else
         {
@@ -55,13 +53,12 @@ public abstract class Profil {
         }
     }
 
-    //TODO: remove Profil -> Admin
     public void removeProfil(Profil profil, String benutzername) {
         this.benutzername = null;
     }
 
 
-    // TODO: Profil verwalten -> Passwort ändern per Benutzereingabe hinzugefügt
+    // TODO: Profil verwalten
     // TODO: Anmelden
     // TODO: Email,Passwort vergessen
 

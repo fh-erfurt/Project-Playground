@@ -7,15 +7,17 @@ import java.util.UUID;
 public class Spielplatz {
     public Spielplatz() {
         this.geraete = new ArrayList<Geraet>();
+        this.angemeldeteBenutzer = new ArrayList<Benutzer>();
     }
 
     public UUID ID;
     private String bezeichnung;
-    private int anzahlKinder;
     private Status status;
     private SauberkeitStatus sauberkeit;
     private Standort standort;
     private String information;
+    private int anzahlKinder;
+    private int kapazitaetSpielplatz;
     public List<Geraet> geraete;
     public List<Benutzer> angemeldeteBenutzer;
     // TODO: Bilder
@@ -61,6 +63,14 @@ public class Spielplatz {
         this.ID = ID;
     }
 
+    public SauberkeitStatus getSauberkeit() {
+        return sauberkeit;
+    }
+
+    public void setSauberkeit(SauberkeitStatus sauberkeit) {
+        this.sauberkeit = sauberkeit;
+    }
+
     public String getInformation() {
         return information;
     }
@@ -78,4 +88,45 @@ public class Spielplatz {
         }
         return null;
     }
+
+    public void pruefeStatus()
+    {
+        if(this.anzahlKinder/(double)this.kapazitaetSpielplatz*100 < 40) // bis 40%
+        {
+            this.setStatus(Status.offen);
+        }
+        else if(this.anzahlKinder/(double)this.kapazitaetSpielplatz*100 < 90) // bis 90%
+        {
+            this.setStatus(Status.gutBesucht);
+        }
+        else if(this.anzahlKinder/(double)this.kapazitaetSpielplatz*100 <= 100) // bis 100%
+        {
+            this.setStatus(Status.voll);
+        }
+        else // > 100%
+        {
+            this.setStatus(Status.ueberfuellt);
+        }
+        System.out.println("Der Status des Spielplatz ist nun: " + this.getStatus());
+    }
+
+    public int getKapazitaetSpielplatz() {
+        return kapazitaetSpielplatz;
+    }
+
+    public void setKapazitaetSpielplatz(int kapazitaetSpielplatz) {
+        this.kapazitaetSpielplatz = kapazitaetSpielplatz;
+    }
+
+    public void aktualisiereSpielplatzKapazitaet()
+    {
+        int kapazitaet = 0;
+        for (int i=0; i < this.geraete.size(); i++)
+        {
+            Geraet geraet = this.geraete.get(i);
+            kapazitaet += geraet.getKapazitaetGeraet();
+        }
+        this.setKapazitaetSpielplatz(kapazitaet);
+    }
+
 }

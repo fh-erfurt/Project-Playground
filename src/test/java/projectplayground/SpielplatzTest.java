@@ -9,13 +9,12 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class BenutzerTest {
-
+class SpielplatzTest {
     List<Spielplatz> spielplatzListe = new ArrayList<>();
 
     Standort testStandort = new Standort();
 
-    Benutzer marvin = new Benutzer("marvin", "test@gmx.de", "qwertz", 1, testStandort);
+    Benutzer marvin = new Benutzer("marvin", "test@gmx.de", "qwertz", 100, testStandort);
     Benutzer mark = new Benutzer("mark", "mark@gmx.de", "12345", 2,testStandort);
     Benutzer fabian = new Benutzer("fabian", "seebär@gmx.de", "6789", 1,testStandort);
     Moderator katja = new Moderator("katja", "katja@gmx.de", "12345", 0 , testStandort);
@@ -36,9 +35,9 @@ class BenutzerTest {
         standortBellaBFSpielplatz.setStadtname("Erfurt");
 
         Geraet schaukel = new Geraet(spielplatz.getID(), "Schaukel", GeraeteStatus.inTaktesGeraet,
-                        "Bei der Schaukel handelt es sich um eine Doppelschaukel.",2);
+                "Bei der Schaukel handelt es sich um eine Doppelschaukel.",50);
         Geraet wippe = new Geraet(spielplatz.getID(), "Wippe", GeraeteStatus.verschmutztesGeraet,
-                        "Hier können sich 2 Kinder beschäftigen.", 2);
+                "Hier können sich 2 Kinder beschäftigen.", 50);
         katja.geraetHinzufuegen(spielplatz, schaukel);
         katja.geraetHinzufuegen(spielplatz,wippe);
         spielplatz.setStandort(standortBellaBFSpielplatz);
@@ -50,31 +49,14 @@ class BenutzerTest {
     }
 
     @Test
-    void getAktuellenSpielplatz() {
-        Spielplatz erwarteterSpielplatz = marvin.getAktuellenSpielplatz(spielplatzListe);
-        if(erwarteterSpielplatz == null)
-            System.out.println("Kein aktueller Spielplatz");
-        System.out.println("Spielplatz gefunden: " + erwarteterSpielplatz.getBezeichnung());
-    }
+    void pruefeStatus() {
+        System.out.println("Kapazität: " + spielplatz.getKapazitaetSpielplatz());
+        System.out.println("Anzahl der Kinder vorort: " + spielplatz.getAnzahlKinder());
+        spielplatz.pruefeStatus();
 
-    @Test
-    void geraetMelden() {
-        marvin.geraetMelden("Schaukel", spielplatzListe);
-        Geraet geaendertesGeraet = marvin.getAktuellenSpielplatz(spielplatzListe).getGeraet("Schaukel");
-        System.out.println("Schaukelstatus: " + geaendertesGeraet.getGeraeteStatus());
-    }
-
-    @Test
-    void spielplatzAnmeldung() {
-        System.out.println("Spielplatzkinderanzahl vor Anmeldung: " + spielplatz.getAnzahlKinder());
-        marvin.spielplatzAnmeldung(spielplatz.getID(), spielplatzListe);
-        System.out.println("Spielplatzkinderanzahl nach Anmeldung: " + spielplatz.getAnzahlKinder());
-    }
-
-    @Test
-    void spielplatzAbmeldung() {
-        System.out.println("Spielplatzkinderanzahl vor Abmeldung: " + spielplatz.getAnzahlKinder());
-        marvin.spielplatzAbmeldung(spielplatzListe);
-        System.out.println("Spielplatzkinderanzahl nach Abmeldung: " + spielplatz.getAnzahlKinder());
+        marvin.spielplatzAnmeldung(spielplatz.ID, spielplatzListe);
+        System.out.println("Kapazität: " + spielplatz.getKapazitaetSpielplatz());
+        System.out.println("Anzahl der Kinder vorort: " + spielplatz.getAnzahlKinder());
+        spielplatz.pruefeStatus();
     }
 }

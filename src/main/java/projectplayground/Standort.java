@@ -3,6 +3,7 @@ package projectplayground;
 
 public class Standort {
 
+    //TODO Konstruktor ausbauen
     public Standort()
     {
 

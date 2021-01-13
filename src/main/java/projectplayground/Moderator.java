@@ -18,15 +18,37 @@ public class Moderator extends Benutzer
     }
 
 
-    // TODO: Gerät hinzufügen, Gerät entfernen
     public void geraetHinzufuegen(Spielplatz spielplatz, Geraet geraet)
     {
-        spielplatz.geraete.add(geraet);
+        try
+        {
+            spielplatz.geraete.add(geraet);
+            spielplatz.setKapazitaetSpielplatz(spielplatz.getKapazitaetSpielplatz() + geraet.getKapazitaetGeraet());
+        }
+        catch(Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
     }
 
     public void geraetEntfernen(Spielplatz spielplatz, Geraet geraet)
     {
-        spielplatz.geraete.remove(geraet);
+        try
+        {
+            if(spielplatz.geraete.contains(geraet))
+            {
+                spielplatz.geraete.remove(geraet);
+                spielplatz.setKapazitaetSpielplatz(spielplatz.getKapazitaetSpielplatz() - geraet.getKapazitaetGeraet());
+            }
+            else
+            {
+                System.out.println("Gerät auf Spielplatz nicht gefunden.");
+            }
+        }
+        catch(Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
     }
 
     public void geraeteStatusAendern(Geraet geraet, GeraeteStatus neuerGeraeteStatus)
@@ -40,10 +62,25 @@ public class Moderator extends Benutzer
     public void spielplatzEntfernen(List<Spielplatz> alleSpielplaetze, Spielplatz spielplatz){
         alleSpielplaetze.remove(spielplatz);
     }
-    
-    // TODO: Spielplatzdaten verwalten
-  /*  public void spielplatzVerwalten(Spielplatz spielplatz, SpielplatzVerwalten neuerSpielplatzEintrag)
+
+    public void spielplatzVerwalten(Spielplatz spielplatz, Spielplatz neuerSpielplatzEintrag)
     {
-        geraet.setSpielplatzVerwalten(neuerSpielplatzEintrag);
-    }*/
+        spielplatz.setKapazitaetSpielplatz(neuerSpielplatzEintrag.getKapazitaetSpielplatz());
+        spielplatz.setAnzahlKinder(neuerSpielplatzEintrag.getAnzahlKinder());
+
+        if(neuerSpielplatzEintrag.getBezeichnung() != null)
+            spielplatz.setBezeichnung(neuerSpielplatzEintrag.getBezeichnung());
+
+        if(neuerSpielplatzEintrag.getInformation() != null)
+            spielplatz.setInformation(neuerSpielplatzEintrag.getInformation());
+
+        if(neuerSpielplatzEintrag.getSauberkeit() != null)
+            spielplatz.setSauberkeit(neuerSpielplatzEintrag.getSauberkeit());
+
+        if(neuerSpielplatzEintrag.getStatus() != null)
+            spielplatz.setStatus(neuerSpielplatzEintrag.getStatus());
+
+        if(neuerSpielplatzEintrag.getStandort() != null)
+            spielplatz.setStandort(neuerSpielplatzEintrag.getStandort());
+    }
 }

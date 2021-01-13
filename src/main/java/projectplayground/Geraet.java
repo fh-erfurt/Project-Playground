@@ -6,13 +6,21 @@ public class Geraet {
     private String bezeichnung;
     private GeraeteStatus geraeteStatus;
     private String beschreibung;
+    private int kapazitaetGeraet;
 
-    public Geraet(UUID spielplatzID, String bezeichnung, GeraeteStatus status, String beschreibung)
+    //TODO Interfaces für Gerätetypen
+
+    public Geraet()
+    {
+
+    }
+    public Geraet(UUID spielplatzID, String bezeichnung, GeraeteStatus status, String beschreibung, int kapazitaetGeraet)
     {
         this.spielplatzID = spielplatzID;
         this.bezeichnung = bezeichnung;
         this.geraeteStatus = status;
         this.beschreibung = beschreibung;
+        this.kapazitaetGeraet = kapazitaetGeraet;
     }
 
     public GeraeteStatus getGeraeteStatus() {
@@ -47,4 +55,13 @@ public class Geraet {
         this.beschreibung = beschreibung;
     }
 
+    public int getKapazitaetGeraet()
+    {
+        return kapazitaetGeraet;
+    }
+
+    public void setKapazitaetGeraet(int kapazitaetGeraet)
+    {
+        this.kapazitaetGeraet = kapazitaetGeraet;
+    }
 }

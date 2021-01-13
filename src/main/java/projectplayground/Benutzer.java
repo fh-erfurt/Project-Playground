@@ -1,5 +1,6 @@
 package projectplayground;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -17,8 +18,21 @@ public class Benutzer extends Profil {
     {
 
     }
-
     public Benutzer(String benutzername, String email, String passwort, int anzahlKinder)
+    {
+        if(anzahlKinder>0){
+            this.benutzername = benutzername;
+            this.email = email;
+            this.passwort = passwort;
+            this.eigeneKinder = anzahlKinder;
+            this.zugriff = Zugriff.benutzer;
+            this.spielplatzFavoriten = new ArrayList<Spielplatz>();
+            this.freunde = new ArrayList<Benutzer>();}
+        else{
+            System.out.println("Es muss mindestens ein Kind angegeben werden");
+        }
+    }
+    public Benutzer(String benutzername, String email, String passwort, int anzahlKinder, Standort aufenthaltsort)
     {
         if(anzahlKinder>0){
         this.benutzername = benutzername;
@@ -26,12 +40,14 @@ public class Benutzer extends Profil {
         this.passwort = passwort;
         this.eigeneKinder = anzahlKinder;
         this.zugriff = Zugriff.benutzer;
+        this.aufenthaltsort = aufenthaltsort;
         this.spielplatzFavoriten = new ArrayList<Spielplatz>();
         this.freunde = new ArrayList<Benutzer>();}
         else{
             System.out.println("Es muss mindestens ein Kind angegeben werden");
         }
     }
+
 
     public List<Spielplatz> getSpielplatzFavoriten() {
         return spielplatzFavoriten;
@@ -95,11 +111,55 @@ public class Benutzer extends Profil {
         return null;
     }
 
-    public void setAktuellenSpielplatz(UUID spielplatzID)
+    //TODO Exceptionhandling wie folgt bei allen komplexen Funktionen einfügen
+    //TODO evtl bei An- und Abmeldung nicht immer die gesamte Anzahl der eigenen Kinder anmelden
+    public void spielplatzAnmeldung(UUID spielplatzID, List<Spielplatz> alleSpielplaetze)
     {
-        //TODO erweitern siehe Spielplatzanmeldung
-        this.aktuellerSpielplatz = spielplatzID;
+        try
+        {
+            if(this.aktuellerSpielplatz == null)
+            {
+                this.aktuellerSpielplatz = spielplatzID;
+                Spielplatz spielplatz = this.getAktuellenSpielplatz(alleSpielplaetze);
+                spielplatz.setAnzahlKinder(spielplatz.getAnzahlKinder() + this.eigeneKinder);
+                spielplatz.angemeldeteBenutzer.add(this);
+                spielplatz.pruefeStatus();
+            }
+            else
+            {
+                System.out.println("Benutzer ist bereits an einem Spielplatz angemeldet.");
+            }
+        }
+        catch(Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
     }
+
+    public void spielplatzAbmeldung(List<Spielplatz> alleSpielplaetze)
+    {
+        try
+        {
+            Spielplatz spielplatz = this.getAktuellenSpielplatz(alleSpielplaetze);
+            if(spielplatz != null)
+            {
+                this.aktuellerSpielplatz = null;
+                spielplatz.setAnzahlKinder(spielplatz.getAnzahlKinder() - this.eigeneKinder);
+                spielplatz.angemeldeteBenutzer.remove(this);
+                spielplatz.pruefeStatus();
+            }
+            else
+            {
+                System.out.println("Benutzer ist an keinem Spielplatz angemeldet.");
+            }
+        }
+        catch(Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+
 
     public void geraetMelden(String geraetName, List<Spielplatz> alleSpielplaetze)
     {
@@ -111,6 +171,5 @@ public class Benutzer extends Profil {
                 System.out.println("Gerät nicht vorhanden.");
     }
 
-    // TODO: Am Spielplatz anmelden (mit Kinderanzahl) / abmelden
 }
 
