@@ -9,6 +9,7 @@ public abstract class Profil {
     protected String passwort;
     protected String email;
     protected Zugriff zugriff;
+    protected boolean istEingeloggt;
 
 
     public String getBenutzername() {
@@ -24,11 +25,7 @@ public abstract class Profil {
     }
 
     public void setPasswort(String passwort) {
-        if (zugriff.equals(Zugriff.administrator)) {
-            this.passwort = passwort;
-        } else {
-            System.out.println("Keinen Zugriff");
-        }
+        this.passwort = passwort;
     }
 
     public String getEmail()
@@ -41,15 +38,26 @@ public abstract class Profil {
         this.email = email;
     }
 
+    public void setIstEingeloggt(boolean istEingeloggt)
+    {
+        this.istEingeloggt = istEingeloggt;
+    }
+
+    public boolean getIstEingeloggt()
+    {
+        return this.istEingeloggt;
+    }
+
     public void passwortAendern(Profil profil, String altesPasswort, String neuesPasswort) {
-        if (profil.passwort.equals(altesPasswort))
-        {
-            System.out.println("Passwort stimmt und kann geändert werden");
-            profil.passwort = neuesPasswort;
-        }
-        else
-        {
-            System.out.println("Falsches Passwort, kann nicht geandert werden");
+        try {
+            if (profil.passwort.equals(altesPasswort)) {
+                System.out.println("Passwort kann geändert werden");
+                profil.passwort = neuesPasswort;
+            } else {
+                System.out.println("Falsches Passwort, kann nicht geandert werden");
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
         }
     }
 
@@ -63,14 +71,18 @@ public abstract class Profil {
     {
         try
         {
-            if (neuerProfilEintrag.getBenutzername() != null && !neuerProfilEintrag.getBenutzername().isEmpty())
-                profil.setBenutzername(neuerProfilEintrag.getBenutzername());
+            if(profil.getIstEingeloggt() == true) {
+                if (neuerProfilEintrag.getBenutzername() != null && !neuerProfilEintrag.getBenutzername().isEmpty())
+                    profil.setBenutzername(neuerProfilEintrag.getBenutzername());
 
-            if (neuerProfilEintrag.getEmail() != null && !neuerProfilEintrag.getEmail().isEmpty())
-                profil.setEmail(neuerProfilEintrag.getEmail());
+                if (neuerProfilEintrag.getEmail() != null && !neuerProfilEintrag.getEmail().isEmpty())
+                    profil.setEmail(neuerProfilEintrag.getEmail());
 
-            if (neuerProfilEintrag.getPasswort() != null && !neuerProfilEintrag.getPasswort().isEmpty())
-                profil.setPasswort(neuerProfilEintrag.getPasswort());
+                if (neuerProfilEintrag.getPasswort() != null && !neuerProfilEintrag.getPasswort().isEmpty())
+                    profil.setPasswort(neuerProfilEintrag.getPasswort());
+            }else{
+                System.out.println("Nicht eingeloggt");
+            }
         }
         catch(Exception ex)
         {
@@ -78,15 +90,18 @@ public abstract class Profil {
         }
     }
 
-    public String login(String benutzername, String passwort, List<Benutzer> benutzerListe)
+    public String login(String benutzername, String passwort, List<Profil> benutzerListe)
     {
         try
         {
-            for (Benutzer benutzer : benutzerListe)
+            for (Profil profil : benutzerListe)
             {
-                if (benutzer.getBenutzername() == benutzername)
-                    if (benutzer.getPasswort() == passwort)
+                if (profil.getBenutzername() == benutzername)
+                    if (profil.getPasswort() == passwort)
+                    {
+                        profil.setIstEingeloggt(true);
                         return "Erfolgreich angemeldet.";
+                    }
             }
             return "Benutzername oder Passwort ist falsch.";
         }
@@ -96,7 +111,27 @@ public abstract class Profil {
             return "Fehler beim Login";
         }
     }
-    // TODO: Email,Passwort vergessen
+
+    public String logout(List<Profil> benutzerListe)
+    {
+        try
+        {
+            for(Profil profil : benutzerListe)
+            {
+                if (profil.getBenutzername() == this.getBenutzername())
+                {
+                    profil.setIstEingeloggt(false);
+                    return "Erfolgreich abgemeldet.";
+                }
+            }
+            return "Benutzer nicht gefunden. Fehler beim Ausloggen.";
+        }
+        catch(Exception ex)
+        {
+            return "Fehler beim Ausloggen.";
+        }
+    }
+    
 
     public void passwortVergessen(List<Profil> profilListe)
     {

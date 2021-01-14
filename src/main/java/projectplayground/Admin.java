@@ -12,7 +12,6 @@ public class Admin extends Profil {
     }
     public Moderator benutzerZuModerator(Benutzer benutzer){
         Moderator neuerModerator = new Moderator(benutzer.benutzername,benutzer.email,benutzer.passwort,benutzer.eigeneKinder,benutzer.aufenthaltsort);
-
         return neuerModerator;
     }
 
@@ -35,20 +34,15 @@ public class Admin extends Profil {
         benutzers.remove(benutzer);
     }
 
-    // TODO: E-mail sperren
+    // TODO: E-mail sperren (2. Semester, da DB-Verbindung notwendig ist)
     public void emailSperren(Profil profil)
     {
         // E-Mail soll nicht verwendet werden können um sich am System zu registrieren / anzumelden
 
     }
 
-    // TODO: Profil zurücksetzen (PW zurücksetzen)
-    public void passwortZuruecksetzen(Profil profil)
+    public void passwortZuruecksetzen(Profil profil, List<Profil> profilListe)
     {
-        // aktuelles Passwort löschen
-        profil.setPasswort(null);
-        // neues zufälliges PW generieren
-        // neues PW setzen
-        // Passwort an Profilemail versenden
+        profil.passwortVergessen(profilListe);
     }
 }

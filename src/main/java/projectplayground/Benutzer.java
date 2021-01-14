@@ -120,7 +120,6 @@ public class Benutzer extends Profil {
     }
 
     //TODO Exceptionhandling wie folgt bei allen komplexen Funktionen einfügen
-    //TODO evtl bei An- und Abmeldung nicht immer die gesamte Anzahl der eigenen Kinder anmelden
     public void spielplatzAnmeldung(UUID spielplatzID, List<Spielplatz> alleSpielplaetze)
     {
         try
@@ -130,6 +129,33 @@ public class Benutzer extends Profil {
                 this.aktuellerSpielplatz = spielplatzID;
                 Spielplatz spielplatz = this.getAktuellenSpielplatz(alleSpielplaetze);
                 spielplatz.setAnzahlKinder(spielplatz.getAnzahlKinder() + this.eigeneKinder);
+                spielplatz.angemeldeteBenutzer.add(this);
+                spielplatz.pruefeStatus();
+            }
+            else
+            {
+                System.out.println("Benutzer ist bereits an einem Spielplatz angemeldet.");
+            }
+        }
+        catch(Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
+    }
+    public void spielplatzAnmeldung(UUID spielplatzID, List<Spielplatz> alleSpielplaetze, int anzahlKinder)
+    {
+        try
+        {
+            if(anzahlKinder == 0)
+            {
+                System.out.println("Mindestens ein Kind zur Anmeldung notwendig.");
+                return;
+            }
+            if(this.aktuellerSpielplatz == null)
+            {
+                this.aktuellerSpielplatz = spielplatzID;
+                Spielplatz spielplatz = this.getAktuellenSpielplatz(alleSpielplaetze);
+                spielplatz.setAnzahlKinder(spielplatz.getAnzahlKinder() + anzahlKinder);
                 spielplatz.angemeldeteBenutzer.add(this);
                 spielplatz.pruefeStatus();
             }

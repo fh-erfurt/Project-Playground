@@ -61,8 +61,8 @@ class SpielplatzTest {
     }
 
     @Test
-    void aktualisiereSpielplatzKapazitaet()
-    {
-        //TODO aktualisiereSpielplatzKapazitaet() testen
+    void aktualisiereSpielplatzKapazitaet(){
+        aktualisiereSpielplatzKapazitaet();
+        System.out.println(spielplatz.getKapazitaetSpielplatz());
     }
 }

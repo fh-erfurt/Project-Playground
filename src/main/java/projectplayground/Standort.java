@@ -3,11 +3,19 @@ package projectplayground;
 
 public class Standort {
 
-    //TODO Konstruktor ausbauen
     public Standort()
     {
-
+        
     }
+
+    public Standort(int hausnummer, String strassenname, int postleitzahl, String stadtname)
+    {
+        this.hausnummer = hausnummer;
+        this.strassenname = strassenname;
+        this.postleitzahl = postleitzahl;
+        this.stadtname = stadtname;
+    }
+
     private String strassenname;
     private int hausnummer;
     private int postleitzahl;
