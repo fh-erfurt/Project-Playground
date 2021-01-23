@@ -10,6 +10,7 @@ Im Rahmen des Projektes zum Thema Programmierung JAVA 1 & 2 haben wir uns entsch
 <br>
 ## Projektteam
 Das soziale Projekt wurde im November 2020 von 
+
 * **Katja Fischer** - [Profil](https://github.com/Katja39)
 * **Mark Nottrott** - [Profil](https://github.com/sonicxte)
 * **Marvin Rupert** - [Profil](https://github.com/Marvin1803)
