@@ -48,16 +48,22 @@ public abstract class Profil {
         return this.istEingeloggt;
     }
 
-    public void passwortAendern(Profil profil, String altesPasswort, String neuesPasswort) {
+    public void passwortAendern(Profil profil, String altesPasswort, String neuesPasswort) throws ProfilException
+    {
         try {
-            if (profil.passwort.equals(altesPasswort)) {
+            if (profil.passwort.equals(altesPasswort))
+            {
                 System.out.println("Passwort kann geändert werden");
                 profil.passwort = neuesPasswort;
-            } else {
-                System.out.println("Falsches Passwort, kann nicht geandert werden");
             }
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
+            else
+            {
+                throw new ProfilException("Falsches Passwort, kann nicht geandert werden");
+            }
+        }
+        catch(ProfilException ex)
+        {
+            throw new ProfilException(ex.getMessage());
         }
     }
 
@@ -67,11 +73,12 @@ public abstract class Profil {
 
 
 
-    public void profilVerwalten(Profil profil, Profil neuerProfilEintrag)
+    public void profilVerwalten(Profil profil, Profil neuerProfilEintrag) throws ProfilException
     {
         try
         {
-            if(profil.getIstEingeloggt() == true) {
+            if(profil.getIstEingeloggt() == true)
+            {
                 if (neuerProfilEintrag.getBenutzername() != null && !neuerProfilEintrag.getBenutzername().isEmpty())
                     profil.setBenutzername(neuerProfilEintrag.getBenutzername());
 
@@ -80,17 +87,19 @@ public abstract class Profil {
 
                 if (neuerProfilEintrag.getPasswort() != null && !neuerProfilEintrag.getPasswort().isEmpty())
                     profil.setPasswort(neuerProfilEintrag.getPasswort());
-            }else{
-                System.out.println("Nicht eingeloggt");
+            }
+            else
+                {
+                throw new ProfilException("Nicht eingeloggt");
             }
         }
-        catch(Exception ex)
+        catch(ProfilException ex)
         {
-            System.out.println(ex.getMessage());
+            throw new ProfilException(ex.getMessage());
         }
     }
 
-    public String login(String benutzername, String passwort, List<Profil> benutzerListe)
+    public String login(String benutzername, String passwort, List<Profil> benutzerListe) throws ProfilException
     {
         try
         {
@@ -103,16 +112,15 @@ public abstract class Profil {
                         return "Erfolgreich angemeldet.";
                     }
             }
-            return "Benutzername oder Passwort ist falsch.";
+            throw new ProfilException("Benutzername oder Passwort ist falsch.");
         }
-        catch(Exception ex)
+        catch(ProfilException ex)
         {
-            System.out.println(ex.getMessage());
-            return "Fehler beim Login";
+            throw new ProfilException(ex.getMessage());
         }
     }
 
-    public String logout(List<Profil> benutzerListe)
+    public String logout(List<Profil> benutzerListe) throws ProfilException
     {
         try
         {
@@ -124,11 +132,11 @@ public abstract class Profil {
                     return "Erfolgreich abgemeldet.";
                 }
             }
-            return "Benutzer nicht gefunden. Fehler beim Ausloggen.";
+            throw new ProfilException("Benutzer nicht gefunden. Fehler beim Ausloggen.");
         }
-        catch(Exception ex)
+        catch(ProfilException ex)
         {
-            return "Fehler beim Ausloggen.";
+            throw new ProfilException(ex.getMessage());
         }
     }
     

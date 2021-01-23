@@ -14,7 +14,7 @@ class SpielplatzTest {
 
     Standort testStandort = new Standort();
 
-    Benutzer marvin = new Benutzer("marvin", "test@gmx.de", "qwertz", 100, testStandort);
+    Benutzer marvin = new Benutzer("marvin", "test@gmx.de", "qwertz", 30, testStandort);
     Benutzer mark = new Benutzer("mark", "mark@gmx.de", "12345", 2,testStandort);
     Benutzer fabian = new Benutzer("fabian", "seebär@gmx.de", "6789", 1,testStandort);
     Moderator katja = new Moderator("katja", "katja@gmx.de", "12345", 0 , testStandort);
@@ -23,8 +23,7 @@ class SpielplatzTest {
 
 
     @BeforeEach
-    public void setUp()
-    {
+    public void setUp() throws ModeratorException {
         spielplatz.setID(UUID.randomUUID());
 
         Standort standortBellaBFSpielplatz = new Standort();
@@ -35,7 +34,7 @@ class SpielplatzTest {
         standortBellaBFSpielplatz.setStadtname("Erfurt");
 
         Geraet schaukel = new Geraet(spielplatz.getID(), "Schaukel", GeraeteStatus.inTaktesGeraet,
-                "Bei der Schaukel handelt es sich um eine Doppelschaukel.",50);
+                "Bei der Schaukel handelt es sich um eine Doppelschaukel.",10);
         Geraet wippe = new Geraet(spielplatz.getID(), "Wippe", GeraeteStatus.verschmutztesGeraet,
                 "Hier können sich 2 Kinder beschäftigen.", 50);
         katja.geraetHinzufuegen(spielplatz, schaukel);
@@ -49,7 +48,7 @@ class SpielplatzTest {
     }
 
     @Test
-    void pruefeStatus() {
+    void pruefeStatus() throws SpielplatzException, BenutzerException {
         System.out.println("Kapazität: " + spielplatz.getKapazitaetSpielplatz());
         System.out.println("Anzahl der Kinder vorort: " + spielplatz.getAnzahlKinder());
         spielplatz.pruefeStatus();
@@ -61,8 +60,8 @@ class SpielplatzTest {
     }
 
     @Test
-    void aktualisiereSpielplatzKapazitaet(){
-        aktualisiereSpielplatzKapazitaet();
+    void aktualisiereSpielplatzKapazitaetTest() throws SpielplatzException{
+        spielplatz.aktualisiereSpielplatzKapazitaet();
         System.out.println(spielplatz.getKapazitaetSpielplatz());
     }
 }

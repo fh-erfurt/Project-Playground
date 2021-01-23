@@ -50,7 +50,7 @@ class ModeratorTest {
     }
 
     @Test
-    void geraetHinzufuegen() {
+    void geraetHinzufuegen() throws ModeratorException{
         System.out.println("Spielplatzkapazität vor dem Hinzufügen eines Geräts: " + spielplatz.getKapazitaetSpielplatz());
         katja.geraetHinzufuegen(spielplatz, wippe);
         System.out.println("Spielplatzkapazität nach dem Hinzufügen eines Geräts: " + spielplatz.getKapazitaetSpielplatz());
@@ -59,7 +59,7 @@ class ModeratorTest {
     }
 
     @Test
-    void geraetEntfernen() {
+    void geraetEntfernen() throws ModeratorException {
         System.out.println("Spielplatzkapazität vor dem Entfernen eines Geräts: " + spielplatz.getKapazitaetSpielplatz());
         katja.geraetEntfernen(spielplatz, wippe);
         System.out.println("Spielplatzkapazität nach dem Entfernen eines Geräts: " + spielplatz.getKapazitaetSpielplatz());
@@ -68,7 +68,7 @@ class ModeratorTest {
     }
 
     @Test
-    void geraetHinzufuegenUndEntfernen() {
+    void geraetHinzufuegenUndEntfernen() throws ModeratorException {
         System.out.println("Spielplatzkapazität vor dem Hinzufügen eines Geräts: " + spielplatz.getKapazitaetSpielplatz());
         katja.geraetHinzufuegen(spielplatz, wippe);
         System.out.println("Spielplatzkapazität nach dem Hinzufügen eines Geräts: " + spielplatz.getKapazitaetSpielplatz());

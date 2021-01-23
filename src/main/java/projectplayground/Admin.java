@@ -12,12 +12,13 @@ public class Admin extends Profil {
     }
     public Moderator benutzerZuModerator(Benutzer benutzer){
         Moderator neuerModerator = new Moderator(benutzer.benutzername,benutzer.email,benutzer.passwort,benutzer.eigeneKinder,benutzer.aufenthaltsort);
+        benutzer = null; // im weiteren Verlauf DB Eintrag löschen
         return neuerModerator;
     }
 
     public Benutzer moderatorZuBenutzer(Moderator moderator){
         Benutzer neuerBenutzer = new Benutzer(moderator.benutzername,moderator.email,moderator.passwort,moderator.eigeneKinder);
-
+        moderator = null; // im weiteren Verlauf DB Eintrag löschen, bisher erledigt GarbageCollector den Rest
         return neuerBenutzer;
     }
 

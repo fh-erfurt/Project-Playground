@@ -10,8 +10,7 @@ public class Spielplatz {
         this.angemeldeteBenutzer = new ArrayList<Benutzer>();
     }
 
-    public Spielplatz(String bezeichnung, Status status, SauberkeitStatus sauberkeit, String information, int anzahlKinder)
-    {
+    public Spielplatz(String bezeichnung, Status status, SauberkeitStatus sauberkeit, String information, int anzahlKinder) {
         this.bezeichnung = bezeichnung;
         this.status = status;
         this.sauberkeit = sauberkeit;
@@ -97,46 +96,44 @@ public class Spielplatz {
         this.kapazitaetSpielplatz = kapazitaetSpielplatz;
     }
 
-    public Geraet getGeraet(String geraeteName)
-    {
-        for (Geraet geraet: this.geraete)
-        {
-            if(geraet.getBezeichnung().equals(geraeteName))
-                return geraet;
+    public Geraet getGeraet(String geraeteName) throws SpielplatzException {
+        try {
+            for (Geraet geraet : this.geraete) {
+                if (geraet.getBezeichnung().equals(geraeteName))
+                    return geraet;
+            }
+            throw new SpielplatzException("Gerät nicht gefunden");
+        } catch (SpielplatzException ex) {
+            throw new SpielplatzException("Beim Gerät abrufen ist etwas schiefgelaufen.");
         }
-        return null;
     }
 
-    public void pruefeStatus()
-    {
-        try
-        {
-            if (this.anzahlKinder / (double) this.kapazitaetSpielplatz * 100 < 40) // bis 40%
+    public void pruefeStatus() throws SpielplatzException {
+        try {
+            double prozentsatzKinderanzahl = this.anzahlKinder / (double) this.kapazitaetSpielplatz * 100;
+            if (prozentsatzKinderanzahl < 40) // bis 40%
             {
                 this.setStatus(Status.offen);
-            }
-            else if (this.anzahlKinder / (double) this.kapazitaetSpielplatz * 100 < 90) // bis 90%
+            } else if (prozentsatzKinderanzahl < 90) // bis 90%
             {
                 this.setStatus(Status.gutBesucht);
-            }
-            else if (this.anzahlKinder / (double) this.kapazitaetSpielplatz * 100 <= 100) // bis 100%
+            } else if (prozentsatzKinderanzahl <= 100) // bis 100%
             {
                 this.setStatus(Status.voll);
-            }
-            else // > 100%
+            } else // > 100%
             {
                 this.setStatus(Status.ueberfuellt);
             }
+            if (prozentsatzKinderanzahl < 0) {
+                throw new SpielplatzException("Prozentsatz unter 0, Berechnung des Status ist fehlgeschlagen.");
+            }
             System.out.println("Der Status des Spielplatz ist nun: " + this.getStatus());
-        }
-        catch(Exception ex)
-        {
-            System.out.println(ex.getMessage());
+        } catch (SpielplatzException ex) {
+            throw new SpielplatzException("Beim Überprüfen des Status ist etwas schiefgelaufen.");
         }
     }
 
-    public void aktualisiereSpielplatzKapazitaet()
-    {
+    public void aktualisiereSpielplatzKapazitaet() throws SpielplatzException {
         try
         {
             int aktuelleKapazitaet = 0;
@@ -145,12 +142,17 @@ public class Spielplatz {
                 Geraet geraet = this.geraete.get(i);
                 aktuelleKapazitaet += geraet.getKapazitaetGeraet();
             }
-            this.setKapazitaetSpielplatz(aktuelleKapazitaet);
+            if (aktuelleKapazitaet >= 0)
+                this.setKapazitaetSpielplatz(aktuelleKapazitaet);
+            else
+            {
+                throw new SpielplatzException("Spielplatzkapazität im negativen Bereich.");
+            }
         }
-        catch(Exception ex)
+        catch(SpielplatzException ex)
         {
-            System.out.println(ex.getMessage());
+        throw new SpielplatzException(ex.getMessage());
         }
-    }
+}
 
 }

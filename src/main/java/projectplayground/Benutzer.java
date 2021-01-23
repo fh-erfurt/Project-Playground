@@ -120,7 +120,7 @@ public class Benutzer extends Profil {
     }
 
     //TODO Exceptionhandling wie folgt bei allen komplexen Funktionen einfügen
-    public void spielplatzAnmeldung(UUID spielplatzID, List<Spielplatz> alleSpielplaetze)
+    public void spielplatzAnmeldung(UUID spielplatzID, List<Spielplatz> alleSpielplaetze) throws BenutzerException
     {
         try
         {
@@ -134,22 +134,22 @@ public class Benutzer extends Profil {
             }
             else
             {
-                System.out.println("Benutzer ist bereits an einem Spielplatz angemeldet.");
+                throw new BenutzerException("Benutzer ist bereits an einem Spielplatz angemeldet.");
             }
         }
-        catch(Exception ex)
+        catch(BenutzerException | SpielplatzException ex)
         {
-            System.out.println(ex.getMessage());
+            throw new BenutzerException(ex.getMessage());
         }
     }
-    public void spielplatzAnmeldung(UUID spielplatzID, List<Spielplatz> alleSpielplaetze, int anzahlKinder)
+
+    public void spielplatzAnmeldung(UUID spielplatzID, List<Spielplatz> alleSpielplaetze, int anzahlKinder) throws BenutzerException
     {
         try
         {
             if(anzahlKinder == 0)
             {
-                System.out.println("Mindestens ein Kind zur Anmeldung notwendig.");
-                return;
+                throw new BenutzerException("Mindestens ein Kind zur Anmeldung notwendig");
             }
             if(this.aktuellerSpielplatz == null)
             {
@@ -164,13 +164,13 @@ public class Benutzer extends Profil {
                 System.out.println("Benutzer ist bereits an einem Spielplatz angemeldet.");
             }
         }
-        catch(Exception ex)
+        catch(BenutzerException | SpielplatzException ex)
         {
-            System.out.println(ex.getMessage());
+            throw new BenutzerException(ex.getMessage());
         }
     }
 
-    public void spielplatzAbmeldung(List<Spielplatz> alleSpielplaetze)
+    public void spielplatzAbmeldung(List<Spielplatz> alleSpielplaetze) throws BenutzerException
     {
         try
         {
@@ -184,12 +184,12 @@ public class Benutzer extends Profil {
             }
             else
             {
-                System.out.println("Benutzer ist an keinem Spielplatz angemeldet.");
+                throw new BenutzerException("Der Benutzer ist an keinem Spielplatz angemeldet. Abmeldung fehlgeschlagen.");
             }
         }
-        catch(Exception ex)
+        catch(BenutzerException | SpielplatzException ex)
         {
-            System.out.println(ex.getMessage());
+            throw new BenutzerException(ex.getMessage());
         }
     }
 

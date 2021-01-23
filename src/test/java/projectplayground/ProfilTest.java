@@ -41,7 +41,7 @@ class ProfilTest {
     }
 
     @Test
-    void login() {
+    void login() throws ProfilException {
         String ergebnis = marvin.login(marvin.getBenutzername(),marvin.getPasswort(),benutzerListe);
         System.out.println(ergebnis);
     }

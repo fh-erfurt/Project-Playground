@@ -18,20 +18,22 @@ public class Moderator extends Benutzer
     }
 
 
-    public void geraetHinzufuegen(Spielplatz spielplatz, Geraet geraet)
+    public void geraetHinzufuegen(Spielplatz spielplatz, Geraet geraet) throws ModeratorException
     {
         try
         {
+            if(geraet == null)
+                throw new ModeratorException("Übergebenes Gerät ist leer.");
             spielplatz.geraete.add(geraet);
             spielplatz.setKapazitaetSpielplatz(spielplatz.getKapazitaetSpielplatz() + geraet.getKapazitaetGeraet());
         }
-        catch(Exception ex)
+        catch(ModeratorException ex)
         {
-            System.out.println(ex.getMessage());
+            throw new ModeratorException(ex.getMessage());
         }
     }
 
-    public void geraetEntfernen(Spielplatz spielplatz, Geraet geraet)
+    public void geraetEntfernen(Spielplatz spielplatz, Geraet geraet) throws ModeratorException
     {
         try
         {
@@ -42,12 +44,12 @@ public class Moderator extends Benutzer
             }
             else
             {
-                System.out.println("Gerät auf Spielplatz nicht gefunden.");
+                throw new ModeratorException("Gerät auf Spielplatz nicht gefunden.");
             }
         }
-        catch(Exception ex)
+        catch(ModeratorException ex)
         {
-            System.out.println(ex.getMessage());
+            throw new ModeratorException(ex.getMessage());
         }
     }
 

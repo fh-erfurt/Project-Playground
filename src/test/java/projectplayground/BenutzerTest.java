@@ -9,7 +9,7 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class BenutzerTest {
+class BenutzerTest  {
 
     List<Spielplatz> spielplatzListe = new ArrayList<>();
 
@@ -24,8 +24,7 @@ class BenutzerTest {
 
 
     @BeforeEach
-    public void setUp()
-    {
+    public void setUp () throws ModeratorException {
         spielplatz.setID(UUID.randomUUID());
 
         Standort standortBellaBFSpielplatz = new Standort();
@@ -58,21 +57,21 @@ class BenutzerTest {
     }
 
     @Test
-    void geraetMelden() {
+    void geraetMelden() throws SpielplatzException {
         marvin.geraetMelden("Schaukel", spielplatzListe);
         Geraet geaendertesGeraet = marvin.getAktuellenSpielplatz(spielplatzListe).getGeraet("Schaukel");
         System.out.println("Schaukelstatus: " + geaendertesGeraet.getGeraeteStatus());
     }
 
     @Test
-    void spielplatzAnmeldung() {
+    void spielplatzAnmeldung() throws BenutzerException{
         System.out.println("Spielplatzkinderanzahl vor Anmeldung: " + spielplatz.getAnzahlKinder());
         marvin.spielplatzAnmeldung(spielplatz.getID(), spielplatzListe);
         System.out.println("Spielplatzkinderanzahl nach Anmeldung: " + spielplatz.getAnzahlKinder());
     }
 
     @Test
-    void spielplatzAbmeldung() {
+    void spielplatzAbmeldung() throws BenutzerException{
         System.out.println("Spielplatzkinderanzahl vor Abmeldung: " + spielplatz.getAnzahlKinder());
         marvin.spielplatzAbmeldung(spielplatzListe);
         System.out.println("Spielplatzkinderanzahl nach Abmeldung: " + spielplatz.getAnzahlKinder());
