@@ -10,9 +10,8 @@ Im Rahmen des Projektes zum Thema Programmierung JAVA 1 & 2 haben wir uns entsch
 <br>
 
 ## Projektteam
-<br>
-Das soziale Projekt wurde im November 2020 von 
 
+Das soziale Projekt wurde im November 2020 von 
 
 *  **Katja Fischer** - [Profil](https://github.com/Katja39)
 *  **Mark Nottrott** - [Profil](https://github.com/sonicxte)
@@ -82,7 +81,6 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 
 
 </details>
-<br>
 <details>
 <summary> Java 2 </summary>
 <br>
@@ -91,7 +89,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 
 <br>
 </details>
-
+<br>
 </details>
 
 <details>
@@ -107,8 +105,8 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 - Die größte Schwierigkeit in diesem Projekt war das Umdenken von einer datenbankbasierten Logik, hatten wir an Anfang doch einige Probleme.
 - Die Tests helfen bei der Programmierung und es ist schnelle kontrolle und Änderung möglich.
 
-</details>
 <br>
+</details>
 <details>
 
 <summary> Java 2 </summary>
@@ -116,14 +114,13 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 
     - Hier kommt alles zu Java 2 rein
 
-<br>
+
 </details>
+<br>
 </details>
 
 <details>
 <summary> Programme </summary>
-<br>
-
 
 * [IntelliJ](https://www.jetbrains.com/de-de/idea/) - IDE für JAVA
   [PlantUML](https://plantuml.com/) - Diagrammerstellung
