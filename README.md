@@ -2,6 +2,18 @@
 
 ![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Playground_Front.png)
 
+
+![CodeFactor](https://img.shields.io/badge/JAVA-13-blue)
+[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/fh-erfurt/Project-Playground/blob/main/LICENSE.md)
+
+## Login:
+
+| USER | username | password |  
+|---|---|---|
+| ADMIN | admin@web.de | 123 |  
+| EMPLOYEE | employee@web.de | 123 |  
+| CUSTOMER | customer1@test.de | 123 | 
+
 # Übersicht über die Spielplätze im Großraum Erfurt
 Im Rahmen des Projektes zum Thema Programmierung JAVA 1 & 2 haben wir uns entschieden eine Übersicht über die Spielplätze mit Vernetzungsmöglichkeiten (analog zu sozialen Netzwerken) zu Programmieren.
 
