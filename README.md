@@ -10,7 +10,7 @@ Im Rahmen des Projektes zum Thema Programmierung JAVA 1 & 2 haben wir uns entsch
 <br>
 ## Projektteam
 Das soziale Projekt wurde im November 2020 von 
-
+<br>
 * **Katja Fischer** - [Profil](https://github.com/Katja39)
 * **Mark Nottrott** - [Profil](https://github.com/sonicxte)
 * **Marvin Rupert** - [Profil](https://github.com/Marvin1803)
@@ -25,7 +25,8 @@ https://github.com/fh-erfurt/Project-Playground/blob/master/share/MANIFEST.md
 https://github.com/fh-erfurt/Project-Playground/blob/master/share/CODECONVENTIONS.md
 
 ## Möglichkeiten
-Die Eltern können sich direkt untereinander vernetzen. Wir zeigen dir die Spielplätze in Erfurt, mit Angebot an Spielmöglichkeiten/Spielgeräte an.
+Die Eltern können sich direkt untereinander vernetzen. Wir zeigen ihnen die Spielplätze in Erfurt, mit Angebot an Spielmöglichkeiten/Spielgeräte an.
+
 
 ## Funktionsweise
 Sie können einen Zeitslot eintragen, in dem sie mit dem Kind den Spielplatz besuchen wollen, um bei hoher Frequentierung eventuell auf einen anderen Spielplatz auszuweichen. Die Hauptnutzungszeiten werden/können durch die Analyse der vergangenen Tage analysiert werden.
@@ -53,7 +54,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 <details>
 <summary> Diagramme </summary>
 <br>
-
+    Hier werden die Diagramme eingefügt
 
 </details>
 
@@ -81,7 +82,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 
 Hier kommen später alle Sachen zu Java 2 rein
 
-
+<br>
 </details>
 
 </details>
