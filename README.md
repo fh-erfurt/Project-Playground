@@ -1,6 +1,6 @@
 # Projekt Playground
 
-![alt text](https://github.com/fh-erfurt/Project-Playground/share/images/Playground_Front.png)
+![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Playground_Front.png)
 
 ## Projektbeschreibung
 
