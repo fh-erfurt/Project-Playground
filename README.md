@@ -10,6 +10,7 @@ Im Rahmen des Projektes zum Thema Programmierung JAVA 1 & 2 haben wir uns entsch
 <br>
 
 ##Projektteam
+
 <br>
 Das soziale Projekt wurde im November 2020 von 
 
@@ -99,13 +100,13 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 <br>
 <details>
 <summary> Java 1 </summary>
-	<br>
-    - 4 Teammitglieder zu koordinieren gestaltete sich anfangs schwierig, wurde aber im laufe des Projektes immer besser.
-    - Die Versionskontrolle machte uns etwas schwierigkeiten aufgrund fehlender Erfahrung, machte aber im Nachhinein paralleles arbeiten sehr angenehm. Absprachen waren dennoch nötig.
-    - Der umgang mit Testklassen und Funktionen gestaltete sich anfangs schwierig, konnte aber mit steigender Erfahrung gemeistert werden.
-    - PlantUML erwies sich als mächtiges Tool um Diagramme zu erstellen und um zu setzen
-    - Die größte Schwierigkeit in diesem Projekt war das Umdenken von einer datenbankbasierten Logik, hatten wir an Anfang doch einige Probleme.
-    - Die Tests helfen bei der Programmierung und es ist schnelle kontrolle und Änderung möglich.
+
+- 4 Teammitglieder zu koordinieren gestaltete sich anfangs schwierig, wurde aber im laufe des Projektes immer besser.
+- Die Versionskontrolle machte uns etwas schwierigkeiten aufgrund fehlender Erfahrung, machte aber im Nachhinein paralleles arbeiten sehr angenehm. Absprachen waren dennoch nötig.
+- Der umgang mit Testklassen und Funktionen gestaltete sich anfangs schwierig, konnte aber mit steigender Erfahrung gemeistert werden.
+- PlantUML erwies sich als mächtiges Tool um Diagramme zu erstellen und um zu setzen
+- Die größte Schwierigkeit in diesem Projekt war das Umdenken von einer datenbankbasierten Logik, hatten wir an Anfang doch einige Probleme.
+- Die Tests helfen bei der Programmierung und es ist schnelle kontrolle und Änderung möglich.
 
 </details>
 <br>
@@ -137,10 +138,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 
 <details>
 <summary> License </summary>
-<br>
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-    Wenn wir was Lizensiert hätten könnte man jetzt daruaf klicken^^
 
 </details>
