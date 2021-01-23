@@ -1,4 +1,7 @@
 # Projekt Playground
+
+![alt text](https://github.com/fh-erfurt/Project-Playground/share/images/Playground_Front.png)
+
 ## Projektbeschreibung
 
 ###1. Das Programm richtet sich an die Mütter und Väter, die einen angenehmen Spielplatz für ihre Kinder suchen. Die Eltern können sich direkt untereinander vernetzen.
