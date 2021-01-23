@@ -98,6 +98,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 <details>
 <summary> Java 1 </summary>
 <br>
+
 - 4 Teammitglieder zu koordinieren gestaltete sich anfangs schwierig, wurde aber im laufe des Projektes immer besser.
 - Die Versionskontrolle machte uns etwas schwierigkeiten aufgrund fehlender Erfahrung, machte aber im Nachhinein paralleles arbeiten sehr angenehm. Absprachen waren dennoch nötig.
 - Der umgang mit Testklassen und Funktionen gestaltete sich anfangs schwierig, konnte aber mit steigender Erfahrung gemeistert werden.
@@ -121,6 +122,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 
 <details>
 <summary> Programme </summary>
+<br>
 
 * [IntelliJ](https://www.jetbrains.com/de-de/idea/) - IDE für JAVA
   [PlantUML](https://plantuml.com/) - Diagrammerstellung
@@ -134,6 +136,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 
 <details>
 <summary> License </summary>
+<br>
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
