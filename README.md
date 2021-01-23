@@ -54,7 +54,10 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 <details>
 <summary> Diagramme </summary>
 <br>
+
     Hier werden die Diagramme eingefügt
+
+<br>
 
 </details>
 
@@ -76,11 +79,12 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 
 
 </details>
+<br>
 <details>
 <summary> Java 2 </summary>
 <br>
 
-Hier kommen später alle Sachen zu Java 2 rein
+    Hier kommen später alle Sachen zu Java 2 rein
 
 <br>
 </details>
@@ -90,18 +94,26 @@ Hier kommen später alle Sachen zu Java 2 rein
 <details>
 <summary> Lessons Learned </summary>
 <br>
-
 <details>
 <summary> Java 1 </summary>
 	<br>
-    - Hier alles zum Thema lessens lerned in Java 1 eintragen
-</details>
+    - 4 Teammitglieder zu koordinieren gestaltete sich anfangs schwierig, wurde aber im laufe des Projektes immer besser.
+    - Die Versionskontrolle machte uns etwas schwierigkeiten aufgrund fehlender Erfahrung, machte aber im Nachhinein paralleles arbeiten sehr angenehm. Absprachen waren dennoch nötig.
+    - Der umgang mit Testklassen und Funktionen gestaltete sich anfangs schwierig, konnte aber mit steigender Erfahrung gemeistert werden.
+    - PlantUML erwies sich als mächtiges Tool um Diagramme zu erstellen und um zu setzen
+    - Die größte Schwierigkeit in diesem Projekt war das Umdenken von einer datenbankbasierten Logik, hatten wir an Anfang doch einige Probleme.
+    - Die Tests helfen bei der Programmierung und es ist schnelle kontrolle und Änderung möglich.
 
+</details>
+<br>
 <details>
+
 <summary> Java 2 </summary>
 <br>
+
     - Hier kommt alles zu Java 2 rein
 
+<br>
 </details>
 </details>
 
@@ -111,6 +123,7 @@ Hier kommen später alle Sachen zu Java 2 rein
 
 
 * [IntelliJ](https://www.jetbrains.com/de-de/idea/) - IDE für JAVA
+  [PlantUML](https://plantuml.com/) - Diagrammerstellung
 * [lucidchart](https://www.lucidchart.com) - Tool für die Erstellung der Diagramme / Charts / ...
 * [Office](https://www.office.com/) - Office Programm
 * [Git](https://git-scm.com/) - Versionskontrolle
@@ -122,6 +135,7 @@ Hier kommen später alle Sachen zu Java 2 rein
 <details>
 <summary> License </summary>
 <br>
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [License.md](License.md) file for details
+
     - Wenn wir was Lizensiert hätten könnte man jetzt daruaf klicken^^-
 </details>
