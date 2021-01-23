@@ -3,7 +3,7 @@
 ![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Playground_Front.png)
 
 
-![CodeFactor](https://img.shields.io/badge/JAVA-13-blue)
+![CodeFactor](https://img.shields.io/badge/JAVA-15-blue)
 [![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/fh-erfurt/Project-Playground/blob/main/LICENSE.md)
 
 ## Login:
