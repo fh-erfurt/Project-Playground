@@ -8,24 +8,26 @@ Im Rahmen des Projektes zum Thema Programmierung JAVA 1 & 2 haben wir uns entsch
 <details>
 <summary> Allgemeine Projektübersicht </summary>
 <br>
-## Projektteam
+
+##Projektteam
 Das soziale Projekt wurde im November 2020 von 
 <br>
-* **Katja Fischer** - [Profil](https://github.com/Katja39)
-* **Mark Nottrott** - [Profil](https://github.com/sonicxte)
-* **Marvin Rupert** - [Profil](https://github.com/Marvin1803)
-* **Fabian Seeber** - [Profil](https://github.com/fabianseeber)
+
+*  **Katja Fischer** - [Profil](https://github.com/Katja39)
+*  **Mark Nottrott** - [Profil](https://github.com/sonicxte)
+*  **Marvin Rupert** - [Profil](https://github.com/Marvin1803)
+*  **Fabian Seeber** - [Profil](https://github.com/fabianseeber)
 
 gegründet. Die Kernkompetenzen liegen im Entwickeln, Designen und Implementieren von Webseiten und Datenbankanwendungen.  Das Programm richtet sich an die Mütter und Väter, die einen angenehmen Spielplatz für ihre Kinder suchen.
 
 ## Manifest
-https://github.com/fh-erfurt/Project-Playground/blob/master/share/MANIFEST.md
+https://github.com/fh-erfurt/Project-Playground/blob/main/share/MANIFEST
 
 ## CodeConventions
-https://github.com/fh-erfurt/Project-Playground/blob/master/share/CODECONVENTIONS.md
+https://github.com/fh-erfurt/Project-Playground/blob/main/share/CODECONVENTIONS
 
 ## Möglichkeiten
-Die Eltern können sich direkt untereinander vernetzen. Wir zeigen ihnen die Spielplätze in Erfurt, mit Angebot an Spielmöglichkeiten/Spielgeräte an.
+Die Eltern können sich direkt untereinander vernetzen. Wir zeigen ihnen die Spielplätze in Erfurt, mit Angebot an Spielmöglichkeiten/Spielgeräten an.
 
 
 ## Funktionsweise
@@ -135,7 +137,9 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 <details>
 <summary> License </summary>
 <br>
-This project is licensed under the MIT License - see the [License.md](License.md) file for details
 
-    - Wenn wir was Lizensiert hätten könnte man jetzt daruaf klicken^^-
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+    Wenn wir was Lizensiert hätten könnte man jetzt daruaf klicken^^
+
 </details>
