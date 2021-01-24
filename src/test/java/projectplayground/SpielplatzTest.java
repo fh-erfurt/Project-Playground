@@ -43,7 +43,6 @@ class SpielplatzTest {
         spielplatz.setAnzahlKinder(0);
         spielplatz.setBezeichnung("BELLA barrierefreier Spielplatz");
         spielplatz.setStatus(Status.offen);
-
         spielplatzListe.add(spielplatz);
     }
 
@@ -64,4 +63,6 @@ class SpielplatzTest {
         spielplatz.aktualisiereSpielplatzKapazitaet();
         System.out.println(spielplatz.getKapazitaetSpielplatz());
     }
+
+
 }

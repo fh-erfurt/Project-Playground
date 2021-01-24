@@ -65,6 +65,13 @@ public class Moderator extends Benutzer
         alleSpielplaetze.remove(spielplatz);
     }
 
+    public void erweiterungHinzufuegen(Erweiterung erweiterung, Spielplatz spielplatz){
+        spielplatz.erweiterungen.add(erweiterung);
+    }
+    public void erweiterungEntfernen(Erweiterung erweiterung, Spielplatz spielplatz){
+        spielplatz.erweiterungen.remove(erweiterung);
+    }
+
     public void spielplatzVerwalten(Spielplatz spielplatz, Spielplatz neuerSpielplatzEintrag)
     {
         spielplatz.setKapazitaetSpielplatz(neuerSpielplatzEintrag.getKapazitaetSpielplatz());

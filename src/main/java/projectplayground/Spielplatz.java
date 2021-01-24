@@ -8,6 +8,8 @@ public class Spielplatz {
     public Spielplatz() {
         this.geraete = new ArrayList<Geraet>();
         this.angemeldeteBenutzer = new ArrayList<Benutzer>();
+        this.erweiterungen = new ArrayList<Erweiterung>();
+
     }
 
     public Spielplatz(String bezeichnung, Status status, SauberkeitStatus sauberkeit, String information, int anzahlKinder) {
@@ -17,6 +19,7 @@ public class Spielplatz {
         this.information = information;
         this.anzahlKinder = anzahlKinder;
         this.geraete = new ArrayList<Geraet>();
+        this.erweiterungen = new ArrayList<Erweiterung>();
         this.angemeldeteBenutzer = new ArrayList<Benutzer>();
     }
 
@@ -29,8 +32,17 @@ public class Spielplatz {
     private int anzahlKinder;
     private int kapazitaetSpielplatz;
     public List<Geraet> geraete;
+    public List<Erweiterung> erweiterungen;
     public List<Benutzer> angemeldeteBenutzer;
 
+
+    public void setErweiterungen(List<Erweiterung> erweiterungen) {
+        this.erweiterungen = erweiterungen;
+    }
+
+    public List<Erweiterung> getErweiterungen() {
+        return erweiterungen;
+    }
 
     public void setBezeichnung(String Bezeichnung) {
         this.bezeichnung = Bezeichnung;
