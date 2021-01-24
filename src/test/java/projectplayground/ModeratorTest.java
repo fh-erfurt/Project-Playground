@@ -2,12 +2,13 @@ package projectplayground;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import projectplayground.enums.GeraeteStatus;
+import projectplayground.enums.Status;
+import projectplayground.exceptions.ModeratorException;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class ModeratorTest {
 
@@ -50,7 +51,7 @@ class ModeratorTest {
     }
 
     @Test
-    void geraetHinzufuegen() throws ModeratorException{
+    void geraetHinzufuegen() throws ModeratorException {
         System.out.println("Spielplatzkapazität vor dem Hinzufügen eines Geräts: " + spielplatz.getKapazitaetSpielplatz());
         katja.geraetHinzufuegen(spielplatz, wippe);
         System.out.println("Spielplatzkapazität nach dem Hinzufügen eines Geräts: " + spielplatz.getKapazitaetSpielplatz());

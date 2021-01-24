@@ -2,12 +2,10 @@ package projectplayground;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import projectplayground.exceptions.ProfilException;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class ProfilTest {
     Standort testStandort = new Standort();
@@ -17,7 +15,7 @@ class ProfilTest {
     Benutzer fabian = new Benutzer("fabian", "", "6789", 1,testStandort);
     Benutzer roman = new Benutzer("roman", "roman.rassloff@fh-erfurt.de", "6789", 1,testStandort);
     Benutzer jonas = new Benutzer("Jonas alte Rakete", "jonas.waldhelm@fh-erfurt.de", "6789", 1,testStandort);
-
+    Benutzer dominic = new Benutzer("dominic", "dominic.meyer@fh-erfurt.de", "6789", 1,testStandort);
     Moderator katja = new Moderator("katja", "katja.fischer@fh-erfurt.de", "12345", 0 , testStandort);
 
     List<Profil> benutzerListe = new ArrayList<Profil>();
@@ -34,6 +32,7 @@ class ProfilTest {
         benutzerListe.add(katja);
         benutzerListe.add(roman);
         benutzerListe.add(jonas);
+        benutzerListe.add(dominic);
     }
 
     @Test
@@ -54,7 +53,6 @@ class ProfilTest {
         //fabian.passwortVergessen(benutzerListe);
         roman.passwortVergessen(benutzerListe);
         jonas.passwortVergessen(benutzerListe);
-
-        System.out.println(jonas.getPasswort());
+        dominic.passwortVergessen(benutzerListe);
     }
 }

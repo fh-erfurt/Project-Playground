@@ -1,5 +1,7 @@
 package projectplayground;
 
+import projectplayground.enums.Zugriff;
+
 import java.util.List;
 
 public class Admin extends Profil {

@@ -2,8 +2,7 @@ package projectplayground;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import projectplayground.exceptions.SpielplatzException;
 
 class ErweiterungTest {
     Spielplatz spielplatz = new Spielplatz();
@@ -15,14 +14,16 @@ class ErweiterungTest {
                                                 ,false, true,true );
         Restaurant waldhaus = new Restaurant(50, "Waldhaus","0361 3459320");
         Toilette toilette = new Toilette(10, true);
+        Sitzgelegenheit bank = new Sitzgelegenheit("Bank", 2);
         spielplatz.erweiterungen.add(toilette);
         spielplatz.erweiterungen.add(restaurant);
         spielplatz.erweiterungen.add(waldhaus);
+        spielplatz.erweiterungen.add(bank);
 
     }
 
     @Test
-    void spielplatzErweiterungToilette() throws SpielplatzException{
+    void spielplatzErweiterungToilette() throws SpielplatzException {
         for (Erweiterung erweiterung : spielplatz.erweiterungen)
         {
             if(erweiterung instanceof Toilette)
@@ -47,7 +48,51 @@ class ErweiterungTest {
                 System.out.println(((Restaurant) erweiterung).wickelTisch());
                 System.out.println(((Restaurant) erweiterung).toilettenGang());
                 System.out.println("---------------------------------------");
+            }
+        }
+    }
 
+    @Test
+    void spielplatzErweiterungSitzgelegenheit() throws SpielplatzException{
+        for (Erweiterung erweiterung : spielplatz.erweiterungen)
+        {
+            if(erweiterung instanceof Sitzgelegenheit)
+            {
+                System.out.println("---------------------------------------");
+                System.out.println(((Sitzgelegenheit) erweiterung).sitzen());
+                System.out.println("---------------------------------------");
+            }
+        }
+    }
+
+    @Test
+    void spielplatzErweiterungenGesamt() throws SpielplatzException
+    {
+        for (Erweiterung erweiterung : spielplatz.erweiterungen)
+        {
+            if(erweiterung instanceof Restaurant)
+            {
+                System.out.println("---------------------------------------");
+                System.out.println(((Restaurant) erweiterung).essenGehen());
+                System.out.println(((Restaurant) erweiterung).essenLiefern());
+                System.out.println(((Restaurant) erweiterung).essenBestellenUndAbholen());
+                System.out.println(((Restaurant) erweiterung).wickelTisch());
+                System.out.println(((Restaurant) erweiterung).toilettenGang());
+                System.out.println("---------------------------------------");
+            }
+            if(erweiterung instanceof Toilette)
+            {
+                System.out.println("---------------------------------------");
+                System.out.println(((Toilette) erweiterung).toilettenGang());
+                System.out.println(((Toilette) erweiterung).haendeWaschen());
+                System.out.println(((Toilette) erweiterung).wickelTisch());
+                System.out.println("---------------------------------------");
+            }
+            if(erweiterung instanceof Sitzgelegenheit)
+            {
+                System.out.println("---------------------------------------");
+                System.out.println(((Sitzgelegenheit) erweiterung).sitzen());
+                System.out.println("---------------------------------------");
             }
         }
     }

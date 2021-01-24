@@ -1,5 +1,9 @@
 package projectplayground;
 
+import projectplayground.enums.SauberkeitStatus;
+import projectplayground.enums.Status;
+import projectplayground.exceptions.SpielplatzException;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;

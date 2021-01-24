@@ -1,4 +1,6 @@
 package projectplayground;
+import projectplayground.enums.GeraeteStatus;
+
 import java.util.UUID;
 
 public class Geraet {

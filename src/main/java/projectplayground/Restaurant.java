@@ -1,5 +1,12 @@
 package projectplayground;
 
+import projectplayground.interfaces.IRestaurant;
+import projectplayground.interfaces.IToilette;
+import projectplayground.interfaces.IWickeltisch;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class Restaurant extends Erweiterung implements IToilette, IWickeltisch, IRestaurant
 {
     public Restaurant(int anzahlPersonen, String bezeichnung,String telefonNummer)
@@ -10,6 +17,7 @@ public class Restaurant extends Erweiterung implements IToilette, IWickeltisch, 
         this.setEssenAbholbar(false);
         this.setEssenLieferbar(false);
         this.setTelefonNummer(telefonNummer);
+        this.speisekarte = new HashMap<String, Double>();
     }
 
     public Restaurant(int anzahlPersonen, String bezeichnung,String telefonNummer, boolean hatWickeltisch
@@ -21,14 +29,35 @@ public class Restaurant extends Erweiterung implements IToilette, IWickeltisch, 
         this.setEssenAbholbar(essenAbholbar);
         this.setEssenLieferbar(essenLieferbar);
         this.setTelefonNummer(telefonNummer);
+        this.speisekarte = new HashMap<String, Double>();
     }
 
+    public HashMap<String, Double> speisekarte;
     public String telefonNummer;
     public boolean hatWickeltisch;
     public boolean essenAbholbar;
     public boolean essenLieferbar;
 
 
+    public void fuegeSpeiseHinzu(String speisenName, Double preis)
+    {
+        this.speisekarte.put(speisenName, preis);
+    }
+
+    public void entferneSpeise(String speisenName )
+    {
+        this.speisekarte.remove(speisenName);
+    }
+
+    public void zeigeSpeisekarteAn()
+    {
+        for(Map.Entry<String, Double> speisenEintrag : this.speisekarte.entrySet()) {
+            String speisenName = speisenEintrag.getKey();
+            Double preis = speisenEintrag.getValue();
+
+            System.out.println(speisenName + ": " + preis.toString());
+        }
+    }
     public boolean getHatWickeltisch() {
         return hatWickeltisch;
     }

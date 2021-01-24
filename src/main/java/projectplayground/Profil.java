@@ -1,8 +1,9 @@
 package projectplayground;
 
-import java.util.ArrayList;
+import projectplayground.enums.Zugriff;
+import projectplayground.exceptions.ProfilException;
+
 import java.util.List;
-import java.util.Scanner;
 
 public abstract class Profil {
     protected String benutzername;

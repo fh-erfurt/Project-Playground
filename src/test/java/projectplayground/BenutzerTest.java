@@ -2,12 +2,15 @@ package projectplayground;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import projectplayground.enums.GeraeteStatus;
+import projectplayground.enums.Status;
+import projectplayground.exceptions.BenutzerException;
+import projectplayground.exceptions.ModeratorException;
+import projectplayground.exceptions.SpielplatzException;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class BenutzerTest  {
 
@@ -18,6 +21,7 @@ class BenutzerTest  {
     Benutzer marvin = new Benutzer("marvin", "test@gmx.de", "qwertz", 1, testStandort);
     Benutzer mark = new Benutzer("mark", "mark@gmx.de", "12345", 2,testStandort);
     Benutzer fabian = new Benutzer("fabian", "seebär@gmx.de", "6789", 1,testStandort);
+
     Moderator katja = new Moderator("katja", "katja@gmx.de", "12345", 0 , testStandort);
     Spielplatz spielplatz = new Spielplatz();
 
@@ -64,7 +68,7 @@ class BenutzerTest  {
     }
 
     @Test
-    void spielplatzAnmeldung() throws BenutzerException{
+    void spielplatzAnmeldung() throws BenutzerException {
         System.out.println("Spielplatzkinderanzahl vor Anmeldung: " + spielplatz.getAnzahlKinder());
         marvin.spielplatzAnmeldung(spielplatz.getID(), spielplatzListe);
         System.out.println("Spielplatzkinderanzahl nach Anmeldung: " + spielplatz.getAnzahlKinder());

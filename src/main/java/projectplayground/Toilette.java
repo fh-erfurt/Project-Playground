@@ -1,6 +1,9 @@
 package projectplayground;
 
-public class Toilette extends Erweiterung implements IToilette, IWickeltisch{
+import projectplayground.interfaces.IToilette;
+import projectplayground.interfaces.IWickeltisch;
+
+public class Toilette extends Erweiterung implements IToilette, IWickeltisch {
 
     public boolean hatWickeltisch;
 

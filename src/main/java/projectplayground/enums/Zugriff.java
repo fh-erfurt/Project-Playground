@@ -1,4 +1,4 @@
-package projectplayground;
+package projectplayground.enums;
 
 public enum Zugriff {
     administrator,

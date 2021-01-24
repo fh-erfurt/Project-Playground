@@ -1,4 +1,4 @@
-package projectplayground;
+package projectplayground.exceptions;
 
 public class ModeratorException extends Exception
 {

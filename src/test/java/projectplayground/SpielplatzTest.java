@@ -2,12 +2,15 @@ package projectplayground;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import projectplayground.enums.GeraeteStatus;
+import projectplayground.enums.Status;
+import projectplayground.exceptions.BenutzerException;
+import projectplayground.exceptions.ModeratorException;
+import projectplayground.exceptions.SpielplatzException;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class SpielplatzTest {
     List<Spielplatz> spielplatzListe = new ArrayList<>();

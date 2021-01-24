@@ -1,4 +1,4 @@
-package projectplayground;
+package projectplayground.interfaces;
 
 public interface IToilette {
     public String toilettenGang();
