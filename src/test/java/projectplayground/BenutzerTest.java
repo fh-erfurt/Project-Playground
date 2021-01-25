@@ -53,15 +53,13 @@ class BenutzerTest  {
 
         spielplatzListe.add(spielplatz);
 
-        marvin.freundHinzufuegen(mark);
     }
 
     @Test
-    void getAktuellenSpielplatzTest() {
-        Spielplatz erwarteterSpielplatz = marvin.getAktuellenSpielplatz(spielplatzListe);
-        if(erwarteterSpielplatz == null)
-            System.out.println("Kein aktueller Spielplatz");
-        System.out.println("Spielplatz gefunden: " + erwarteterSpielplatz.getBezeichnung());
+    void getAktuellenSpielplatzTest() throws BenutzerException {
+        marvin.spielplatzAnmeldung(spielplatz.getID(), spielplatzListe);
+        Spielplatz angemeldeterSpielplatz = marvin.getAktuellenSpielplatz(spielplatzListe);
+        assertEquals(spielplatz, angemeldeterSpielplatz);
     }
 
     @Test
@@ -81,6 +79,14 @@ class BenutzerTest  {
     }
 
     @Test
+    void spielplatzAnmeldungTestMitAnzahlKinder() throws BenutzerException, SpielplatzException {
+        System.out.println("Spielplatzkinderanzahl vor Anmeldung: " + spielplatz.getAnzahlKinder());
+        marvin.spielplatzAnmeldung(spielplatz.getID(), spielplatzListe, 20);
+        System.out.println("Spielplatzkinderanzahl nach Anmeldung: " + spielplatz.getAnzahlKinder());
+        assertEquals(spielplatz,marvin.getAktuellenSpielplatz(spielplatzListe));
+    }
+
+    @Test
     void spielplatzAbmeldungTest() throws BenutzerException{
         marvin.spielplatzAnmeldung(spielplatz.getID(), spielplatzListe);
         System.out.println("Spielplatzkinderanzahl vor Abmeldung: " + spielplatz.getAnzahlKinder());
@@ -89,12 +95,14 @@ class BenutzerTest  {
         assertEquals(null,marvin.getAktuellenSpielplatz(spielplatzListe));
     }
 
+    @Test
     void freundHinzufuegenTest() throws BenutzerException {
         marvin.freundHinzufuegen(mark);
         assertEquals(true,marvin.getFreunde().contains(mark));
     }
     @Test
     void freundEntfernenTest() throws BenutzerException {
+        marvin.freundHinzufuegen(mark);
         marvin.freundEntfernen(mark);
         assertEquals(false,marvin.getFreunde().contains(mark));
     }
@@ -105,11 +113,9 @@ class BenutzerTest  {
     }
     @Test
     void spielplatzFavoritEntfernenTest() throws BenutzerException {
+        marvin.spielplatzFavoritHinzufuegen(spielplatz);
         marvin.spielplatzFavoritEntfernen(spielplatz);
         assertEquals(false,marvin.getSpielplatzFavoriten().contains(spielplatz));
     }
-    //ToDO bestehende Testfunktionen auch überprüfen
-    //Todo Testdaten überprüfen
-    //ToDo Exception Benutzer
 
 }
