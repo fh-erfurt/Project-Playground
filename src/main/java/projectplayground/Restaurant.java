@@ -32,11 +32,11 @@ public class Restaurant extends Erweiterung implements IToilette, IWickeltisch, 
         this.speisekarte = new HashMap<String, Double>();
     }
 
-    public HashMap<String, Double> speisekarte;
-    public String telefonNummer;
-    public boolean hatWickeltisch;
-    public boolean essenAbholbar;
-    public boolean essenLieferbar;
+    private HashMap<String, Double> speisekarte;
+    private String telefonNummer;
+    private boolean hatWickeltisch;
+    private boolean essenAbholbar;
+    private boolean essenLieferbar;
 
 
     public void fuegeSpeiseHinzu(String speisenName, Double preis)
@@ -44,7 +44,7 @@ public class Restaurant extends Erweiterung implements IToilette, IWickeltisch, 
         this.speisekarte.put(speisenName, preis);
     }
 
-    public void entferneSpeise(String speisenName )
+    public void entferneSpeise(String speisenName)
     {
         this.speisekarte.remove(speisenName);
     }

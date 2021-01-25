@@ -5,7 +5,7 @@ import projectplayground.interfaces.IWickeltisch;
 
 public class Toilette extends Erweiterung implements IToilette, IWickeltisch {
 
-    public boolean hatWickeltisch;
+    private boolean hatWickeltisch;
 
     public Toilette(int anzahlPersonen)
     {
