@@ -70,7 +70,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 	<summary> Diagramme </summary>
 <br>
 
-**UML Diagramm**
+**Klassendiagramm**
 ![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/UMLDiagramm.png)
 </details>
 
