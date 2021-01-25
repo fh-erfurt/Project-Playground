@@ -118,20 +118,36 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 ### Besprechung 14.01.2020
 
 **Abstimmung zu Besprechung mit Jonas**
+- Terminfindung im Projektteam in Zeiten von Corona
+
 ![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Stundenplan.png)
 
 
 ### Besprechung 12.01.2020
 
 **1. Projektänderungen**
+-
+-
+-
 **2. Dokumentation**
+-
+-
+-
 
 ### Besprechung 11.12.2020
 
 **1. Projektänderungen**
+-
+-
 **2. Dokumentation**
+-
+-
 **3. Zwischenpräsentation**
+-
+-
 **4. Brainstorm Klassendiagramm**
+- Brainstorm für Klassendiagramm mit Whatsapp, Kamera und Discord
+
 ![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Brainstorm.png)
 
 
