@@ -115,6 +115,12 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 - Exceptions erstellt und getestet
 - Klassendiagramm erweitert
 
+### Besprechung 14.01.2020
+
+**Abstimmung zu Besprechung mit Jonas**
+![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Stundenplan.png)
+
+
 ### Besprechung 12.01.2020
 
 **1. Projektänderungen**
@@ -125,6 +131,8 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 **1. Projektänderungen**
 **2. Dokumentation**
 **3. Zwischenpräsentation**
+**4. Brainstorm Klassendiagramm**
+![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Brainstorm.png)
 
 
 </details>
