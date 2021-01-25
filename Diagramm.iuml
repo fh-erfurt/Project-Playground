@@ -239,6 +239,21 @@ enum Zugriff{
  benutzer
 }
 
+interface IRestaurant{
++essenGehen():String
++essenBestellenUndAbholen():String
++essenLiefern():String
+}
+
+interface IToilette{
++toilettenGang:String
++haendeWaschen:String
+}
+
+interface IWickeltisch{
++wickelTisch:String
+}
+
 Profil <|--Benutzer
 Profil <|--Admin
 Benutzer <|--Moderator
@@ -256,6 +271,13 @@ Zugriff "1" --* "1" Profil
 Passwort "1" --* "1" Profil
 Geraet "0..n" }-- "1" Spielplatz
 Geraet "1" *-- "1" GeraeteStatus
-
 Erweiterung "0..n" }-- "1" Spielplatz
+
+class Restaurant implements IRestaurant
+class Restaurant implements IToilette
+class Restaurant implements IWickeltisch
+
+class Toilette implements IToilette
+class Toilette implements IWickeltisch
+
 @enduml
