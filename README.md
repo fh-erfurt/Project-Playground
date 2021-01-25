@@ -66,14 +66,13 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 </details>
 
 <details>
-<summary> Diagramme </summary>
+	<summary> Diagramme </summary>
 <br>
+
 **UML Diagramm**
- ![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/UMLDiagramm.png)
-
-<br>
-
+![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/UMLDiagramm.png)
 </details>
+
 
 
 <details>
