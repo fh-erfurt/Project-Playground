@@ -102,7 +102,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 - Änderungen im Projekt seit Zwischenpräsentation dokumentieren
 
 
-### Besprechung 25.01.2021###
+### Besprechung 25.01.2021
 ---
 **1.Besprechung**
 - Finales Überarbeiten der Klassenfunktionen
@@ -117,7 +117,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 - UML Diagramm eingefügt
 - Projektdefinition editiert
 
-### Besprechung 23.01.2021###
+### Besprechung 23.01.2021
 ---
 
 **1.Projektänderung**
@@ -130,9 +130,9 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
  - Restaurant/Erweiterungen/Toilette/Wickeltisch/Sitzgelegenheiten
  - Interfaces implementiert
  - SpielplatzTest/ErweiterungTest zu Testklassen hinzugefügt
- [!alt-text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Brainstorming_3.jpeg)
+ ![alt-text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Brainstorming_3.jpeg)
  
-### Besprechung 20.01.2021###
+### Besprechung 20.01.2021
 ---
 
 **1.Projektänderung**
@@ -141,7 +141,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 - Brainstorming zur Umsetzung der Dozentenvorschläge
 
 
-### Besprechung 13.01.2021###
+### Besprechung 13.01.2021
  ---
 
 **1.Projektänderungen**
@@ -152,7 +152,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 - Implementierung Mailversand
 - + Umsetzung zugehöriger Passwortgenerator
 - Brainstorming Projekterweiterungen
-[!alt-text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Brainstorming_2.jpeg)
+![alt-text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Brainstorming_2.jpeg)
 
 ### Besprechung 11.01.2020
 
