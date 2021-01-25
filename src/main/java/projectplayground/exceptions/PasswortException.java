@@ -1,7 +1,7 @@
 package projectplayground.exceptions;
 
 /**
- * Exception für die Passwortklasse
+ * Exception fuer die Passwortklasse
  */
 public class PasswortException extends Exception{
     public PasswortException(String message)

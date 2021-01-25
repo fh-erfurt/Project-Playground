@@ -1,7 +1,7 @@
 package projectplayground.exceptions;
 
 /**
- * Exception für die Moderatorklasse
+ * Exception fuer die Moderatorklasse
  */
 public class ModeratorException extends Exception
 {
