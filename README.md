@@ -117,6 +117,8 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 
 ### Besprechung 14.01.2020
 
+---
+
 **Abstimmung zu Besprechung mit Jonas**
 - Terminfindung im Projektteam in Zeiten von Corona
 
@@ -124,6 +126,8 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 
 
 ### Besprechung 12.01.2020
+
+---
 
 **1. Projektänderungen**
 -
@@ -135,6 +139,8 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 -
 
 ### Besprechung 11.12.2020
+
+---
 
 **1. Projektänderungen**
 -
