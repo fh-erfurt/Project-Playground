@@ -5,6 +5,7 @@
 
 ![CodeFactor](https://img.shields.io/badge/JAVA-15-blue)
 [![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/fh-erfurt/Project-Playground/blob/main/LICENSE.md)
+[![Docs](https://img.shields.io/badge/javadoc-see%20here-9cf.svg?style=flat&logo=java)](https://fh-erfurt.github.io/Project-Playground)
 
 ## Login: (Java 2)
 
@@ -164,7 +165,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 - Korrektur Codestyle
 
 **3. Zwischenpräsentation**
-[Zwischenpäsentation](https://github.com/fh-erfurt/Project-Playground/blob/main/share/presentations/Java_1/Zwischenprasentation_2.pdf)
+- [Zwischenpäsentation](https://github.com/fh-erfurt/Project-Playground/blob/main/share/presentations/Java_1/Zwischenprasentation_2.pdf)
 
 ### Besprechungen 11.12. - 23.12.2020
 
@@ -200,7 +201,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 - Geraet/GeraeteStatus/Profil/Main/Spielplatz/Standort/Status
 
 **3. Zwischenpräsentation**
-[Auftaktpräsentation](https://github.com/fh-erfurt/Project-Playground/blob/main/share/presentations/Java_1/Auftakt_Pr%C3%A4sentation.pdf)
+- [Auftaktpräsentation](https://github.com/fh-erfurt/Project-Playground/blob/main/share/presentations/Java_1/Auftakt_Pr%C3%A4sentation.pdf)
 
 ### Besprechung 06.11.2020
 
