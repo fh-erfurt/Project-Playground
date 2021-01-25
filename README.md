@@ -5,7 +5,6 @@
 
 ![CodeFactor](https://img.shields.io/badge/JAVA-15-blue)
 [![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/fh-erfurt/Project-Playground/blob/main/LICENSE.md)
-[![Docs](https://img.shields.io/badge/javadoc-see%20here-9cf.svg?style=flat&logo=java)](https://fh-erfurt.github.io/Project-Playground)
 
 ## Login: (Java 2)
 
@@ -54,7 +53,7 @@ Grobziele sind:
 
 	- Erstellung und Implementierung einer Übersicht von Spielplätzen und Möglichkeiten in und um Erfurt
 	- Erstellung und Implementierung eines Netzwerkes- und Logistikverwaltungssystems
-	- 
+	
 
 ## Abgrenzungskriterien
 Nicht zum Projektumfang gehören:
@@ -131,6 +130,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
  - Restaurant/Erweiterungen/Toilette/Wickeltisch/Sitzgelegenheiten
  - Interfaces implementiert
  - SpielplatzTest/ErweiterungTest zu Testklassen hinzugefügt
+ 
  ![alt-text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Brainstorming_3.jpeg)
  
 ### Besprechung 20.01.2021
@@ -153,6 +153,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 - Implementierung Mailversand
 - + Umsetzung zugehöriger Passwortgenerator
 - Brainstorming Projekterweiterungen
+
 ![alt-text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Brainstorming_2.jpeg)
 
 ### Besprechung 11.01.2020
@@ -163,7 +164,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 - Korrektur Codestyle
 
 **3. Zwischenpräsentation**
-![alt-text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/presentations/Java_1/Zwischenprasentation_2.pdf)
+[Zwischenpäsentation](https://github.com/fh-erfurt/Project-Playground/blob/main/share/presentations/Java_1/Zwischenprasentation_2.pdf)
 
 ### Besprechungen 11.12. - 23.12.2020
 
@@ -199,7 +200,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 - Geraet/GeraeteStatus/Profil/Main/Spielplatz/Standort/Status
 
 **3. Zwischenpräsentation**
-![alt-text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/presentations/Java_1/Auftakt_Pr%C3%A4sentation.pdf)
+[Auftaktpräsentation](https://github.com/fh-erfurt/Project-Playground/blob/main/share/presentations/Java_1/Auftakt_Pr%C3%A4sentation.pdf)
 
 ### Besprechung 06.11.2020
 
