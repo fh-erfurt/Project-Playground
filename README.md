@@ -6,13 +6,13 @@
 ![CodeFactor](https://img.shields.io/badge/JAVA-15-blue)
 [![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/fh-erfurt/Project-Playground/blob/main/LICENSE.md)
 
-## Login:
+## Login: (Java 2)
 
 | USER | username | password |  
 |---|---|---|
-| ADMIN | admin@web.de | 123 |  
-| EMPLOYEE | employee@web.de | 123 |  
-| CUSTOMER | customer1@test.de | 123 | 
+| ADMIN | Mail | 123 |  
+| MODERATOR | Mail | 123 |  
+| BENUTZER | Mail | 123 | 
 
 # Übersicht über die Spielplätze im Großraum Erfurt
 Im Rahmen des Projektes zum Thema Programmierung JAVA 1 & 2 haben wir uns entschieden eine Übersicht über die Spielplätze mit Vernetzungsmöglichkeiten (analog zu sozialen Netzwerken) zu Programmieren.
@@ -84,7 +84,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 	<summary> Java 1 </summary>
 <br>
 	
-### Besprechung 25.01.2020
+### Besprechung 29.01.2021
 
 ---
 
@@ -100,61 +100,116 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 - Erstellen der Präsentation von Endprodukt
 - Präsentationszeit ca 10 min
 - Änderungen im Projekt seit Zwischenpräsentation dokumentieren
-- Vorbereitung auf Abschlusspräsentation durch Projektteam
 
-**3. Dokumenation**
+
+### Besprechung 25.01.2021
+---
+**1.Besprechung**
+- Finales Überarbeiten der Klassenfunktionen
+- Überarbeitung des Exceptionhandlings
+- Testfunktionen überarbeitet
+- UML diagramm auf finalen Stand angepasst
+
+**2. Dokumenation**
 
 - Erweiterung der Readme
 - Lessons Learned
 - UML Diagramm eingefügt
-- Top Down Sicht erstellt - wird später eingebunden
 - Projektdefinition editiert
 
-**4. Projektänderungen**
+### Besprechung 23.01.2021
+---
 
-- Exceptions erstellt und getestet
-- Klassendiagramm erweitert
+**1.Projektänderung**
+- Umsetzung der Neuen Konzepte
+- Erweiterungen umgesetzt
+- Interfaces implementiert
+- Vervollständigung der Klassenstruktur
 
-### Besprechung 14.01.2020
+ **2.Dokumentation**
+ - Restaurant/Erweiterungen/Toilette/Wickeltisch/Sitzgelegenheiten
+ - Interfaces implementiert
+ - SpielplatzTest/ErweiterungTest zu Testklassen hinzugefügt
+ ![alt-text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Brainstorming_3.jpeg)
+ 
+### Besprechung 20.01.2021
+---
+
+**1.Projektänderung**
+- Brainstorming zur Erweiterung des Projektes
+- künftiges Exceptionhandling besprochen
+- Brainstorming zur Umsetzung der Dozentenvorschläge
+
+
+### Besprechung 13.01.2021
+ ---
+
+**1.Projektänderungen**
+- Ausbau der Funktionen
+- Brainstorming Umsetzung der Tests
+
+**2.Dokumentation**
+- Implementierung Mailversand
+- + Umsetzung zugehöriger Passwortgenerator
+- Brainstorming Projekterweiterungen
+![alt-text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Brainstorming_2.jpeg)
+
+### Besprechung 11.01.2020
 
 ---
 
-**Abstimmung zu Besprechung mit Jonas**
-- Terminfindung im Projektteam in Zeiten von Corona
+**1.Projektänderungen**
+- Korrektur Codestyle
 
-![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Stundenplan.png)
-
-
-### Besprechung 12.01.2020
-
----
-
-**1. Projektänderungen**
--
--
--
-**2. Dokumentation**
--
--
--
-
-### Besprechung 11.12.2020
-
----
-
-**1. Projektänderungen**
--
--
-**2. Dokumentation**
--
--
 **3. Zwischenpräsentation**
--
--
-**4. Brainstorm Klassendiagramm**
-- Brainstorm für Klassendiagramm mit Whatsapp, Kamera und Discord
+![alt-text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/presentations/Java_1/Zwischenprasentation_2.pdf)
 
-![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Brainstorm.png)
+### Besprechungen 11.12. - 23.12.2020
+
+---
+
+**1. Projektänderungen**
+- Individuelle erste Funktionen/Tests eingefügt
+
+**2. Dokumentation**
+- BenutzerTest/MainTest implementiert
+
+### Besprechung 10.12.2020
+
+---
+
+**1. Projektänderungen**
+- Erweiterung der Projektstruktur
+- Erster Entwurf des UML-Klassendiagramms
+
+**2. Dokumentation**
+- Implementierung weiterer Klassen
+- Admin/Benutzer hinzugefügt
+
+### Besprechung 08.12.2020
+
+---
+
+**1. Projektänderungen**
+- Aufbau der groben Projektstruktur
+
+**2. Dokumentation**
+- Erste Implementierung der Klassen
+- Geraet/GeraeteStatus/Profil/Main/Spielplatz/Standort/Status
+
+**3. Zwischenpräsentation**
+![alt-text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/presentations/Java_1/Auftakt_Pr%C3%A4sentation.pdf)
+
+### Besprechung 06.11.2020
+
+---
+
+**1. Brainstorm Klassendiagramm**
+- Brainstorming für Klassendiagramm mit Whiteboard
+- Erste Überlegungen zum Projekt
+- Projektname/Funktionen/Projektumfang
+
+![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Brainstorming_1.jpeg)
 
 
 </details>
@@ -176,13 +231,22 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 <summary> Java 1 </summary>
 <br>
 
-- 4 Teammitglieder zu koordinieren gestaltete sich anfangs schwierig, wurde aber im laufe des Projektes immer besser.
-- Die Versionskontrolle machte uns etwas schwierigkeiten aufgrund fehlender Erfahrung, machte aber im Nachhinein paralleles arbeiten sehr angenehm. Absprachen waren dennoch nötig.
-- Der umgang mit Testklassen und Funktionen gestaltete sich anfangs schwierig, konnte aber mit steigender Erfahrung gemeistert werden.
-- PlantUML erwies sich als mächtiges Tool um Diagramme zu erstellen und um zu setzen
-- Die größte Schwierigkeit in diesem Projekt war das Umdenken von einer datenbankbasierten Logik, hatten wir an Anfang doch einige Probleme.
-- Die Tests helfen bei der Programmierung und es ist schnelle kontrolle und Änderung möglich.
-
+- 4 Teammitglieder zu koordinieren gestaltete sich anfangs schwierig, wurde aber im laufe des Projektes immer besser
+- Umgang mit Versionskontrolle
+- Umgang mit testgetreibener Entwicklung
+- PlantUML eignete sich gut zum entwerfen eines Klassendiagrammes 
+- das Umdenken von datenbankbasiertem Logikaufbau auf klassenbasierte Logik
+- Die Tests helfen bei der Programmierung sowie bei der Kontrolle der Änderungen
+- Umgang mit Java
+	- Exceptionhandling
+	- Vererbung
+	- Interfaces
+	- Enums
+	- Testklassen
+	- Javadocs
+	
+- Nachtschichten können auch Spaß machen!
+	
 <br>
 </details>
 <details>
@@ -201,13 +265,13 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 <summary> Programme </summary>
 <br>
 
-* [IntelliJ](https://www.jetbrains.com/de-de/idea/) - IDE für JAVA
-  [PlantUML](https://plantuml.com/) - Diagrammerstellung
+* [IntelliJ](https://www.jetbrains.com/de-de/idea) - IDE für JAVA
+  [PlantUML](https://plantuml.com) - Diagrammerstellung
 * [lucidchart](https://www.lucidchart.com) - Tool für die Erstellung der Diagramme / Charts / ...
-* [Office](https://www.office.com/) - Office Programm
-* [Git](https://git-scm.com/) - Versionskontrolle
-* [MS-Teams](https://www.microsoft.com/de-de/microsoft-365/microsoft-teams/group-chat-software) - Kommunikationsmittel
-* ??? - Server
+* [Office](https://www.office.com) - Office Programm
+* [Git](https://git-scm.com) - Versionskontrolle
+* [Discord](https://discord.com) - 1. Kommunikationsmittel
+* [Watsapp](https://www.whatsapp.com) - 2. Kommunikationsmittel
 
 </details>
 
