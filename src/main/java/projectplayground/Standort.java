@@ -1,6 +1,11 @@
 package projectplayground;
 
 
+/**
+ * Jedes Profil und jeder Spielplatz hat einen Standort
+ * Der Standort beinhaltet alle geografischen Informationen die noetig sind,
+ * um eine Adresse zu identifizieren
+ */
 public class Standort {
 
     public Standort()

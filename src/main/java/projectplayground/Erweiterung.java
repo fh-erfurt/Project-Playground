@@ -1,5 +1,8 @@
 package projectplayground;
 
+/**
+ * Ist die Grundklasse fuer alle logistischen Erweiterungen, die ein Spielplatz zusaetzlich bieten kann
+ */
 public abstract class Erweiterung
 {
     protected String bezeichnung;

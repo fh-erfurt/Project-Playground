@@ -6,6 +6,10 @@ import projectplayground.exceptions.ProfilException;
 
 import java.util.List;
 
+/**
+ * Der Admin ist ein Nutzer, welche besondere Rechte beinhaltet um das spaetere Programm zu verwalten.
+ * Er verwaltet Nutzer und hat außerdem die Moeglichkeit Spielplaetze und Geraete zu loeschen
+ */
 public class Admin extends Profil {
     public Admin(String benutzername, String passwort, String email)
     {
@@ -14,11 +18,18 @@ public class Admin extends Profil {
         this.passwort = passwort;
         this.email = email;
     }
+
+    /**
+     * @param benutzer Benutzer, der zum Moderator 'aufgewertet' werden soll
+     * @return Moderatorobjekt, das aus den Daten des Benutzers erzeugt wird
+     * Im spaeteren Verlauf: Benutzer aus DB loeschen + Moderator anlegen oder Zugriffsrechte des DB Eintrags aendern
+     * @throws AdminException
+     */
     public Moderator benutzerZuModerator(Benutzer benutzer) throws AdminException {
         try
         {
             Moderator neuerModerator = new Moderator(benutzer.benutzername, benutzer.email, benutzer.passwort, benutzer.eigeneKinder, benutzer.aufenthaltsort);
-            benutzer = null; // im weiteren Verlauf DB Eintrag löschen
+            benutzer = null;
             if (neuerModerator == null) {
                 throw new AdminException("Beim Anlegen des neuen Moderators ist etwas schief gelaufen.");
             }
@@ -31,6 +42,13 @@ public class Admin extends Profil {
 
     }
 
+
+    /**
+     * @param moderator Moderator, der zum Benutzer 'herabgestuft' werden soll
+     * @return Benutzerobjekt, das aus den Daten des Moderators erzeugt wird
+     * Im spaeteren Verlauf: Moderator aus DB loeschen + Benutzer anlegen oder Zugriffsrechte des DB Eintrags aendern
+     * @throws AdminException
+     */
     public Benutzer moderatorZuBenutzer(Moderator moderator) throws AdminException {
         try
         {
@@ -48,6 +66,11 @@ public class Admin extends Profil {
         }
     }
 
+    /**
+     * @param spielplatzListe Gesamtheit aller vorhandenen Spielplaetze (spaeter in der DB)
+     * @param spielplatz Der Spielplatz, der entfernt werden soll
+     * @throws AdminException
+     */
     public void spielplatzLoeschen(List<Spielplatz> spielplatzListe,Spielplatz spielplatz) throws AdminException{
         try
         {
@@ -63,6 +86,11 @@ public class Admin extends Profil {
         }
     }
 
+    /**
+     * @param geraete Gesamtheit aller vorhandenen Geraete
+     * @param geraet Geraet, das entfernt werden soll
+     * @throws AdminException
+     */
     public void geraetLoeschen(List<Geraet> geraete, Geraet geraet) throws AdminException
     {
         try
@@ -79,6 +107,11 @@ public class Admin extends Profil {
         }
     }
 
+    /**
+     * @param profile Gesamtheit aller vorhandenen Profile
+     * @param profil Profil, das entfernt werden soll
+     * @throws AdminException
+     */
     public void removeProfil(List<Profil> profile, Profil profil) throws AdminException
     {
         try
@@ -102,6 +135,11 @@ public class Admin extends Profil {
 
     }
 
+    /**
+     * @param profil Profil, dessen Passwort zurueckgesetzt werden soll
+     * @param profilListe Gesamtheit aller Profile
+     * @throws ProfilException
+     */
     public void passwortZuruecksetzen(Profil profil, List<Profil> profilListe) throws ProfilException {
         profil.passwortVergessen(profilListe);
     }

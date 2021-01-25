@@ -9,6 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Kindklasse vom Profil, stellt die Klasse fuer den Standardbenutzer
+ * Bietet Funktionen, um das Programm ohne Verwaltungsrechte zu nutzen
+ */
 public class Benutzer extends Profil {
 
     protected int eigeneKinder;
@@ -94,6 +98,10 @@ public class Benutzer extends Profil {
     }
 
 
+    /**
+     * @param neuerFreund Freund, der zur Freundesliste hinzugefuegt weden soll
+     * @throws BenutzerException
+     */
     public void freundHinzufuegen(Benutzer neuerFreund) throws BenutzerException
     {
         try
@@ -108,6 +116,11 @@ public class Benutzer extends Profil {
         }
 
     }
+
+    /**
+     * @param freund Freund, der aus der Freundesliste entfernt werden soll
+     * @throws BenutzerException
+     */
     public void freundEntfernen(Benutzer freund) throws BenutzerException
     {
         try
@@ -124,6 +137,10 @@ public class Benutzer extends Profil {
         }
     }
 
+    /**
+     * @param neuerSpielplatz Spielplatz, der zu den Favoriten des Benutzers hinzugefuegt werden soll
+     * @throws BenutzerException
+     */
     public void spielplatzFavoritHinzufuegen(Spielplatz neuerSpielplatz) throws BenutzerException
     {
         try {
@@ -138,6 +155,10 @@ public class Benutzer extends Profil {
 
     }
 
+    /**
+     * @param spielplatz Spielplatz, der aus Favoriten entfernt werden soll
+     * @throws BenutzerException
+     */
     public void spielplatzFavoritEntfernen(Spielplatz spielplatz) throws BenutzerException
     {
         try {
@@ -164,6 +185,11 @@ public class Benutzer extends Profil {
         return null;
     }
 
+    /**
+     * @param spielplatzID ID des Spielplatzes, fuer den sich der Nutzer anmelden moechte
+     * @param alleSpielplaetze Gesamtheit aller Spielplaetze
+     * @throws BenutzerException
+     */
     public void spielplatzAnmeldung(UUID spielplatzID, List<Spielplatz> alleSpielplaetze) throws BenutzerException
     {
         try
@@ -191,6 +217,12 @@ public class Benutzer extends Profil {
         }
     }
 
+    /**
+     * @param spielplatzID ID des Spielplatzes auf dem sich der Benutzer anmeldet
+     * @param alleSpielplaetze Liste aller Spielplaetze (spaeter Datenbank)
+     * @param anzahlKinder Anzahl der Kinder, mit denen man sich am Spielplatz anmelden moechte
+     * @throws BenutzerException
+     */
     public void spielplatzAnmeldung(UUID spielplatzID, List<Spielplatz> alleSpielplaetze, int anzahlKinder) throws BenutzerException
     {
         try
@@ -218,6 +250,11 @@ public class Benutzer extends Profil {
         }
     }
 
+    /**
+     * @param alleSpielplaetze Liste aller Spielplaetze(spaeter Datenbank)
+     * Nutzer meldet sich von seinem aktuellen Spielplatz ab
+     * @throws BenutzerException
+     */
     public void spielplatzAbmeldung(List<Spielplatz> alleSpielplaetze) throws BenutzerException
     {
         try
@@ -242,7 +279,11 @@ public class Benutzer extends Profil {
     }
 
 
-
+    /**
+     * @param geraetName Name des Geraets, das gemeldet werden soll
+     * @param alleSpielplaetze Liste aller Spielplaetze(spaeter Datenbank)
+     * @throws BenutzerException
+     */
     public void geraetMelden(String geraetName, List<Spielplatz> alleSpielplaetze) throws BenutzerException
     {
         try

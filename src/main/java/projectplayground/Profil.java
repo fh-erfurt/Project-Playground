@@ -5,6 +5,9 @@ import projectplayground.exceptions.ProfilException;
 
 import java.util.List;
 
+/**
+ * Ist die Grundklasse fuer alle Benutzer, Moderatoren und Admins
+ */
 public abstract class Profil {
     protected String benutzername;
     protected String passwort;
@@ -49,6 +52,12 @@ public abstract class Profil {
         return this.istEingeloggt;
     }
 
+    /**
+     * @param profil Profil, dessen Passwort geaendert werden soll
+     * @param altesPasswort Altes Passwort des Users
+     * @param neuesPasswort Neues Passwort, welches der User kuenftig zum Anmelden nutzen will
+     * @throws ProfilException
+     */
     public void passwortAendern(Profil profil, String altesPasswort, String neuesPasswort) throws ProfilException
     {
         try
@@ -64,6 +73,11 @@ public abstract class Profil {
         }
     }
 
+    /**
+     * @param profil Profil, welches entfernt werden soll
+     * @param alleProfile Liste von allen Profilen(spaeter Datenbank)
+     * @throws ProfilException
+     */
     public void entferneEigenesProfil(Profil profil, List<Profil> alleProfile) throws ProfilException
     {
         try
@@ -82,7 +96,11 @@ public abstract class Profil {
     }
 
 
-
+    /**
+     * @param profil Profil, welches geaendert werden soll
+     * @param neuerProfilEintrag Neues Profil mit geanderten Eintraegen
+     * @throws ProfilException
+     */
     public void profilVerwalten(Profil profil, Profil neuerProfilEintrag) throws ProfilException
     {
         try
@@ -111,6 +129,13 @@ public abstract class Profil {
         }
     }
 
+    /**
+     * @param benutzername Benutzername des Profils, welcher sich einloggen moechte
+     * @param passwort Passwort des Profils, welcher sich einloggen moechte
+     * @param benutzerListe Liste von allen Profilen(spaeter Datenbank)
+     * @return
+     * @throws ProfilException
+     */
     public String login(String benutzername, String passwort, List<Profil> benutzerListe) throws ProfilException
     {
         try
@@ -132,6 +157,11 @@ public abstract class Profil {
         }
     }
 
+    /**
+     * @param benutzerListe Liste von allen Benutzern(spaeter Datenbank)
+     * @return Wenn der Benutzer erfolgreich abgemeldet ist, kommt die Ausgabe "Erfolgreich abgemeldet"
+     * @throws ProfilException
+     */
     public String logout(List<Profil> benutzerListe) throws ProfilException
     {
         try
@@ -151,8 +181,12 @@ public abstract class Profil {
             throw new ProfilException(ex.getMessage());
         }
     }
-    
 
+
+    /**
+     * @param profilListe Liste von allen Profilen (spaeter Datenbank)
+     * @throws ProfilException
+     */
     public void passwortVergessen(List<Profil> profilListe) throws ProfilException
     {
         try

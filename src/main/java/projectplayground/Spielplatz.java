@@ -8,6 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+
+/**
+ * Bietet die Grundklasse zum Abbilden eines Spielplatzes
+ * Dient vor Allem als Datengrundlage zum Zugriff durch die Nutzer des Programms
+ */
 public class Spielplatz {
     public Spielplatz() {
         this.geraete = new ArrayList<Geraet>();
@@ -128,6 +133,14 @@ public class Spielplatz {
         }
     }
 
+
+    /** Prueft den Status des Spielplatzes
+     * Bis 40% gilt der Spielplatz als 'Offen'
+     * Bis 90% gilt der Spielplatz als 'Gut besucht'
+     * Bis 100% gilt der Spielplatz als 'Voll'
+     * Ab 100% gilt der Spielplatz als 'Ueberfuellt'
+     * @throws SpielplatzException
+     */
     public void pruefeStatus() throws SpielplatzException {
         try
         {
@@ -160,6 +173,9 @@ public class Spielplatz {
         }
     }
 
+    /** Gibt alle Erweiterungen eines einzelnen Spielplatzes aus
+     * @throws SpielplatzException
+     */
     public void zeigeErweiterungenAn() throws SpielplatzException
     {
         try
@@ -200,6 +216,10 @@ public class Spielplatz {
         }
     }
 
+    /** Aktualisiert die Spielplatzkapazitaet, indem alle Kapazitaeten der einzelnen Geraete eines Spielplatzes
+     * iteriert und aufgerechnet werden.
+     * @throws SpielplatzException
+     */
     public void aktualisiereSpielplatzKapazitaet() throws SpielplatzException
     {
         try
@@ -223,6 +243,9 @@ public class Spielplatz {
         }
     }
 
+    /** Gibt den Standort des Spielplatzes aus
+     * @throws SpielplatzException
+     */
     public void zeigeStandortAn() throws SpielplatzException
     {
         try

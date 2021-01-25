@@ -3,6 +3,11 @@ package projectplayground;
 import projectplayground.interfaces.IToilette;
 import projectplayground.interfaces.IWickeltisch;
 
+/**
+ * Toilette ist eine Erweiterung von Spielplatz
+ * Ist eine Kindklasse von Erweiterung
+ * Implementiert die Interfaces IToilette und IWickeltisch
+ */
 public class
 Toilette extends Erweiterung implements IToilette, IWickeltisch {
 

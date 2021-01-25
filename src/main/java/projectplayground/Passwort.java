@@ -4,8 +4,16 @@ import projectplayground.exceptions.PasswortException;
 import java.security.SecureRandom;
 
 
-
+/**
+ * Klasse, die eine statische Methode bietet, ein Passwort zufaellig zu generieren
+ * Jedes Profil besitzt ein Passwort
+ */
 public class Passwort {
+    /** Die Methode wird immer aufgerufen, wenn das Passwort eines Profils zurueckgesetzt wird
+     *  die Methode generiert ein zufaelliges Passwort
+     * @return Ausgabe des generierten Passworts
+     * @throws PasswortException
+     */
     public static String passwortGenerator() throws PasswortException
     {
         try

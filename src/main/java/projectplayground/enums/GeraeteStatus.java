@@ -1,5 +1,8 @@
 package projectplayground.enums;
 
+/**
+ * Status, der genutzt wird um den Zustand des Geraets festzulegen
+ */
 public enum GeraeteStatus {
     inTaktesGeraet,
     verschmutztesGeraet,

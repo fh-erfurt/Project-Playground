@@ -8,6 +8,11 @@ import projectplayground.interfaces.IWickeltisch;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Restaurant ist eine Erweiterung eines Spielplatzes
+ * Ist eine Kindklasse von Erweiterung
+ * Implementiert die Interfaces IToilette, IWickeltisch und IRestaurant
+ */
 public class Restaurant extends Erweiterung implements IToilette, IWickeltisch, IRestaurant
 {
     public Restaurant(int anzahlPersonen, String bezeichnung,String telefonNummer)
@@ -40,15 +45,23 @@ public class Restaurant extends Erweiterung implements IToilette, IWickeltisch, 
     private boolean essenLieferbar;
 
 
+    /**
+     * @param speisenName Bezeichnung der Speise, die der Speisekarte hinzugefuegt werden soll
+     * @param preis Preis der Speise, die hinzugefuegt werden soll
+     */
     public void fuegeSpeiseHinzu(String speisenName, Double preis)
     {
         this.speisekarte.put(speisenName, preis);
     }
 
+    /**
+     * @param speisenName Bezeichnung der Speise, die aus der Speisekarte geloescht wird
+     */
     public void entferneSpeise(String speisenName)
     {
         this.speisekarte.remove(speisenName);
     }
+
 
     public void zeigeSpeisekarteAn() throws RestaurantException
     {
@@ -119,7 +132,6 @@ public class Restaurant extends Erweiterung implements IToilette, IWickeltisch, 
     {
         return "Hier kann man sich die Hände waschen.";
     }
-
 
     @Override
     public String essenGehen() {

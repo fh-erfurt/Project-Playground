@@ -3,6 +3,9 @@ import projectplayground.enums.GeraeteStatus;
 
 import java.util.UUID;
 
+/**
+ * Klasse um das Geraet eines Spielplatzes abzubilden
+ */
 public class Geraet {
     private UUID spielplatzID;
     private String bezeichnung;
