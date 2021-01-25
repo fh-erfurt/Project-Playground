@@ -85,5 +85,6 @@ class BenutzerTest  {
     }
     //ToDo freundhinzufügen, freundEntfernen, spielplatzFavoritHinzufuegen,spielplatzFavoritEntfernen
     //ToDO bestehende Testfunktionen auch überprüfen
+    //Todo Testdaten überprüfen
 
 }
