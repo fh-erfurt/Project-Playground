@@ -53,6 +53,7 @@ Grobziele sind:
 
 	- Erstellung und Implementierung einer Übersicht von Spielplätzen und Möglichkeiten in und um Erfurt
 	- Erstellung und Implementierung eines Netzwerkes- und Logistikverwaltungssystems
+	- 
 
 ## Abgrenzungskriterien
 Nicht zum Projektumfang gehören:
@@ -82,13 +83,48 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 <details>
 	<summary> Java 1 </summary>
 <br>
+	
+### Besprechung 25.01.2020
+
+---
 
 **1. Abgabe des Projektes**
-- in der Form wird das noch nachgetragen
-- Abgabe über Github
-- Link zum Repository an Jonas übergeben
-- Präsentationen können in dem Repository hinterlegt werden
-- Abgabe am XX.XX.2021
+
+- Abgabe erfolgt über Github
+- Link zum Repository an Auftraggeber Jonas Hecht übergeben
+- Präsentation im GitHub hinterlegt
+- Abgabe am 01.02.2021
+
+**2. Abschlusspräsentation**
+
+- Erstellen der Präsentation von Endprodukt
+- Präsentationszeit ca 10 min
+- Änderungen im Projekt seit Zwischenpräsentation dokumentieren
+- Vorbereitung auf Abschlusspräsentation durch Projektteam
+
+**3. Dokumenation**
+
+- Erweiterung der Readme
+- Lessons Learned
+- UML Diagramm eingefügt
+- Top Down Sicht erstellt - wird später eingebunden
+- Projektdefinition editiert
+
+**4. Projektänderungen**
+
+- Exceptions erstellt und getestet
+- Klassendiagramm erweitert
+
+### Besprechung 12.01.2020
+
+**1. Projektänderungen**
+**2. Dokumentation**
+
+### Besprechung 11.12.2020
+
+**1. Projektänderungen**
+**2. Dokumentation**
+**3. Zwischenpräsentation**
 
 
 </details>
