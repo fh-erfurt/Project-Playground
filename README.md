@@ -5,7 +5,7 @@
 
 ![CodeFactor](https://img.shields.io/badge/JAVA-15-blue)
 [![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/fh-erfurt/Project-Playground/blob/main/LICENSE.md)
-[![Docs](https://img.shields.io/badge/javadoc-see%20here-9cf.svg?style=flat&logo=java)](https://fh-erfurt.github.io/Project-Playground)
+[![Docs](https://img.shields.io/badge/javadoc-see%20here-9cf.svg?style=flat&logo=java)](https://fh-erfurt.github.io/Project-Playground/)
 
 ## Login: (Java 2)
 
@@ -152,7 +152,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 
 **2.Dokumentation**
 - Implementierung Mailversand
-- + Umsetzung zugehöriger Passwortgenerator
+	- Umsetzung zugehöriger Passwortgenerator
 - Brainstorming Projekterweiterungen
 
 ![alt-text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Brainstorming_2.jpeg)
