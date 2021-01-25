@@ -1,11 +1,13 @@
 package projectplayground;
 
 import org.junit.jupiter.api.Test;
+import projectplayground.exceptions.PasswortException;
 
 class PasswortTest {
-    Passwort neuesPasswort = new Passwort();
+
+
     @Test
-    void passwortGenerator() {
-        System.out.println(neuesPasswort.passwortGenerator());
+    void passwortGenerator() throws PasswortException {
+        System.out.println(Passwort.passwortGenerator());
     }
 }

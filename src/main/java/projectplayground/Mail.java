@@ -17,26 +17,26 @@ import javax.mail.internet.MimeMessage;
 public class Mail {
     public static void versendeEmailPasswortVergessen(Profil profil, String neuesPasswort)
     {
-        final String username = "projectplayground2021@gmail.com";
-        final String password = "Versandmail2021";
+        final String benutzername = "projectplayground2021@gmail.com";
+        final String passwort = "Versandmail2021";
 
-        Properties props = new Properties();
-        props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.port", "25");
+        Properties einstellungen = new Properties();
+        einstellungen.put("mail.smtp.starttls.enable", "true");
+        einstellungen.put("mail.smtp.auth", "true");
+        einstellungen.put("mail.smtp.host", "smtp.gmail.com");
+        einstellungen.put("mail.smtp.port", "25");
 
-        Session session = Session.getInstance(props,
+        Session session = Session.getInstance(einstellungen,
                 new javax.mail.Authenticator() {
                     protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication(username, password);
+                        return new PasswordAuthentication(benutzername, passwort);
                     }
                 });
 
         try
         {
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(username));
+            message.setFrom(new InternetAddress(benutzername));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(profil.getEmail()));
             message.setSubject("Ihr neues Passwort für die ProjectPlaygroundApp");
             message.setText("Sehr geehrte/r " + profil.getBenutzername() + ","
@@ -54,9 +54,9 @@ public class Mail {
             System.out.println("Passwortvergessen Email versendet.");
 
         }
-        catch (MessagingException e)
+        catch (MessagingException ex)
         {
-            throw new RuntimeException(e);
+            throw new RuntimeException(ex);
         }
     }
 }

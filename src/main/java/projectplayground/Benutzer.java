@@ -37,7 +37,7 @@ public class Benutzer extends Profil {
             this.freunde = new ArrayList<Benutzer>();}
         else
         {
-            System.out.println("Es muss mindestens ein Kind angegeben werden");
+            System.out.println("Es muss mindestens ein Kind angegeben werden. Der Benutzer wurde nicht angelegt.");
         }
     }
 
@@ -56,7 +56,7 @@ public class Benutzer extends Profil {
         }
         else
         {
-            System.out.println("Es muss mindestens ein Kind angegeben werden");
+            System.out.println("Es muss mindestens ein Kind angegeben werden. Der Benutzer wurde nicht angelegt.");
         }
     }
 
@@ -96,10 +96,12 @@ public class Benutzer extends Profil {
 
     public void freundHinzufuegen(Benutzer neuerFreund)
     {
+
         this.freunde.add(neuerFreund);
     }
     public void freundEntfernen(Benutzer freund)
     {
+
         this.freunde.remove(freund);
     }
 
@@ -123,16 +125,19 @@ public class Benutzer extends Profil {
         return null;
     }
 
-    //TODO Exceptionhandling wie folgt bei allen komplexen Funktionen einfügen
     public void spielplatzAnmeldung(UUID spielplatzID, List<Spielplatz> alleSpielplaetze) throws BenutzerException
     {
         try
         {
+            if(this.getEigeneKinder() <= 0)
+            {
+                throw new BenutzerException("Mindestens ein Kind zur Anmeldung notwendig");
+            }
             if(this.aktuellerSpielplatz == null)
             {
                 this.aktuellerSpielplatz = spielplatzID;
                 Spielplatz spielplatz = this.getAktuellenSpielplatz(alleSpielplaetze);
-                spielplatz.setAnzahlKinder(spielplatz.getAnzahlKinder() + this.eigeneKinder);
+                spielplatz.setAnzahlKinder(spielplatz.getAnzahlKinder() + this.getEigeneKinder());
                 spielplatz.angemeldeteBenutzer.add(this);
                 spielplatz.pruefeStatus();
             }
@@ -151,7 +156,7 @@ public class Benutzer extends Profil {
     {
         try
         {
-            if(anzahlKinder == 0)
+            if(anzahlKinder <= 0)
             {
                 throw new BenutzerException("Mindestens ein Kind zur Anmeldung notwendig");
             }
@@ -165,7 +170,7 @@ public class Benutzer extends Profil {
             }
             else
             {
-                System.out.println("Benutzer ist bereits an einem Spielplatz angemeldet.");
+                throw new BenutzerException("Benutzer ist bereits an einem Spielplatz angemeldet.");
             }
         }
         catch(BenutzerException | SpielplatzException ex)
@@ -199,20 +204,21 @@ public class Benutzer extends Profil {
 
 
 
-    public void geraetMelden(String geraetName, List<Spielplatz> alleSpielplaetze)
+    public void geraetMelden(String geraetName, List<Spielplatz> alleSpielplaetze) throws BenutzerException
     {
         try
         {
             Spielplatz spielplatz = this.getAktuellenSpielplatz(alleSpielplaetze);
             Geraet geraet = spielplatz.getGeraet(geraetName);
-            if (geraet != null)
-                geraet.setGeraeteStatus(GeraeteStatus.zuPruefen);
-            else
-                System.out.println("Gerät nicht vorhanden.");
+            if (geraet == null)
+                throw new BenutzerException("Gerät konnte nicht gemeldet werden.");
+
+            geraet.setGeraeteStatus(GeraeteStatus.zuPruefen);
+
         }
-        catch(Exception ex)
+        catch(BenutzerException | SpielplatzException ex)
         {
-            System.out.println(ex.getMessage());
+            throw new BenutzerException(ex.getMessage());
         }
     }
 

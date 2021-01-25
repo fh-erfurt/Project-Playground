@@ -51,16 +51,12 @@ public abstract class Profil {
 
     public void passwortAendern(Profil profil, String altesPasswort, String neuesPasswort) throws ProfilException
     {
-        try {
-            if (profil.passwort.equals(altesPasswort))
-            {
-                System.out.println("Passwort kann geändert werden");
-                profil.passwort = neuesPasswort;
-            }
-            else
-            {
-                throw new ProfilException("Falsches Passwort, kann nicht geandert werden");
-            }
+        try
+        {
+            if(!profil.passwort.equals(altesPasswort))
+                throw new ProfilException("Falsches Passwort, kann nicht geaendert werden");
+
+            profil.passwort = neuesPasswort;
         }
         catch(ProfilException ex)
         {
@@ -68,8 +64,21 @@ public abstract class Profil {
         }
     }
 
-    public void removeProfil(Profil profil, String benutzername) {
-        this.benutzername = null;
+    public void entferneEigenesProfil(Profil profil, List<Profil> alleProfile) throws ProfilException
+    {
+        try
+        {
+            if(profil == null)
+                throw new ProfilException("Profil ist leer und kann nicht gelöscht werden.");
+            if(!alleProfile.contains(profil))
+                throw new ProfilException("Profil nicht in DB vorhanden, kann nicht gelöscht werden.");
+
+            alleProfile.remove(profil);
+        }
+        catch(ProfilException ex)
+        {
+            throw new ProfilException(ex.getMessage());
+        }
     }
 
 
@@ -78,21 +87,23 @@ public abstract class Profil {
     {
         try
         {
-            if(profil.getIstEingeloggt() == true)
-            {
-                if (neuerProfilEintrag.getBenutzername() != null && !neuerProfilEintrag.getBenutzername().isEmpty())
-                    profil.setBenutzername(neuerProfilEintrag.getBenutzername());
+            if(!profil.getIstEingeloggt())
+                throw new ProfilException("Benutzer ist nicht eingeloggt. Änderungen verworfen.");
+            if(profil == null)
+                throw new ProfilException("Profil ist leer, Änderungen nicht durchgeführt.");
+            if(neuerProfilEintrag == null)
+                throw new ProfilException("Neue Daten sind leer. Keine Änderungen durchgeführt.");
 
-                if (neuerProfilEintrag.getEmail() != null && !neuerProfilEintrag.getEmail().isEmpty())
-                    profil.setEmail(neuerProfilEintrag.getEmail());
 
-                if (neuerProfilEintrag.getPasswort() != null && !neuerProfilEintrag.getPasswort().isEmpty())
+            if (neuerProfilEintrag.getBenutzername() != null && !neuerProfilEintrag.getBenutzername().isEmpty())
+                profil.setBenutzername(neuerProfilEintrag.getBenutzername());
+
+            if (neuerProfilEintrag.getEmail() != null && !neuerProfilEintrag.getEmail().isEmpty())
+                profil.setEmail(neuerProfilEintrag.getEmail());
+
+            if (neuerProfilEintrag.getPasswort() != null && !neuerProfilEintrag.getPasswort().isEmpty())
                     profil.setPasswort(neuerProfilEintrag.getPasswort());
-            }
-            else
-                {
-                throw new ProfilException("Nicht eingeloggt");
-            }
+
         }
         catch(ProfilException ex)
         {
@@ -142,7 +153,7 @@ public abstract class Profil {
     }
     
 
-    public void passwortVergessen(List<Profil> profilListe)
+    public void passwortVergessen(List<Profil> profilListe) throws ProfilException
     {
         try
         {
@@ -158,10 +169,11 @@ public abstract class Profil {
                 }
                 //Keine Antwort an nicht vorhandenen Benutzernamen aus Sicherheitsaspekten
             }
+            throw new ProfilException("Passwort konnte nicht zurückgesetzt werden.");
         }
         catch(Exception ex)
         {
-            System.out.println(ex.getMessage());
+            throw new ProfilException(ex.getMessage());
         }
     }
 

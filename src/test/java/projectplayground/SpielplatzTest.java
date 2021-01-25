@@ -12,17 +12,22 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class SpielplatzTest {
     List<Spielplatz> spielplatzListe = new ArrayList<>();
 
     Standort testStandort = new Standort();
 
-    Benutzer marvin = new Benutzer("marvin", "test@gmx.de", "qwertz", 30, testStandort);
+    Benutzer marvin = new Benutzer("marvin", "test@gmx.de", "qwertz", 1, testStandort);
     Benutzer mark = new Benutzer("mark", "mark@gmx.de", "12345", 2,testStandort);
     Benutzer fabian = new Benutzer("fabian", "seebär@gmx.de", "6789", 1,testStandort);
     Moderator katja = new Moderator("katja", "katja@gmx.de", "12345", 0 , testStandort);
     Spielplatz spielplatz = new Spielplatz();
-
+    Geraet schaukel = new Geraet(spielplatz.getID(), "Schaukel", GeraeteStatus.inTaktesGeraet,
+            "Bei der Schaukel handelt es sich um eine Doppelschaukel.",2);
+    Geraet wippe = new Geraet(spielplatz.getID(), "Wippe", GeraeteStatus.verschmutztesGeraet,
+            "Hier können sich 2 Kinder beschäftigen.", 2);
 
 
     @BeforeEach
@@ -32,14 +37,12 @@ class SpielplatzTest {
         Standort standortBellaBFSpielplatz = new Standort();
 
         standortBellaBFSpielplatz.setStrassenname("Tettaustraße");
+        standortBellaBFSpielplatz.setStadtteil("Teststadtteil");
         standortBellaBFSpielplatz.setHausnummer(4);
         standortBellaBFSpielplatz.setPostleitzahl(99094);
         standortBellaBFSpielplatz.setStadtname("Erfurt");
 
-        Geraet schaukel = new Geraet(spielplatz.getID(), "Schaukel", GeraeteStatus.inTaktesGeraet,
-                "Bei der Schaukel handelt es sich um eine Doppelschaukel.",10);
-        Geraet wippe = new Geraet(spielplatz.getID(), "Wippe", GeraeteStatus.verschmutztesGeraet,
-                "Hier können sich 2 Kinder beschäftigen.", 50);
+
         katja.geraetHinzufuegen(spielplatz, schaukel);
         katja.geraetHinzufuegen(spielplatz,wippe);
         spielplatz.setStandort(standortBellaBFSpielplatz);
@@ -49,23 +52,44 @@ class SpielplatzTest {
         spielplatzListe.add(spielplatz);
     }
 
-    @Test
-    void pruefeStatus() throws SpielplatzException, BenutzerException {
-        System.out.println("Kapazität: " + spielplatz.getKapazitaetSpielplatz());
-        System.out.println("Anzahl der Kinder vorort: " + spielplatz.getAnzahlKinder());
-        spielplatz.pruefeStatus();
 
-        marvin.spielplatzAnmeldung(spielplatz.ID, spielplatzListe);
-        System.out.println("Kapazität: " + spielplatz.getKapazitaetSpielplatz());
-        System.out.println("Anzahl der Kinder vorort: " + spielplatz.getAnzahlKinder());
-        spielplatz.pruefeStatus();
+
+
+    @Test
+    void getGeraetTest() throws SpielplatzException{
+        Geraet wippe = spielplatz.getGeraet("Wippe");
+        assertEquals(wippe.getBezeichnung(), "Wippe");
     }
+
+    @Test
+    void pruefeStatusOffenTest() throws SpielplatzException, BenutzerException {
+        System.out.println("Kapazität: " + spielplatz.getKapazitaetSpielplatz());
+        spielplatz.pruefeStatus();
+        assertEquals(Status.offen, spielplatz.getStatus());
+
+    }
+
+    @Test
+    void pruefeStatusOffenGutBesuchtVollTest() throws SpielplatzException, BenutzerException {
+        System.out.println("Kapazität: " + spielplatz.getKapazitaetSpielplatz());
+        marvin.spielplatzAnmeldung(spielplatz.getID(), spielplatzListe);
+        mark.spielplatzAnmeldung(spielplatz.getID(), spielplatzListe);
+        fabian.spielplatzAnmeldung(spielplatz.getID(), spielplatzListe);
+        assertEquals(Status.voll, spielplatz.getStatus());
+
+    }
+
 
     @Test
     void aktualisiereSpielplatzKapazitaetTest() throws SpielplatzException{
+        spielplatz.geraete.add(wippe);
+        spielplatz.geraete.add(wippe);
         spielplatz.aktualisiereSpielplatzKapazitaet();
-        System.out.println(spielplatz.getKapazitaetSpielplatz());
+        assertEquals(8, spielplatz.getKapazitaetSpielplatz());
     }
 
-
+    @Test
+    void zeigeStandortAnTest() throws SpielplatzException{
+        spielplatz.zeigeStandortAn();
+    }
 }

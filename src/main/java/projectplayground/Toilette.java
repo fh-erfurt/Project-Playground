@@ -3,7 +3,8 @@ package projectplayground;
 import projectplayground.interfaces.IToilette;
 import projectplayground.interfaces.IWickeltisch;
 
-public class Toilette extends Erweiterung implements IToilette, IWickeltisch {
+public class
+Toilette extends Erweiterung implements IToilette, IWickeltisch {
 
     private boolean hatWickeltisch;
 

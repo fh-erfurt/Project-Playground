@@ -5,6 +5,7 @@ public abstract class Erweiterung
     protected String bezeichnung;
     protected int personenAnzahl;
 
+
     public String getBezeichnung() {
         return bezeichnung;
     }

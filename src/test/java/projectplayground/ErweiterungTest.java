@@ -23,7 +23,7 @@ class ErweiterungTest {
     }
 
     @Test
-    void spielplatzErweiterungToilette() throws SpielplatzException {
+    void spielplatzErweiterungToiletteTest() throws SpielplatzException {
         for (Erweiterung erweiterung : spielplatz.erweiterungen)
         {
             if(erweiterung instanceof Toilette)
@@ -36,7 +36,7 @@ class ErweiterungTest {
     }
 
     @Test
-    void spielplatzErweiterungRestaurant() throws SpielplatzException{
+    void spielplatzErweiterungRestaurantTest() throws SpielplatzException{
         for (Erweiterung erweiterung : spielplatz.erweiterungen)
         {
             if(erweiterung instanceof Restaurant)
@@ -53,7 +53,7 @@ class ErweiterungTest {
     }
 
     @Test
-    void spielplatzErweiterungSitzgelegenheit() throws SpielplatzException{
+    void spielplatzErweiterungSitzgelegenheitTest() throws SpielplatzException{
         for (Erweiterung erweiterung : spielplatz.erweiterungen)
         {
             if(erweiterung instanceof Sitzgelegenheit)
@@ -66,34 +66,8 @@ class ErweiterungTest {
     }
 
     @Test
-    void spielplatzErweiterungenGesamt() throws SpielplatzException
+    void spielplatzErweiterungenGesamtTest() throws SpielplatzException
     {
-        for (Erweiterung erweiterung : spielplatz.erweiterungen)
-        {
-            if(erweiterung instanceof Restaurant)
-            {
-                System.out.println("---------------------------------------");
-                System.out.println(((Restaurant) erweiterung).essenGehen());
-                System.out.println(((Restaurant) erweiterung).essenLiefern());
-                System.out.println(((Restaurant) erweiterung).essenBestellenUndAbholen());
-                System.out.println(((Restaurant) erweiterung).wickelTisch());
-                System.out.println(((Restaurant) erweiterung).toilettenGang());
-                System.out.println("---------------------------------------");
-            }
-            if(erweiterung instanceof Toilette)
-            {
-                System.out.println("---------------------------------------");
-                System.out.println(((Toilette) erweiterung).toilettenGang());
-                System.out.println(((Toilette) erweiterung).haendeWaschen());
-                System.out.println(((Toilette) erweiterung).wickelTisch());
-                System.out.println("---------------------------------------");
-            }
-            if(erweiterung instanceof Sitzgelegenheit)
-            {
-                System.out.println("---------------------------------------");
-                System.out.println(((Sitzgelegenheit) erweiterung).sitzen());
-                System.out.println("---------------------------------------");
-            }
-        }
+        spielplatz.zeigeErweiterungenAn();
     }
 }

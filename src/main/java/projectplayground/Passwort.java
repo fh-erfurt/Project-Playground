@@ -1,27 +1,32 @@
 package projectplayground;
+import projectplayground.exceptions.PasswortException;
+
 import java.security.SecureRandom;
 
 
 
 public class Passwort {
-    public static String passwortGenerator()
+    public static String passwortGenerator() throws PasswortException
     {
         try
         {
-            final String allowedChars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            SecureRandom random = new SecureRandom();
-            StringBuilder pass = new StringBuilder(12);
+            final String erlaubteZeichen = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            int anzahlZeichen = 12;
+            SecureRandom zufall = new SecureRandom();
+            StringBuilder pass = new StringBuilder(anzahlZeichen);
             for (int i = 0; i < 12; i++)
             {
-                pass.append(allowedChars.charAt(random.nextInt(allowedChars.length())));
+                pass.append(erlaubteZeichen.charAt(zufall.nextInt(erlaubteZeichen.length())));
             }
+
+            if(pass.length() != anzahlZeichen)
+                throw new PasswortException("Beim Passwort generieren ist etwas schief gelaufen (Länge passt nicht)");
             return pass.toString();
 
         }
-        catch (Exception ex)
+        catch (PasswortException ex)
         {
-            System.out.println(ex.getMessage());
-            return "Fehler beim Passwort generieren.";
+            throw new PasswortException(ex.getMessage());
         }
     }
 }

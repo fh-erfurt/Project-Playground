@@ -8,9 +8,8 @@ public class Standort {
         
     }
 
-    public Standort(int hausnummer, String strassenname, int postleitzahl, String stadtname, String name, String stadtteil)
+    public Standort(int hausnummer, String strassenname, int postleitzahl, String stadtname, String stadtteil)
     {
-        this.name = name;
         this.hausnummer = hausnummer;
         this.strassenname = strassenname;
         this.postleitzahl = postleitzahl;
@@ -18,7 +17,6 @@ public class Standort {
         this.stadtteil = stadtteil;
     }
 
-    private String name;
     private String strassenname;
     private int hausnummer;
     private int postleitzahl;
@@ -57,9 +55,6 @@ public class Standort {
         this.stadtname = stadtname;
     }
 
-    public String getName() { return name; }
-
-    public void setName(String name) { this.name = name; }
 
     public String getStadtteil() { return stadtteil; }
 

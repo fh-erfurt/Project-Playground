@@ -2,6 +2,9 @@ package projectplayground;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import projectplayground.exceptions.RestaurantException;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RestaurantTest {
     Restaurant restaurant = new Restaurant(30, "Waldkasino","0361 3456677"
@@ -9,23 +12,42 @@ public class RestaurantTest {
 
     @BeforeEach
     void setUp() {
-
-        restaurant.fuegeSpeiseHinzu("Pommes", 1.22);
+        restaurant.fuegeSpeiseHinzu("Pommes", 2.22);
         restaurant.fuegeSpeiseHinzu("Burger", 5.0);
-        restaurant.fuegeSpeiseHinzu("Senfschnuller", 3.22);
-        restaurant.fuegeSpeiseHinzu("Schnibrö", 5.0);
-
+        restaurant.fuegeSpeiseHinzu("Schnitzel", 3.22);
+        restaurant.fuegeSpeiseHinzu("Salat", 2.0);
 
     }
 
     @Test
-    void restaurantSpeisekarte(){
-        restaurant.zeigeSpeisekarteAn();
-        System.out.println("---------------------------------------");
-        restaurant.entferneSpeise("Schnibrö");
-        System.out.println("Entferne Schnibrö");
-        System.out.println("---------------------------------------");
-        restaurant.zeigeSpeisekarteAn();
+    void hatWickeltischTest(){
+        String restaurantWickeltisch = restaurant.wickelTisch();
+        assertEquals("Hier gibt es keinen Wickeltisch", restaurantWickeltisch);
+    }
 
+    @Test
+    void essenBestellenUndAbholenTest(){
+        String essenBestellenUndAbholen = restaurant.essenBestellenUndAbholen();
+        String erwartet = "Hier kann man Essen bestellen und abholen, unter folgender Telefonnummer: " + restaurant.getTelefonNummer();
+        assertEquals(erwartet, essenBestellenUndAbholen);
+    }
+
+    @Test
+    void essenLiefernTest(){
+        String essenLieferbar = restaurant.essenLiefern();
+        String erwartet = "Hier kann man Essen bestellen und es wird geliefert, unter folgender Telefonnummer: " + restaurant.getTelefonNummer();
+        assertEquals(erwartet, essenLieferbar);
+    }
+
+
+    @Test
+    void restaurantSpeisekarte() throws RestaurantException {
+        restaurant.zeigeSpeisekarteAn();
+    }
+
+    @Test
+    void entferneSpeiseTest() throws RestaurantException {
+        restaurant.entferneSpeise("Schnitzel");
+        assertEquals(false, restaurant.speisekarte.containsKey("Schnitzel"));
     }
 }

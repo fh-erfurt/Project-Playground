@@ -1,5 +1,6 @@
 package projectplayground;
 
+import projectplayground.exceptions.RestaurantException;
 import projectplayground.interfaces.IRestaurant;
 import projectplayground.interfaces.IToilette;
 import projectplayground.interfaces.IWickeltisch;
@@ -32,7 +33,7 @@ public class Restaurant extends Erweiterung implements IToilette, IWickeltisch, 
         this.speisekarte = new HashMap<String, Double>();
     }
 
-    private HashMap<String, Double> speisekarte;
+    public HashMap<String, Double> speisekarte;
     private String telefonNummer;
     private boolean hatWickeltisch;
     private boolean essenAbholbar;
@@ -49,13 +50,22 @@ public class Restaurant extends Erweiterung implements IToilette, IWickeltisch, 
         this.speisekarte.remove(speisenName);
     }
 
-    public void zeigeSpeisekarteAn()
+    public void zeigeSpeisekarteAn() throws RestaurantException
     {
-        for(Map.Entry<String, Double> speisenEintrag : this.speisekarte.entrySet()) {
-            String speisenName = speisenEintrag.getKey();
-            Double preis = speisenEintrag.getValue();
+        try
+        {
+            if (this.speisekarte == null)
+                throw new RestaurantException("Speisekarte ist leer und kann nicht angezeigt werden.");
 
-            System.out.println(speisenName + ": " + preis.toString());
+            for (Map.Entry<String, Double> speisenEintrag : this.speisekarte.entrySet()) {
+                String speisenName = speisenEintrag.getKey();
+                Double preis = speisenEintrag.getValue();
+                System.out.println(speisenName + ": " + preis.toString() + "€");
+            }
+        }
+        catch(RestaurantException ex)
+        {
+            throw new RestaurantException(ex.getMessage());
         }
     }
     public boolean getHatWickeltisch() {
@@ -93,7 +103,7 @@ public class Restaurant extends Erweiterung implements IToilette, IWickeltisch, 
     @Override
     public String wickelTisch()
     {
-        if(hatWickeltisch == true)
+        if(hatWickeltisch)
             return "Hier gibt es einen Wickeltisch.";
         return "Hier gibt es keinen Wickeltisch";
     }
@@ -119,7 +129,7 @@ public class Restaurant extends Erweiterung implements IToilette, IWickeltisch, 
     @Override
     public String essenBestellenUndAbholen()
     {
-        if(essenAbholbar == true)
+        if(essenAbholbar)
         {
             if(this.getTelefonNummer() != null)
                 return "Hier kann man Essen bestellen und abholen, unter folgender Telefonnummer: " + this.getTelefonNummer();
@@ -131,7 +141,7 @@ public class Restaurant extends Erweiterung implements IToilette, IWickeltisch, 
     @Override
     public String essenLiefern()
     {
-        if(essenLieferbar == true)
+        if(essenLieferbar)
         {
             if(this.getTelefonNummer() != null)
                 return "Hier kann man Essen bestellen und es wird geliefert, unter folgender Telefonnummer: " + this.getTelefonNummer();

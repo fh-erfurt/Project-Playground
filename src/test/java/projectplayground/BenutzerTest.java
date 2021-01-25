@@ -12,17 +12,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class BenutzerTest  {
 
     List<Spielplatz> spielplatzListe = new ArrayList<>();
 
     Standort testStandort = new Standort();
 
-    Benutzer marvin = new Benutzer("marvin", "test@gmx.de", "qwertz", 1, testStandort);
+    Benutzer marvin = new Benutzer("marvin", "test@gmx.de", "qwertz", -10, testStandort);
     Benutzer mark = new Benutzer("mark", "mark@gmx.de", "12345", 2,testStandort);
     Benutzer fabian = new Benutzer("fabian", "seebär@gmx.de", "6789", 1,testStandort);
 
-    Moderator katja = new Moderator("katja", "katja@gmx.de", "12345", 0 , testStandort);
+    Moderator katja = new Moderator("katja", "katja@gmx.de", "12345", 0,testStandort );
     Spielplatz spielplatz = new Spielplatz();
 
 
@@ -53,7 +55,7 @@ class BenutzerTest  {
     }
 
     @Test
-    void getAktuellenSpielplatz() {
+    void getAktuellenSpielplatzTest() {
         Spielplatz erwarteterSpielplatz = marvin.getAktuellenSpielplatz(spielplatzListe);
         if(erwarteterSpielplatz == null)
             System.out.println("Kein aktueller Spielplatz");
@@ -61,23 +63,27 @@ class BenutzerTest  {
     }
 
     @Test
-    void geraetMelden() throws SpielplatzException {
+    void geraetMeldenTest() throws SpielplatzException, BenutzerException {
         marvin.geraetMelden("Schaukel", spielplatzListe);
         Geraet geaendertesGeraet = marvin.getAktuellenSpielplatz(spielplatzListe).getGeraet("Schaukel");
         System.out.println("Schaukelstatus: " + geaendertesGeraet.getGeraeteStatus());
+        assertEquals(GeraeteStatus.zuPruefen,geaendertesGeraet.getGeraeteStatus());
     }
 
     @Test
-    void spielplatzAnmeldung() throws BenutzerException {
+    void spielplatzAnmeldungTest() throws BenutzerException, SpielplatzException {
         System.out.println("Spielplatzkinderanzahl vor Anmeldung: " + spielplatz.getAnzahlKinder());
         marvin.spielplatzAnmeldung(spielplatz.getID(), spielplatzListe);
         System.out.println("Spielplatzkinderanzahl nach Anmeldung: " + spielplatz.getAnzahlKinder());
     }
 
     @Test
-    void spielplatzAbmeldung() throws BenutzerException{
+    void spielplatzAbmeldungTest() throws BenutzerException{
         System.out.println("Spielplatzkinderanzahl vor Abmeldung: " + spielplatz.getAnzahlKinder());
         marvin.spielplatzAbmeldung(spielplatzListe);
         System.out.println("Spielplatzkinderanzahl nach Abmeldung: " + spielplatz.getAnzahlKinder());
     }
+    //ToDo freundhinzufügen, freundEntfernen, spielplatzFavoritHinzufuegen,spielplatzFavoritEntfernen
+    //ToDO bestehende Testfunktionen auch überprüfen
+
 }
