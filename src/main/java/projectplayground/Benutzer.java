@@ -94,25 +94,64 @@ public class Benutzer extends Profil {
     }
 
 
-    public void freundHinzufuegen(Benutzer neuerFreund)
+    public void freundHinzufuegen(Benutzer neuerFreund) throws BenutzerException
     {
+        try
+        {
+            if(neuerFreund == null)
+                throw new BenutzerException("Freund ist leer und konnte nicht hinzugefügt werden");
+            this.freunde.add(neuerFreund);
+        }
+        catch (BenutzerException ex)
+        {
+            throw new BenutzerException(ex.getMessage());
+        }
 
-        this.freunde.add(neuerFreund);
     }
-    public void freundEntfernen(Benutzer freund)
+    public void freundEntfernen(Benutzer freund) throws BenutzerException
     {
-
-        this.freunde.remove(freund);
+        try
+        {
+            if(freund == null)
+                throw new BenutzerException("Freund ist leer und konnte nicht entfernt werden");
+            if(!this.freunde.contains(freund))
+                throw new BenutzerException("Freund ist nicht in der Liste und konnte nicht entfernt werden");
+            this.freunde.remove(freund);
+        }
+        catch (BenutzerException ex)
+        {
+            throw new BenutzerException(ex.getMessage());
+        }
     }
 
-    public void spielplatzFavoritHinzufuegen(Spielplatz neuerSpielplatz)
+    public void spielplatzFavoritHinzufuegen(Spielplatz neuerSpielplatz) throws BenutzerException
     {
-        this.spielplatzFavoriten.add(neuerSpielplatz);
+        try {
+            if (neuerSpielplatz == null)
+                throw new BenutzerException("Der Spielplatz ist leer und konnte nicht hinzugefügt werden");
+            this.spielplatzFavoriten.add(neuerSpielplatz);
+        }
+        catch (BenutzerException ex)
+        {
+            throw new BenutzerException(ex.getMessage());
+        }
+
     }
 
-    public void spielplatzFavoritEntfernen(Spielplatz spielplatz)
+    public void spielplatzFavoritEntfernen(Spielplatz spielplatz) throws BenutzerException
     {
-        this.spielplatzFavoriten.remove(spielplatz);
+        try {
+            if (spielplatz == null)
+                throw new BenutzerException("Der Spielplatz ist leer und konnte nicht entfernt werden");
+            if (!this.spielplatzFavoriten.contains(spielplatz))
+                throw new BenutzerException("Der Spielplatz ist nicht in der Liste und konnte nicht hinzugefügt werden");
+            this.spielplatzFavoriten.remove(spielplatz);
+        }
+        catch (BenutzerException ex)
+        {
+            throw new BenutzerException(ex.getMessage());
+        }
+
     }
 
     public Spielplatz getAktuellenSpielplatz(List<Spielplatz> alleSpielplaetze)

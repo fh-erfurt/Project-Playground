@@ -30,7 +30,7 @@ class BenutzerTest  {
 
 
     @BeforeEach
-    public void setUp () throws ModeratorException {
+    public void setUp () throws ModeratorException, BenutzerException {
         spielplatz.setID(UUID.randomUUID());
 
         Standort standortBellaBFSpielplatz = new Standort();
@@ -89,22 +89,22 @@ class BenutzerTest  {
         assertEquals(null,marvin.getAktuellenSpielplatz(spielplatzListe));
     }
 
-    void freundHinzufuegenTest(){
+    void freundHinzufuegenTest() throws BenutzerException {
         marvin.freundHinzufuegen(mark);
         assertEquals(true,marvin.getFreunde().contains(mark));
     }
     @Test
-    void freundEntfernenTest(){
+    void freundEntfernenTest() throws BenutzerException {
         marvin.freundEntfernen(mark);
         assertEquals(false,marvin.getFreunde().contains(mark));
     }
     @Test
-    void spielplatzFavoritHinzufuegenTest(){
+    void spielplatzFavoritHinzufuegenTest() throws BenutzerException {
         marvin.spielplatzFavoritHinzufuegen(spielplatz);
         assertEquals(true,marvin.getSpielplatzFavoriten().contains(spielplatz));
     }
     @Test
-    void spielplatzFavoritEntfernenTest(){
+    void spielplatzFavoritEntfernenTest() throws BenutzerException {
         marvin.spielplatzFavoritEntfernen(spielplatz);
         assertEquals(false,marvin.getSpielplatzFavoriten().contains(spielplatz));
     }
