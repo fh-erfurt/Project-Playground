@@ -68,8 +68,8 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 <details>
 <summary> Diagramme </summary>
 <br>
-
-    Hier werden die Diagramme eingefügt
+**UML Diagramm**
+ ![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/UMLDiagramm.png)
 
 <br>
 
