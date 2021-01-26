@@ -277,7 +277,22 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 * [Watsapp](https://www.whatsapp.com) - 2. Kommunikationsmittel
 
 </details>
+<details>
+<summary> Ausblick in Java2 </summary>
+<br>
 
+"Nach der Arbeit ist vor der Arbeit", oder "ein Projekt endet nie". 
+Das Projekt wird fortgesetzt und die Gedanken für die Weiterführung sind bereits da. Nach dem Backend, aus dem Teilprojekt
+Java 1, wird das Frontend unser Projekt an den Mann, oder besser, an die Eltern bringen. 
+Folgende Punkte sind zur Realisierung geplant. Umsetzung ausstehend, Änderungen möglich und wahrscheinlich.
+
+- grafische Oberfläche
+- Aufbau und Befüllen der Datenbank mit Texten, Bildern, Karten - rundum allen Informationen zu den Spielplätzen
+- Login durch 'Kunden'
+- Testbetrieb
+- Code verfeinern, falls möglich
+
+</details>
 <details>
 <summary> License </summary>
 <br>
