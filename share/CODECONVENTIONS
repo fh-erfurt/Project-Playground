@@ -1,4 +1,4 @@
-Sinnvolle sprechende, deutsche Bezeichner
+• Sinnvolle sprechende, deutsche Bezeichner
 • Der Code hält sich an die Java Code Conventions [1]
 • Der Code vermeidet unnötige Redundanzen (DRY!)
 • Der Code folgt dem „Single Responsibility Principle“
