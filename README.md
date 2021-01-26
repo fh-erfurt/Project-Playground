@@ -287,6 +287,7 @@ Java 1, wird das Frontend unser Projekt an den Mann, oder besser, an die Eltern 
 Folgende Punkte sind zur Realisierung geplant. Umsetzung ausstehend, Änderungen möglich und wahrscheinlich.
 
 - grafische Oberfläche
+- Auslagerung der Projekts in eine cloudbasierte Umgebung - evtl. Heroku.
 - Aufbau und Befüllen der Datenbank mit Texten, Bildern, Karten - rundum allen Informationen zu den Spielplätzen
 - Login durch 'Kunden'
 - Testbetrieb
