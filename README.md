@@ -72,7 +72,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 <br>
 
 **Klassendiagramm**
-![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/UMLDiagramm.png)
+![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/Klassendiagramm-0.png)
 </details>
 
 
