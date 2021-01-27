@@ -105,7 +105,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 
 ### Besprechung 25.01.2021
 ---
-**1.Besprechung**
+**1. Besprechung**
 - Finales Überarbeiten der Klassenfunktionen
 - Überarbeitung des Exceptionhandlings
 - Testfunktionen überarbeitet
@@ -121,13 +121,13 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 ### Besprechung 23.01.2021
 ---
 
-**1.Projektänderung**
+**1. Projektänderung**
 - Umsetzung der Neuen Konzepte
 - Erweiterungen umgesetzt
 - Interfaces implementiert
 - Vervollständigung der Klassenstruktur
 
- **2.Dokumentation**
+ **2. Dokumentation**
  - Restaurant/Erweiterungen/Toilette/Wickeltisch/Sitzgelegenheiten
  - Interfaces implementiert
  - SpielplatzTest/ErweiterungTest zu Testklassen hinzugefügt
@@ -137,7 +137,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 ### Besprechung 20.01.2021
 ---
 
-**1.Projektänderung**
+**1. Projektänderung**
 - Brainstorming zur Erweiterung des Projektes
 - künftiges Exceptionhandling besprochen
 - Brainstorming zur Umsetzung der Dozentenvorschläge
@@ -146,11 +146,11 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 ### Besprechung 13.01.2021
  ---
 
-**1.Projektänderungen**
+**1. Projektänderungen**
 - Ausbau der Funktionen
 - Brainstorming Umsetzung der Tests
 
-**2.Dokumentation**
+**2. Dokumentation**
 - Implementierung Mailversand
 	- Umsetzung zugehöriger Passwortgenerator
 - Brainstorming Projekterweiterungen
@@ -161,10 +161,10 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 
 ---
 
-**1.Projektänderungen**
+**1. Projektänderungen**
 - Korrektur Codestyle
 
-**3. Zwischenpräsentation**
+**2. Zwischenpräsentation**
 - [Zwischenpäsentation](https://github.com/fh-erfurt/Project-Playground/blob/main/share/presentations/Java_1/Zwischenprasentation_2.pdf)
 
 ### Besprechungen 11.12. - 23.12.2020
