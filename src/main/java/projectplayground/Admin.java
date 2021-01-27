@@ -56,7 +56,7 @@ public class Admin extends Profil {
                 throw new AdminException("Beim Anlegen des neuen Benutzers ist etwas schief gelaufen.");
 
             Benutzer neuerBenutzer = new Benutzer(moderator.benutzername, moderator.email, moderator.passwort, moderator.eigeneKinder);
-            moderator = null; // im weiteren Verlauf DB Eintrag löschen, bisher erledigt GarbageCollector den Rest
+            moderator = null;
 
             return neuerBenutzer;
         }
@@ -78,7 +78,7 @@ public class Admin extends Profil {
                 throw new AdminException("Spielplatz konnte nicht entfernt werden");
 
             spielplatzListe.remove(spielplatz);
-            spielplatz = null; //im weiteren Verlauf DB Eintrag löschen, bisher erledigt GarbageCollector den Rest
+            spielplatz = null;
         }
         catch(AdminException ex)
         {
@@ -99,7 +99,7 @@ public class Admin extends Profil {
                 throw new AdminException("Gerät konnte nicht entfernt werden.");
 
             geraete.remove(geraet);
-            geraet = null; //im weiteren Verlauf DB Eintrag löschen, bisher erledigt GarbageCollector den Rest
+            geraet = null;
         }
         catch(AdminException ex)
         {
@@ -120,7 +120,7 @@ public class Admin extends Profil {
                 throw new AdminException("Profil konnte nicht entfernt werden.");
 
             profile.remove(profil);
-            profil = null; //im weiteren Verlauf DB Eintrag löschen, bisher erledigt GarbageCollector den Rest
+            profil = null;
         }
         catch(AdminException ex)
         {
@@ -132,7 +132,6 @@ public class Admin extends Profil {
     public void emailSperren(Profil profil)
     {
         // E-Mail soll nicht verwendet werden können um sich am System zu registrieren / anzumelden
-
     }
 
     /**

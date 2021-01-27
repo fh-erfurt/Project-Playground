@@ -15,7 +15,7 @@ import javax.mail.internet.MimeMessage;
 
 
 /**
- * Klasse, welche eine statische Funktion bietet um die E-Mail zum Passwortzurücksetzen zu versenden
+ * Klasse, welche eine statische Funktion bietet um die E-Mail zum Passwortzuruecksetzen zu versenden
  * Logindaten sind hardcoded, im weiteren Verlauf evtl. verschluesselt in eine Konfigdatei auslagern
  */
 public class Mail {
