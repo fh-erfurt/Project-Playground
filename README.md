@@ -58,17 +58,18 @@ Nicht zum Projektumfang gehören:
 
 	- Die Personalverwaltung
 	- Lohnbuchhaltung/Zeiterfassung
-	- Rechnung und Mahnwesen
 
-Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Daten zu den externen Bearbeitern geschickt werden können.
+
 
 </details>
 
 <details>
 	<summary> Diagramme </summary>
 <br>
+	
 <details>
 <summary> Klassendiagramm </summary>
+<br>
 	
 **Klassendiagramm**
 
@@ -77,7 +78,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 </details>
 <details>
 <summary> Use-Case-Diagramme </summary>
-
+<br>
 **Benutzer-Use-Case-Diagramm**
 
 ![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Benutzer-Use-Case.jpg)
@@ -92,7 +93,8 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 </details>
 <details>
 <summary> Aktivitätsdiagramme </summary>
-
+<br>
+	
 **Aktivitätsdiagramm - Gerät hinzufügen**
 
 ![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/geraetHinzufuegen-Aktivit%C3%A4tsdiagramm.png)
@@ -104,6 +106,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 **Aktivitätsdiagramm - Passwort zurücksetzen**
 
 ![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Passwortzuruecksetzen-Aktivit%C3%A4tsdiagramm.png)
+<br>
 </details>
 </details>
 </details>
@@ -326,6 +329,7 @@ Folgende Punkte sind zur Realisierung geplant. Umsetzung ausstehend, Änderungen
 - Abhängigkeiten zwischen Nutzerlogin und Funktionen, des Benutzers, programmieren
 - Testbetrieb
 - Code verfeinern, falls möglich
+- Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Daten zu den externen Bearbeitern geschickt werden können
 
 </details>
 <details>
