@@ -79,6 +79,7 @@ Nicht zum Projektumfang gehören:
 <details>
 <summary> Use-Case-Diagramme </summary>
 <br>
+	
 **Benutzer-Use-Case-Diagramm**
 
 ![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Benutzer-Use-Case.jpg)
@@ -112,7 +113,7 @@ Nicht zum Projektumfang gehören:
 </details>
 
 
-
+<br>
 <details>
 <summary> Besprechungsprotokolle </summary>
 <br>
