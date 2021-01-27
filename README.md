@@ -290,6 +290,7 @@ Folgende Punkte sind zur Realisierung geplant. Umsetzung ausstehend, Änderungen
 - Auslagerung der Projekts in eine cloudbasierte Umgebung - evtl. Heroku.
 - Aufbau und Befüllen der Datenbank mit Texten, Bildern, Karten - rundum allen Informationen zu den Spielplätzen
 - Login durch 'Kunden'
+- Abhängigkeiten zwischen Nutzerlogin und Funktionen, des Benutzers, programmieren
 - Testbetrieb
 - Code verfeinern, falls möglich
 
