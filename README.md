@@ -257,7 +257,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 <summary> Java 2 </summary>
 <br>
 
-    - Hier kommt alles zu Java 2 rein
+- Hier werden zukünftig unsere Erfahrungen aus Java2 dokumentiert.
 
 
 </details>
@@ -270,7 +270,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 
 * [IntelliJ](https://www.jetbrains.com/de-de/idea) - IDE für JAVA
   [PlantUML](https://plantuml.com) - Diagrammerstellung
-* [lucidchart](https://www.lucidchart.com) - Tool für die Erstellung der Diagramme / Charts / ...
+* [drawio](https://app.diagrams.net/) - Tool für die Erstellung der Diagramme / Charts / ...
 * [Office](https://www.office.com) - Office Programm
 * [Git](https://git-scm.com) - Versionskontrolle
 * [Discord](https://discord.com) - 1. Kommunikationsmittel
