@@ -152,7 +152,7 @@ Nicht zum Projektumfang gehören:
 - Finales Überarbeiten der Klassenfunktionen
 - Überarbeitung des Exceptionhandlings
 - Testfunktionen überarbeitet
-- UML diagramm auf finalen Stand angepasst
+- UML Diagramm auf finalen Stand angepasst
 
 **2. Dokumentation**
 
