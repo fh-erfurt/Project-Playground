@@ -302,7 +302,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 <br>
 
 * [IntelliJ](https://www.jetbrains.com/de-de/idea) - IDE für JAVA
-  [PlantUML](https://plantuml.com) - Diagrammerstellung
+* [PlantUML](https://plantuml.com) - Diagrammerstellung
 * [drawio](https://app.diagrams.net/) - Tool für die Erstellung der Diagramme / Charts / ...
 * [Office](https://www.office.com) - Office Programm
 * [Git](https://git-scm.com) - Versionskontrolle
@@ -329,9 +329,9 @@ Folgende Punkte sind zur Realisierung geplant. Umsetzung ausstehend, Änderungen
 
 </details>
 <details>
-<summary> License </summary>
+<summary> Lizenz </summary>
 <br>
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+Dieses Projekt ist unter der MIT-Lizenz lizenziert. Weitere Informationen finden Sie in der Datei [LIZENZ](LICENSE.md)
 
 </details>
