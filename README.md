@@ -141,6 +141,10 @@ Nicht zum Projektumfang gehören:
 - Präsentationszeit ca 10 min
 - Änderungen im Projekt seit Zwischenpräsentation dokumentieren
 
+### Besprechung 27.01.2021
+---
+**1. Besprechung**
+- überarbeiten und einfügen der Use-Case-Diagramme / Aktivitätsdiagramme
 
 ### Besprechung 25.01.2021
 ---
@@ -227,6 +231,9 @@ Nicht zum Projektumfang gehören:
 **2. Dokumentation**
 - Implementierung weiterer Klassen
 - Admin/Benutzer hinzugefügt
+
+**3. Klassendiagramm**
+- [Klassendiagramm](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/UMLDiagramm.png)
 
 ### Besprechung 08.12.2020
 
