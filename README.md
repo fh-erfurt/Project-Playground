@@ -74,7 +74,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 	
 **Klassendiagramm**
 ![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/Klassendiagramm-0.png)
-</details>
+
 <summary> Use-Case-Diagramme </summary>
 
 **Benutzer-Use-Case-Diagramm**
@@ -85,7 +85,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 
 **Admin-Use-Case-Diagramm**
 ![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Admin-Use-Case.jpg)
-</details>
+
 <summary> Aktivitätsdiagramme </summary>
 
 **Aktivitätsdiagramm - Gerät hinzufügen**
@@ -96,7 +96,6 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 
 **Aktivitätsdiagramm - Passwort zurücksetzen**
 ![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Passwortzuruecksetzen-Aktivit%C3%A4tsdiagramm.png)
-</details>
 </details>
 </details>
 
