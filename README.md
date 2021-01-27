@@ -1,4 +1,4 @@
-# Projekt Playground
+# Project Playground
 
 ![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Playground_Front.png)
 
