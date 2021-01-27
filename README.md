@@ -70,9 +70,34 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 <details>
 	<summary> Diagramme </summary>
 <br>
-
+<summary> Klassendiagramm </summary>
+	
 **Klassendiagramm**
 ![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/Klassendiagramm-0.png)
+</details>
+<summary> Use-Case-Diagramme </summary>
+
+**Benutzer-Use-Case-Diagramm**
+![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Benutzer-Use-Case.jpg)
+
+**Moderator-Use-Case-Diagramm**
+![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Moderator-Use-Case.jpg)
+
+**Admin-Use-Case-Diagramm**
+![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Admin-Use-Case.jpg)
+</details>
+<summary> Aktivitätsdiagramme </summary>
+
+**Aktivitätsdiagramm - Gerät hinzufügen**
+![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/geraetHinzufuegen-Aktivit%C3%A4tsdiagramm.png)
+
+**Aktivitätsdiagramm - Spielplatz Anmeldung**
+![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/spielplatzAnmeldung-Aktivit%C3%A4tsdiagramm.png)
+
+**Aktivitätsdiagramm - Passwort zurücksetzen**
+![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Passwortzuruecksetzen-Aktivit%C3%A4tsdiagramm.png)
+</details>
+</details>
 </details>
 
 
