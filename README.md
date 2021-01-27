@@ -33,9 +33,6 @@ Das soziale Projekt wurde im November 2020 von
 
 gegründet. Die Kernkompetenzen liegen im Entwickeln, Designen und Implementieren von Webseiten und Datenbankanwendungen.  Das Programm richtet sich an die Mütter und Väter, die einen angenehmen Spielplatz für ihre Kinder suchen.
 
-## Manifest
-https://github.com/fh-erfurt/Project-Playground/blob/main/share/MANIFEST
-
 ## CodeConventions
 https://github.com/fh-erfurt/Project-Playground/blob/main/share/CODECONVENTIONS
 
@@ -147,7 +144,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 - Testfunktionen überarbeitet
 - UML diagramm auf finalen Stand angepasst
 
-**2. Dokumenation**
+**2. Dokumentation**
 
 - Erweiterung der Readme
 - Lessons Learned
