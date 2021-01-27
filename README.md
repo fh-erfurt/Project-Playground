@@ -109,8 +109,9 @@ Nicht zum Projektumfang gehören:
 ![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Passwortzuruecksetzen-Aktivit%C3%A4tsdiagramm.png)
 <br>
 </details>
-</details>
 <br>
+</details>
+
 </details>
 
 
