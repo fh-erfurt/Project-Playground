@@ -93,7 +93,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 
 ![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Admin-Use-Case.jpg)
 </details>
-
+<details>
 <summary> Aktivitätsdiagramme </summary>
 
 **Aktivitätsdiagramm - Gerät hinzufügen**
@@ -107,6 +107,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 **Aktivitätsdiagramm - Passwort zurücksetzen**
 
 ![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Passwortzuruecksetzen-Aktivit%C3%A4tsdiagramm.png)
+</details>
 </details>
 </details>
 
@@ -200,7 +201,7 @@ Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Da
 - Korrektur Codestyle
 
 **2. Zwischenpräsentation**
-- [Zwischenpäsentation](https://github.com/fh-erfurt/Project-Playground/blob/main/share/presentations/Java_1/Zwischenprasentation_2.pdf)
+- [Zwischenpräsentation](https://github.com/fh-erfurt/Project-Playground/blob/main/share/presentations/Java_1/Zwischenprasentation_2.pdf)
 
 ### Besprechungen 11.12. - 23.12.2020
 
