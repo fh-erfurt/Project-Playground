@@ -66,11 +66,10 @@ class ModeratorTest {
 
     @Test
     void geraetEntfernenTest() throws ModeratorException {
+        katja.geraetHinzufuegen(spielplatz, schaukel);
         System.out.println("Spielplatzkapazität vor dem Entfernen eines Geräts: " + spielplatz.getKapazitaetSpielplatz());
-        katja.geraetEntfernen(spielplatz, wippe);
-        System.out.println("Spielplatzkapazität nach dem Entfernen eines Geräts: " + spielplatz.getKapazitaetSpielplatz());
         katja.geraetEntfernen(spielplatz, schaukel);
-        System.out.println("Spielplatzkapazität nach dem Entfernen eines weiteren Geräts: " + spielplatz.getKapazitaetSpielplatz());
+        System.out.println("Spielplatzkapazität nach dem Entfernen eines Geräts: " + spielplatz.getKapazitaetSpielplatz());
     }
 
     @Test
@@ -80,15 +79,12 @@ class ModeratorTest {
         System.out.println("Spielplatzkapazität nach dem Hinzufügen eines Geräts: " + spielplatz.getKapazitaetSpielplatz());
         katja.geraetEntfernen(spielplatz, wippe);
         System.out.println("Spielplatzkapazität nach dem Entfernen eines Geräts: " + spielplatz.getKapazitaetSpielplatz());
-        katja.geraetEntfernen(spielplatz, schaukel);
-        System.out.println("Spielplatzkapazität nach dem Entfernen eines weiteren Geräts: " + spielplatz.getKapazitaetSpielplatz());
     }
     @Test
     void geraetStatusAendernTest() throws ModeratorException{
-        System.out.println("Gerätestatus vor der Änderung:");
-        schaukel.getGeraeteStatus();
-        System.out.println("Gerätestatus nach der Änderung:");
+        System.out.println("Gerätestatus vor der Änderung:"+schaukel.getGeraeteStatus());
         katja.geraeteStatusAendern(schaukel,GeraeteStatus.kaputtesGeraet);
+        System.out.println("Gerätestatus nach der Änderung:"+schaukel.getGeraeteStatus());
         assertEquals(GeraeteStatus.kaputtesGeraet,schaukel.getGeraeteStatus());
     }
     @Test
@@ -109,6 +105,10 @@ class ModeratorTest {
     }
     @Test
     void erweiterungEntfernenTest() throws ModeratorException, SpielplatzException {
+        katja.erweiterungHinzufuegen(bank,spielplatz);
+        System.out.println("Erweiterungen vor dem Entfernen:");
+        spielplatz.zeigeErweiterungenAn();
+        System.out.println("Erweiterungen nach dem Entfernen:");
         katja.erweiterungEntfernen(bank,spielplatz);
         spielplatz.zeigeErweiterungenAn();
         assertEquals(false, spielplatz.erweiterungen.contains(bank));
@@ -116,6 +116,5 @@ class ModeratorTest {
     @Test
     void spielplatzverwaltenTest() throws ModeratorException{
     katja.spielplatzVerwalten(spielplatz, neuerSpielplatz);
-
     }
 }
