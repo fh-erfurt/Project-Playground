@@ -64,6 +64,7 @@ class BenutzerTest  {
 
     @Test
     void geraetMeldenTest() throws SpielplatzException, BenutzerException {
+        marvin.spielplatzAnmeldung(spielplatz.getID(), spielplatzListe);
         marvin.geraetMelden("Schaukel", spielplatzListe);
         Geraet geaendertesGeraet = marvin.getAktuellenSpielplatz(spielplatzListe).getGeraet("Schaukel");
         System.out.println("Schaukelstatus: " + geaendertesGeraet.getGeraeteStatus());

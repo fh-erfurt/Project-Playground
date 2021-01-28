@@ -30,7 +30,7 @@ class AdminTest{
 
     @Test
     void benutzerZuModeratorTest() throws AdminException{
-        marvin.benutzerZuModerator(mark);
+        mark = marvin.benutzerZuModerator(mark);
         assertEquals(true,mark instanceof Moderator);
     }
 

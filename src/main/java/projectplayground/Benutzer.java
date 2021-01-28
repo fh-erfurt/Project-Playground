@@ -289,7 +289,11 @@ public class Benutzer extends Profil {
         try
         {
             Spielplatz spielplatz = this.getAktuellenSpielplatz(alleSpielplaetze);
+            if (spielplatz == null)
+                throw new BenutzerException("Benutzer ist nicht am Spielplatz angemeldet.");
+
             Geraet geraet = spielplatz.getGeraet(geraetName);
+
             if (geraet == null)
                 throw new BenutzerException("Gerät konnte nicht gemeldet werden.");
 
