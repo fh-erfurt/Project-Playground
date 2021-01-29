@@ -21,7 +21,7 @@ class AdminTest{
 
     Benutzer mark = new Benutzer("mark", "mark@gmx.de", "12345", 2);
     Admin marvin = new Admin("marvin","qwertz","marvin@fh-erfurt.de");
-    Moderator fabian = new Moderator("fabian","fabian@fh-erfurt.de","1234",2);
+    Benutzer fabian = new Moderator("fabian","fabian@fh-erfurt.de","1234",2);
 
     @BeforeEach
     void setUp() {
@@ -36,7 +36,7 @@ class AdminTest{
 
     @Test
     void moderatorZuBenutzerTest() throws AdminException{
-        marvin.moderatorZuBenutzer(fabian);
+        fabian=marvin.moderatorZuBenutzer((Moderator)fabian);
         assertEquals(true,fabian instanceof Benutzer);
     }
 

@@ -16,24 +16,13 @@ public class Moderator extends Benutzer
 {
     public Moderator(String benutzername, String email, String passwort, int anzahlKinder)
     {
-        this.benutzername = benutzername;
-        this.email = email;
-        this.passwort = passwort;
-        this.eigeneKinder = anzahlKinder;
+        super(benutzername,email,passwort,anzahlKinder);
         this.zugriff = Zugriff.moderator;
-        this.spielplatzFavoriten = new ArrayList<>();
-        this.freunde = new ArrayList<>();
     }
     public Moderator(String benutzername, String email, String passwort, int anzahlKinder, Standort aufenthaltsort)
     {
-        this.benutzername = benutzername;
-        this.email = email;
-        this.passwort = passwort;
-        this.eigeneKinder = anzahlKinder;
-        this.aufenthaltsort = aufenthaltsort;
+        super(benutzername,email,passwort,anzahlKinder,aufenthaltsort);
         this.zugriff = Zugriff.moderator;
-        this.spielplatzFavoriten = new ArrayList<>();
-        this.freunde = new ArrayList<>();
     }
 
 

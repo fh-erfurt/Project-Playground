@@ -7,7 +7,7 @@ import projectplayground.exceptions.ProfilException;
 import java.util.List;
 
 /**
- * Der Admin ist ein Nutzer, welche besondere Rechte beinhaltet um das spaetere Programm zu verwalten.
+ * Der Admin ist ein Nutzer, welcher besondere Rechte beinhaltet um das spaetere Programm zu verwalten.
  * Er verwaltet Nutzer und hat außerdem die Moeglichkeit Spielplaetze und Geraete zu loeschen
  */
 public class Admin extends Profil {
