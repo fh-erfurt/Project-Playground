@@ -1,6 +1,6 @@
 # Project Playground
 
-![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Playground_Front.png)
+![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Spielplatz_Cover.jpg)
 
 
 ![CodeFactor](https://img.shields.io/badge/JAVA-15-blue)
@@ -133,11 +133,12 @@ Nicht zum Projektumfang gehören:
 - Abgabe erfolgt über Github
 - Link zum Repository an Auftraggeber Jonas Hecht übergeben
 - Präsentation im GitHub hinterlegt
+- [Abschlusspräsentation Java 1](https://github.com/fh-erfurt/Project-Playground/blob/main/share/presentations/Java_1/Abschlusspraesentation.pdf)
 - Abgabe am 01.02.2021
 
 **2. Abschlusspräsentation**
 
-- Erstellen der Präsentation von Endprodukt
+- Erstellen der Präsentation
 - Präsentationszeit ca 10 min
 - Änderungen im Projekt seit Zwischenpräsentation dokumentieren
 
