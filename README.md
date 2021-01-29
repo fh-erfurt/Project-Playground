@@ -133,7 +133,7 @@ Nicht zum Projektumfang gehören:
 - Abgabe erfolgt über Github
 - Link zum Repository an Auftraggeber Jonas Hecht übergeben
 - Präsentation im GitHub hinterlegt
-- [Zwischenpräsentation](https://github.com/fh-erfurt/Project-Playground/blob/main/share/presentations/Java_1/Abschlusspraesentation.pdf)
+- [Abschlusspräsentation Java 1](https://github.com/fh-erfurt/Project-Playground/blob/main/share/presentations/Java_1/Abschlusspraesentation.pdf)
 - Abgabe am 01.02.2021
 
 **2. Abschlusspräsentation**
