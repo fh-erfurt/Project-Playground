@@ -23,7 +23,7 @@ class ErweiterungTest {
     }
 
     @Test
-    void spielplatzErweiterungToiletteTest() throws SpielplatzException {
+    void spielplatzErweiterungToiletteTest() {
         for (Erweiterung erweiterung : spielplatz.erweiterungen)
         {
             if(erweiterung instanceof Toilette)
@@ -36,7 +36,7 @@ class ErweiterungTest {
     }
 
     @Test
-    void spielplatzErweiterungRestaurantTest() throws SpielplatzException{
+    void spielplatzErweiterungRestaurantTest() {
         for (Erweiterung erweiterung : spielplatz.erweiterungen)
         {
             if(erweiterung instanceof Restaurant)
@@ -53,7 +53,7 @@ class ErweiterungTest {
     }
 
     @Test
-    void spielplatzErweiterungSitzgelegenheitTest() throws SpielplatzException{
+    void spielplatzErweiterungSitzgelegenheitTest() {
         for (Erweiterung erweiterung : spielplatz.erweiterungen)
         {
             if(erweiterung instanceof Sitzgelegenheit)
