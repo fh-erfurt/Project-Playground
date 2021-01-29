@@ -13,10 +13,6 @@ class MailTest {
     Standort testStandort = new Standort();
 
     Benutzer marvin = new Benutzer("marvin", "marvin.ruppert@fh-erfurt.de", "qwertz", 100, testStandort);
-    Benutzer roman = new Benutzer("roman", "roman.rassloff@fh-erfurt.de", "6789", 1,testStandort);
-    Benutzer mark = new Benutzer("mark", "mark@gmx.de", "12345", 2,testStandort);
-    Benutzer fabian = new Benutzer("fabian", "seebär@gmx.de", "6789", 1,testStandort);
-    Moderator katja = new Moderator("katja", "katja@gmx.de", "12345", 0 , testStandort);
     Benutzer jonasHecht = new Benutzer("JonasHackt", "jonas.hecht@fh-erfurt.de","123456", 2 );
     Spielplatz spielplatz = new Spielplatz();
 

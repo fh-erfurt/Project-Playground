@@ -18,7 +18,7 @@ public class Spielplatz {
         this.geraete = new ArrayList<Geraet>();
         this.angemeldeteBenutzer = new ArrayList<Benutzer>();
         this.erweiterungen = new ArrayList<Erweiterung>();
-
+        this.anzahlKinder = 0;
     }
 
     public Spielplatz(String bezeichnung, Status status, SauberkeitStatus sauberkeit, String information, int anzahlKinder) {
