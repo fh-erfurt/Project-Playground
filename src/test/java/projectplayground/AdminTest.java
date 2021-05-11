@@ -2,14 +2,12 @@ package projectplayground;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import projectplayground.enums.Zugriff;
-import projectplayground.exceptions.AdminException;
-import projectplayground.exceptions.ProfilException;
+import projectplayground.domains.*;
+import projectplayground.domains.exceptions.AdminException;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class AdminTest{

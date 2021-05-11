@@ -2,11 +2,12 @@ package projectplayground;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import projectplayground.enums.GeraeteStatus;
-import projectplayground.enums.SauberkeitStatus;
-import projectplayground.enums.Status;
-import projectplayground.exceptions.ModeratorException;
-import projectplayground.exceptions.SpielplatzException;
+import projectplayground.domains.*;
+import projectplayground.domains.enums.GeraeteStatus;
+import projectplayground.domains.enums.SauberkeitStatus;
+import projectplayground.domains.enums.Status;
+import projectplayground.domains.exceptions.ModeratorException;
+import projectplayground.domains.exceptions.SpielplatzException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,14 +23,12 @@ class ModeratorTest {
     Benutzer marvin = new Benutzer("marvin", "test@gmx.de", "qwertz", 1, testStandort);
     Benutzer mark = new Benutzer("mark", "mark@gmx.de", "12345", 2,testStandort);
     Benutzer fabian = new Benutzer("fabian", "seebär@gmx.de", "6789", 1,testStandort);
-    Moderator katja = new Moderator("katja", "katja@gmx.de", "12345", 0 , testStandort);
-
+    Moderator katja = new Moderator("katja", "katja@gmx.de", "12345", 2 , testStandort);
     Spielplatz spielplatz = new Spielplatz();
     Spielplatz neuerSpielplatz = new Spielplatz("spielplatz",Status.offen, SauberkeitStatus.leichtVerschmutzt,"information",2);
     Geraet schaukel = new Geraet();
     Geraet wippe = new Geraet();
     Sitzgelegenheit bank = new Sitzgelegenheit("bank",2);
-
 
     @BeforeEach
     void setUp() {

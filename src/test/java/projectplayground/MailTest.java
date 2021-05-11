@@ -1,11 +1,13 @@
 package projectplayground;
 
 import org.junit.jupiter.api.Test;
+import projectplayground.domains.Benutzer;
+import projectplayground.domains.Mail;
+import projectplayground.domains.Spielplatz;
+import projectplayground.domains.Standort;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class MailTest {
     List<Spielplatz> spielplatzListe = new ArrayList<>();
@@ -13,9 +15,7 @@ class MailTest {
     Standort testStandort = new Standort();
 
     Benutzer marvin = new Benutzer("marvin", "marvin.ruppert@fh-erfurt.de", "qwertz", 100, testStandort);
-    Benutzer jonasHecht = new Benutzer("JonasHackt", "jonas.hecht@fh-erfurt.de","123456", 2 );
     Spielplatz spielplatz = new Spielplatz();
-
 
     @Test
     void versendeEmailTest() {

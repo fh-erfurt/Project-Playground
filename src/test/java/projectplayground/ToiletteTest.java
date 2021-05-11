@@ -1,6 +1,7 @@
 package projectplayground;
 
 import org.junit.jupiter.api.Test;
+import projectplayground.domains.Toilette;
 
 import static org.junit.jupiter.api.Assertions.*;
 

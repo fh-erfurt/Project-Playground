@@ -2,7 +2,11 @@ package projectplayground;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import projectplayground.exceptions.ProfilException;
+import projectplayground.domains.Benutzer;
+import projectplayground.domains.Moderator;
+import projectplayground.domains.Profil;
+import projectplayground.domains.Standort;
+import projectplayground.domains.exceptions.ProfilException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +22,6 @@ class ProfilTest {
     Benutzer roman = new Benutzer("roman", "roman.rassloff@fh-erfurt.de", "6789", 1,testStandort);
     Benutzer dominic = new Benutzer("dominic", "dominic.meyer@fh-erfurt.de", "6789", 1,testStandort);
     Moderator katja = new Moderator("katja", "katja.fischer@fh-erfurt.de", "12345", 1 , testStandort);
-    Benutzer jonasHecht = new Benutzer("JonasHackt", "jonas.hecht@fh-erfurt.de","123456", 2 );
     Benutzer marvinNeu = new Benutzer("marvin1","marvin.ruppert@fh-erfurt.de", "qwertz", 1);
     List<Profil> benutzerListe = new ArrayList<>();
 
@@ -31,7 +34,6 @@ class ProfilTest {
         benutzerListe.add(fabian);
         benutzerListe.add(katja);
         benutzerListe.add(roman);
-        benutzerListe.add(jonasHecht);
         benutzerListe.add(dominic);
     }
 
@@ -60,7 +62,6 @@ class ProfilTest {
     void passwortVergessenTest() throws ProfilException {
         marvin.passwortVergessen(benutzerListe);
         // wenn Sie zum Testen ein neues Passwort zugesendet haben wollen, folgende Zeile einkommentieren:
-        // jonasHecht.passwortVergessen(benutzerListe);
     }
     @Test
     void passwortAendernTest() throws ProfilException{
