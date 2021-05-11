@@ -1,8 +1,8 @@
-package projectplayground;
+package projectplayground.core;
 
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
-import org.h2.jdbcx.JdbcDataSource;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
