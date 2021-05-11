@@ -1,5 +1,6 @@
 package projectplayground;
 
+import lombok.*;
 import projectplayground.interfaces.IToilette;
 import projectplayground.interfaces.IWickeltisch;
 
@@ -8,8 +9,9 @@ import projectplayground.interfaces.IWickeltisch;
  * Ist eine Kindklasse von Erweiterung
  * Implementiert die Interfaces IToilette und IWickeltisch
  */
-public class
-Toilette extends Erweiterung implements IToilette, IWickeltisch {
+@Getter
+@Setter
+public class Toilette extends Erweiterung implements IToilette, IWickeltisch {
 
     private boolean hatWickeltisch;
 
@@ -24,14 +26,6 @@ Toilette extends Erweiterung implements IToilette, IWickeltisch {
         this.setHatWickeltisch(hatWickeltisch);
         this.setBezeichnung("Toilette");
         this.setPersonenAnzahl(anzahlPersonen);
-    }
-
-    public boolean getHatWickeltisch() {
-        return hatWickeltisch;
-    }
-
-    public void setHatWickeltisch(boolean hatWickeltisch) {
-        this.hatWickeltisch = hatWickeltisch;
     }
 
 

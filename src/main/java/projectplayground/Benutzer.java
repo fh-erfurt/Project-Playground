@@ -1,5 +1,6 @@
 package projectplayground;
 
+import lombok.*;
 import projectplayground.enums.GeraeteStatus;
 import projectplayground.enums.Zugriff;
 import projectplayground.exceptions.BenutzerException;
@@ -13,6 +14,8 @@ import java.util.UUID;
  * Kindklasse vom Profil, stellt die Klasse fuer den Standardbenutzer
  * Bietet Funktionen, um das Programm ohne Verwaltungsrechte zu nutzen
  */
+@Setter
+@Getter
 public class Benutzer extends Profil {
 
     protected int eigeneKinder;
@@ -62,39 +65,6 @@ public class Benutzer extends Profil {
         {
             System.out.println("Es muss mindestens ein Kind angegeben werden. Der Benutzer wurde nicht angelegt.");
         }
-    }
-
-
-    public List<Spielplatz> getSpielplatzFavoriten() {
-        return spielplatzFavoriten;
-    }
-
-    public void setSpielplatzFavoriten(List<Spielplatz> spielplatzFavoriten) {
-        this.spielplatzFavoriten = spielplatzFavoriten;
-    }
-
-    public int getEigeneKinder() {
-        return eigeneKinder;
-    }
-
-    public void setEigeneKinder(int eigeneKinder) {
-        this.eigeneKinder = eigeneKinder;
-    }
-
-    public Standort getAufenthaltsort() {
-        return aufenthaltsort;
-    }
-
-    public void setAufenthaltsort(Standort aufenthaltsort) {
-        this.aufenthaltsort = aufenthaltsort;
-    }
-
-    public List<Benutzer> getFreunde() {
-        return freunde;
-    }
-
-    public void setFreunde(List<Benutzer> freunde) {
-        this.freunde = freunde;
     }
 
 

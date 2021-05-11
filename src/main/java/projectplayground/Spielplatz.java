@@ -1,5 +1,7 @@
 package projectplayground;
 
+import lombok.Getter;
+import lombok.Setter;
 import projectplayground.enums.SauberkeitStatus;
 import projectplayground.enums.Status;
 import projectplayground.exceptions.SpielplatzException;
@@ -13,6 +15,8 @@ import java.util.UUID;
  * Bietet die Grundklasse zum Abbilden eines Spielplatzes
  * Dient vor Allem als Datengrundlage zum Zugriff durch die Nutzer des Programms
  */
+@Getter
+@Setter
 public class Spielplatz {
     public Spielplatz() {
         this.geraete = new ArrayList<Geraet>();
@@ -44,78 +48,6 @@ public class Spielplatz {
     public List<Erweiterung> erweiterungen;
     public List<Benutzer> angemeldeteBenutzer;
 
-
-    public void setErweiterungen(List<Erweiterung> erweiterungen) {
-        this.erweiterungen = erweiterungen;
-    }
-
-    public List<Erweiterung> getErweiterungen() {
-        return erweiterungen;
-    }
-
-    public void setBezeichnung(String Bezeichnung) {
-        this.bezeichnung = Bezeichnung;
-    }
-
-    public String getBezeichnung() {
-        return this.bezeichnung;
-    }
-
-    public Status getStatus() {
-        return this.status;
-    }
-
-    public void setStatus(Status Status) {
-        this.status = Status;
-    }
-
-    public void setAnzahlKinder(int AnzahlKinder) {
-        this.anzahlKinder = AnzahlKinder;
-    }
-
-    public int getAnzahlKinder() {
-        return this.anzahlKinder;
-    }
-
-    public Standort getStandort() {
-        return standort;
-    }
-
-    public void setStandort(Standort standort) {
-        this.standort = standort;
-    }
-
-    public UUID getID() {
-        return ID;
-    }
-
-    public void setID(UUID ID) {
-        this.ID = ID;
-    }
-
-    public SauberkeitStatus getSauberkeit() {
-        return sauberkeit;
-    }
-
-    public void setSauberkeit(SauberkeitStatus sauberkeit) {
-        this.sauberkeit = sauberkeit;
-    }
-
-    public String getInformation() {
-        return information;
-    }
-
-    public void setInformation(String information) {
-        this.information = information;
-    }
-
-    public int getKapazitaetSpielplatz() {
-        return kapazitaetSpielplatz;
-    }
-
-    public void setKapazitaetSpielplatz(int kapazitaetSpielplatz) {
-        this.kapazitaetSpielplatz = kapazitaetSpielplatz;
-    }
 
     public Geraet getGeraet(String geraeteName) throws SpielplatzException
     {

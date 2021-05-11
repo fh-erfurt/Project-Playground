@@ -22,7 +22,7 @@ public class Mail {
     public static void versendeEmailPasswortVergessen(Profil profil, String neuesPasswort)
     {
         final String benutzername = "projectplayground2021@gmail.com";
-        final String passwort = "Versandmail2021";
+        final String passwort = "Qwertz12345!";
 
         Properties einstellungen = new Properties();
         einstellungen.put("mail.smtp.starttls.enable", "true");

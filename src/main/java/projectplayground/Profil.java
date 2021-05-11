@@ -2,12 +2,14 @@ package projectplayground;
 
 import projectplayground.enums.Zugriff;
 import projectplayground.exceptions.ProfilException;
-
+import lombok.*;
 import java.util.List;
 
 /**
  * Ist die Grundklasse fuer alle Benutzer, Moderatoren und Admins
  */
+@Getter
+@Setter
 public abstract class Profil {
     protected String benutzername;
     protected String passwort;
@@ -15,32 +17,6 @@ public abstract class Profil {
     protected Zugriff zugriff;
     protected boolean istEingeloggt;
 
-
-    public String getBenutzername() {
-        return benutzername;
-    }
-
-    public void setBenutzername(String benutzername) {
-        this.benutzername = benutzername;
-    }
-
-    public String getPasswort() {
-        return passwort;
-    }
-
-    public void setPasswort(String passwort) {
-        this.passwort = passwort;
-    }
-
-    public String getEmail()
-    {
-        return email;
-    }
-
-    public void setEmail(String email)
-    {
-        this.email = email;
-    }
 
     public void setIstEingeloggt(boolean istEingeloggt)
     {

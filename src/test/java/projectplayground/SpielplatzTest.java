@@ -76,7 +76,7 @@ class SpielplatzTest {
         mark.spielplatzAnmeldung(spielplatz.getID(), spielplatzListe);
         fabian.spielplatzAnmeldung(spielplatz.getID(), spielplatzListe);
         assertEquals(Status.voll, spielplatz.getStatus());
-
+        Toilette neu = new Toilette(2,true);
     }
 
 

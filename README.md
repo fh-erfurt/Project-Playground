@@ -112,9 +112,6 @@ Nicht zum Projektumfang gehören:
 <br>
 </details>
 
-</details>
-
-
 
 <details>
 <summary> Besprechungsprotokolle </summary>

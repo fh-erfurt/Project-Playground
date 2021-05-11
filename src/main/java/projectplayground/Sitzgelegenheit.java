@@ -1,5 +1,7 @@
 package projectplayground;
 
+import lombok.AllArgsConstructor;
+
 /**
  * Sitzgelegenheit ist eine Erweiterung eines Spielplatzes
  * Ist eine Kindklasse von Erweiterung
