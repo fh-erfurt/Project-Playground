@@ -1,12 +1,15 @@
 package projectplayground.domains;
 
 import lombok.*;
+import org.springframework.context.annotation.Primary;
 import projectplayground.domains.enums.GeraeteStatus;
 import projectplayground.domains.enums.Zugriff;
 import projectplayground.domains.exceptions.BenutzerException;
 import projectplayground.domains.exceptions.SpielplatzException;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -19,6 +22,10 @@ import java.util.UUID;
 @Setter
 @Getter
 public class Benutzer extends Profil {
+
+    @Id
+    @GeneratedValue
+    protected UUID ID;
 
     protected int eigeneKinder;
     protected Standort aufenthaltsort;
