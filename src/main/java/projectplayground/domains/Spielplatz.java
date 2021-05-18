@@ -15,10 +15,10 @@ import java.util.UUID;
  * Bietet die Grundklasse zum Abbilden eines Spielplatzes
  * Dient vor Allem als Datengrundlage zum Zugriff durch die Nutzer des Programms
  */
-@Entity
+
 @Getter
 @Setter
-public class Spielplatz extends BaseEntity {
+public class Spielplatz {
     public Spielplatz() {
         this.geraete = new ArrayList<Geraet>();
         this.angemeldeteBenutzer = new ArrayList<Benutzer>();
@@ -46,11 +46,8 @@ public class Spielplatz extends BaseEntity {
     private String information;
     private int anzahlKinder;
     private int kapazitaetSpielplatz;
-
     public List<Geraet> geraete;
-    @OneToMany
     public List<Erweiterung> erweiterungen;
-    @ManyToOne
     public List<Benutzer> angemeldeteBenutzer;
 
 

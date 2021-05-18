@@ -18,7 +18,7 @@ import java.util.UUID;
  * Kindklasse vom Profil, stellt die Klasse fuer den Standardbenutzer
  * Bietet Funktionen, um das Programm ohne Verwaltungsrechte zu nutzen
  */
-@Entity
+
 @Setter
 @Getter
 public class Benutzer extends Profil {

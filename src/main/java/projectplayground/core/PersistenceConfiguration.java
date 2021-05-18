@@ -22,7 +22,7 @@ public class PersistenceConfiguration {
         dataSource.setDriverClassName("org.h2.Driver");
         dataSource.setUrl("jdbc:h2:mem:projectplayground;DB_CLOSE_ON_EXIT=FALSE");
         dataSource.setUsername("");
-        return dataSource();
+        return dataSource;
     }
     @Bean
     public PlatformTransactionManager transactionManager(@Autowired LocalContainerEntityManagerFactoryBean entityManagerFactory){

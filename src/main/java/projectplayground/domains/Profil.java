@@ -3,18 +3,27 @@ package projectplayground.domains;
 import projectplayground.domains.enums.Zugriff;
 import projectplayground.domains.exceptions.ProfilException;
 import lombok.*;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
 import java.util.List;
 
 /**
  * Ist die Grundklasse fuer alle Benutzer, Moderatoren und Admins
  */
+@Entity
 @Getter
 @Setter
-public abstract class Profil {
+public abstract class Profil extends BaseEntity {
+    @Column
     protected String benutzername;
+    @Column
     protected String passwort;
+    @Column
     protected String email;
+    @Column
     protected Zugriff zugriff;
+    @Column
     protected boolean istEingeloggt;
 
 
