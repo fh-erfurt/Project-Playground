@@ -19,11 +19,11 @@ public class Password {
         {
             final String allowedCharacters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
             int numberOfCharacters = 12;
-            SecureRandom zufall = new SecureRandom();
+            SecureRandom random = new SecureRandom();
             StringBuilder pass = new StringBuilder(numberOfCharacters);
             for (int i = 0; i < 12; i++)
             {
-                pass.append(allowedCharacters.charAt(zufall.nextInt(allowedCharacters.length())));
+                pass.append(allowedCharacters.charAt(random.nextInt(allowedCharacters.length())));
             }
 
             if(pass.length() != numberOfCharacters)
