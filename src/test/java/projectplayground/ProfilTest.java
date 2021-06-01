@@ -2,10 +2,10 @@ package projectplayground;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import projectplayground.domains.Benutzer;
-import projectplayground.domains.Moderator;
-import projectplayground.domains.Profil;
-import projectplayground.domains.Standort;
+import projectplayground.domains.java1.Benutzer;
+import projectplayground.domains.java1.Moderator;
+import projectplayground.domains.java1.Profil;
+import projectplayground.domains.java1.Standort;
 import projectplayground.domains.exceptions.ProfilException;
 
 import java.util.ArrayList;

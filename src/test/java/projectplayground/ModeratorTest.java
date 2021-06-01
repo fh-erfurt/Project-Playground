@@ -2,12 +2,12 @@ package projectplayground;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import projectplayground.domains.*;
 import projectplayground.domains.enums.GeraeteStatus;
 import projectplayground.domains.enums.SauberkeitStatus;
 import projectplayground.domains.enums.Status;
 import projectplayground.domains.exceptions.ModeratorException;
 import projectplayground.domains.exceptions.SpielplatzException;
+import projectplayground.domains.java1.*;
 
 import java.util.ArrayList;
 import java.util.List;

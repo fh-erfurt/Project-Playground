@@ -1,13 +1,11 @@
-package projectplayground.domains;
+package projectplayground.domains.java1;
 
 import lombok.*;
-import org.springframework.context.annotation.Primary;
 import projectplayground.domains.enums.GeraeteStatus;
 import projectplayground.domains.enums.Zugriff;
 import projectplayground.domains.exceptions.BenutzerException;
 import projectplayground.domains.exceptions.SpielplatzException;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.ArrayList;

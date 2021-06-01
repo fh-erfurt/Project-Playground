@@ -1,7 +1,7 @@
 package projectplayground;
 
 import org.junit.jupiter.api.Test;
-import projectplayground.domains.Passwort;
+import projectplayground.domains.java1.Passwort;
 import projectplayground.domains.exceptions.PasswortException;
 
 class PasswortTest {

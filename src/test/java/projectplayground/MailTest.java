@@ -1,10 +1,10 @@
 package projectplayground;
 
 import org.junit.jupiter.api.Test;
-import projectplayground.domains.Benutzer;
-import projectplayground.domains.Mail;
-import projectplayground.domains.Spielplatz;
-import projectplayground.domains.Standort;
+import projectplayground.domains.java1.Benutzer;
+import projectplayground.domains.java1.Mail;
+import projectplayground.domains.java1.Spielplatz;
+import projectplayground.domains.java1.Standort;
 
 import java.util.ArrayList;
 import java.util.List;

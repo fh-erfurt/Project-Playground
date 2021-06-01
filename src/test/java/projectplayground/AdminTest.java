@@ -2,8 +2,8 @@ package projectplayground;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import projectplayground.domains.*;
 import projectplayground.domains.exceptions.AdminException;
+import projectplayground.domains.java1.*;
 
 import java.util.ArrayList;
 import java.util.List;

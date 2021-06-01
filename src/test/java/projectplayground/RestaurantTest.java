@@ -2,7 +2,7 @@ package projectplayground;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import projectplayground.domains.Restaurant;
+import projectplayground.domains.java1.Restaurant;
 import projectplayground.domains.exceptions.RestaurantException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

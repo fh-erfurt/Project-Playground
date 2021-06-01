@@ -1,7 +1,7 @@
 package projectplayground;
 
 import org.junit.jupiter.api.Test;
-import projectplayground.domains.Toilette;
+import projectplayground.domains.java1.Toilette;
 
 import static org.junit.jupiter.api.Assertions.*;
 

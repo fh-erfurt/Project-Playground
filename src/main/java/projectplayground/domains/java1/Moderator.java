@@ -1,4 +1,4 @@
-package projectplayground.domains;
+package projectplayground.domains.java1;
 
 import projectplayground.domains.enums.GeraeteStatus;
 import projectplayground.domains.enums.Zugriff;

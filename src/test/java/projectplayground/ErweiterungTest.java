@@ -2,8 +2,8 @@ package projectplayground;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import projectplayground.domains.*;
 import projectplayground.domains.exceptions.SpielplatzException;
+import projectplayground.domains.java1.*;
 
 class ErweiterungTest {
     Spielplatz spielplatz = new Spielplatz();

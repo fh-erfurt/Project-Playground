@@ -1,6 +1,6 @@
-package projectplayground.domains;
+package projectplayground.domains.java1;
 
-import projectplayground.domains.Erweiterung;
+import projectplayground.domains.java1.Erweiterung;
 
 /**
  * Sitzgelegenheit ist eine Erweiterung eines Spielplatzes

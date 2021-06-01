@@ -1,4 +1,4 @@
-package projectplayground.domains;
+package projectplayground.domains.java1;
 
 
 import lombok.*;

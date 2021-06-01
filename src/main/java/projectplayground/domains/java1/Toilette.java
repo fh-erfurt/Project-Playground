@@ -1,8 +1,9 @@
-package projectplayground.domains;
+package projectplayground.domains.java1;
 
 import lombok.*;
 import projectplayground.domains.interfaces.IToilette;
 import projectplayground.domains.interfaces.IWickeltisch;
+import projectplayground.domains.java1.Erweiterung;
 
 /**
  * Toilette ist eine Erweiterung von Spielplatz
