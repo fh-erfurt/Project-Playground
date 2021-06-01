@@ -1,13 +1,13 @@
 package projectplayground.domains.enums;
 
 /**
- * Status, der genutzt wird um die Menge der Besucher zu klassifizieren
+ * Status indicates how many users are currently logged into the playground
  */
 public enum Status {
-    offen,
-    gutBesucht,
-    voll,
-    ueberfuellt
+    open,
+    wellVisited,
+    full,
+    overfilled
 }
 
 

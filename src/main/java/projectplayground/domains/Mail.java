@@ -1,4 +1,4 @@
-package projectplayground.domains.java1;
+package projectplayground.domains;
 
 
 import java.util.Properties;
@@ -17,7 +17,7 @@ import javax.mail.internet.MimeMessage;
  * Logindaten sind hardcoded, im weiteren Verlauf evtl. verschluesselt in eine Konfigdatei auslagern
  */
 public class Mail {
-    public static void versendeEmailPasswortVergessen(Profil profil, String neuesPasswort)
+    public static void versendeEmailPasswortVergessen(User user, String neuesPasswort)
     {
         final String benutzername = "projectplayground2021@gmail.com";
         final String passwort = "Qwertz12345!";
@@ -39,9 +39,9 @@ public class Mail {
         {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(benutzername));
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(profil.getEmail()));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("Testemail@wir.de"));
             message.setSubject("Ihr neues Passwort für die ProjectPlaygroundApp");
-            message.setText("Sehr geehrte/r " + profil.getBenutzername() + ","
+            message.setText("Sehr geehrte/r " + benutzername + ","
                     + "\n\nsie haben ihr Passwort vergessen und eine Passwortzurücksetzung angefordert."
                     + "\n\nDazu haben wir Ihnen ein neues Passwort generiert und Ihr Passwort auf dieses festgelegt."
                     + "\n\nBitte ändern Sie Ihr Passwort nach dem Login für die optimale Sicherheit."
