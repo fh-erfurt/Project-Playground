@@ -20,6 +20,9 @@ public class PersistenceConfiguration {
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.h2.Driver");
+        //hier kann Pfad angegeben werden
+        //    dataSource.setUrl("jdbc:h2:mem:projectplayground;DB_CLOSE_ON_EXIT=FALSE");
+        //    jdbc:h2:[file:][<path>]<databaseName>.
         dataSource.setUrl("jdbc:h2:mem:projectplayground;DB_CLOSE_ON_EXIT=FALSE");
         dataSource.setUsername("");
         return dataSource;
@@ -47,7 +50,9 @@ public class PersistenceConfiguration {
     }
     Properties additionalProperties(){
         Properties properties = new Properties();
+        //nochmal überprüfen
         properties.setProperty("hibernate.hbm2ddl.auto","update");
+        //mysql dialect einstellen
         properties.setProperty("hibernate.dialect","org.hibernate.dialect.H2Dialect");
         return properties;
     }
