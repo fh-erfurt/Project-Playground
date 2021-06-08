@@ -17,9 +17,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Playground extends BaseEntity {
-//    @Id
-//    @GeneratedValue
-//    public UUID ID;
+
     private String title;
     private Status status;
     private Cleanliness cleanliness;
@@ -30,10 +28,10 @@ public class Playground extends BaseEntity {
     private int counterChildren;
     private int capacityPlayground;
 
-    @OneToMany
+    @Transient
     private List<Device> device;
 
-    @OneToMany
+    @Transient
     private List<Expansion> expansions;
 
     @OneToMany

@@ -5,6 +5,7 @@ import lombok.Setter;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import java.util.UUID;
 
 
@@ -17,11 +18,11 @@ import java.util.UUID;
 @Setter
 @Entity
 public class Account extends BaseEntity {
-//    @Id
-//    @GeneratedValue
-//    private UUID ID;
+
     private String username;
     private String password;
     private String email;
-    private UUID userID;
+
+    @OneToOne
+    private User user;
 }

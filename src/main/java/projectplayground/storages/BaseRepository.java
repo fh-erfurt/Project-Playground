@@ -1,7 +1,7 @@
 package projectplayground.storages;
 
 import projectplayground.domains.BaseEntity;
-import lombok.*;
+import lombok.RequiredArgsConstructor;
 import javax.persistence.EntityManager;
 import java.util.Objects;
 import java.util.List;

@@ -15,9 +15,6 @@ import java.util.UUID;
 @Getter
 @Setter
 public class User extends BaseEntity {
-//    @Id
-//    @GeneratedValue
-//    private UUID ID;
 
     @Column
     protected Accesslevel accessLevel;
