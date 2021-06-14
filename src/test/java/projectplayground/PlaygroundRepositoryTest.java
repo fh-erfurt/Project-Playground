@@ -39,6 +39,7 @@ class PlaygroundRepositoryTest {
                 "Erfurt",
                 "Andreasviertel"
         );
+        Location neu = LocationTestEntityBuilder.of().build();
 
         Playground given = new Playground(
                 "Kikaninchen",
