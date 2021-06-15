@@ -32,14 +32,8 @@ class PlaygroundRepositoryTest {
 
     @Test
     void save() {
-        Location kikaninchen = new Location(
-                "Hütergasse",
-                4,
-                99084,
-                "Erfurt",
-                "Andreasviertel"
-        );
-        Location neu = LocationTestEntityBuilder.of().build();
+
+        Location kikaninchen = LocationTestEntityBuilder.of().build();
 
         Playground given = new Playground(
                 "Kikaninchen",

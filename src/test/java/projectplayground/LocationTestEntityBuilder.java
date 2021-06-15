@@ -40,7 +40,12 @@ public class LocationTestEntityBuilder {
     public Location build(){
         Location res = new Location();
         if(StringUtils.isEmpty(streetname)){
-        res.setStreetname("straßenname");
+        res.setStreetname("Hütergasse");
+        res.setHouseNumber(4);
+        res.setPostCode(99084);
+        res.setCityname("Erfurt");
+        res.setDistrict("Andreasviertel");
+
         }else{
             res.setStreetname(this.streetname);
         }
