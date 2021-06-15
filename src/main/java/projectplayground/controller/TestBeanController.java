@@ -1,9 +1,9 @@
 package projectplayground.controller;
 
 
-import javax.faces.bean.ManagedBean;
+
+import javax.annotation.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.faces.bean.ViewScoped;
 
 @ManagedBean
 @RequestScoped
