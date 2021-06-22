@@ -1,4 +1,5 @@
 package projectplayground.domains;
+import com.sun.istack.NotNull;
 import lombok.*;
 import projectplayground.domains.enums.Accesslevel;
 import javax.persistence.*;
@@ -26,6 +27,6 @@ public class User extends BaseEntity {
     @OneToMany
     protected List<User> friends;
 
-    @OneToOne
+    @OneToOne(optional = true)
     protected Playground currentPlayground;
 }

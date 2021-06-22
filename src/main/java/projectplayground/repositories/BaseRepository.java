@@ -1,4 +1,4 @@
-package projectplayground.storages;
+package projectplayground.repositories;
 
 import projectplayground.domains.BaseEntity;
 import lombok.RequiredArgsConstructor;

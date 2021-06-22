@@ -9,8 +9,8 @@ import projectplayground.domains.Location;
 import projectplayground.domains.Playground;
 import projectplayground.domains.enums.Cleanliness;
 import projectplayground.domains.enums.Status;
-import projectplayground.storages.LocationRepository;
-import projectplayground.storages.PlaygroundRepository;
+import projectplayground.repositories.LocationRepository;
+import projectplayground.repositories.PlaygroundRepository;
 
 
 

@@ -1,4 +1,4 @@
-package projectplayground.storages;
+package projectplayground.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import projectplayground.domains.Playground;
 

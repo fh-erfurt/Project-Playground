@@ -1,6 +1,7 @@
 package projectplayground.domains;
 import lombok.Getter;
 import lombok.Setter;
+import projectplayground.repositories.account.AccountRepositoryImpl;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,4 +26,5 @@ public class Account extends BaseEntity {
 
     @OneToOne
     private User user;
+
 }

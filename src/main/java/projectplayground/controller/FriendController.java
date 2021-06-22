@@ -7,10 +7,9 @@ import javax.faces.bean.RequestScoped;
 
 @ManagedBean
 @RequestScoped
-public class TestBeanController {
-
-    public String showHello()
+public class FriendController {
+    public String Index()
     {
-        return "Hello from TestBean";
+        return "friendIndex";
     }
 }
