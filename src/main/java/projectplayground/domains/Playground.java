@@ -25,6 +25,8 @@ public class Playground extends BaseEntity {
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     private Location location;
+
+    @Column(columnDefinition = "VARCHAR(1024)")
     private String information;
     private int counterChildren;
     private int capacityPlayground;

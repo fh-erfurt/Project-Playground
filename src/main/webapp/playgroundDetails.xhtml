@@ -15,10 +15,22 @@
 
 
     <h1>Spielplatzname: #{playgroundController.playground.title}</h1>
-    <p:graphicImage url="/images/Glockengasse/Sandkasten.jpg" />
-    <!--    <ui:repeat value="#{playgroundController.playground.pictures}" var="picture">-->
-<!--    </ui:repeat>-->
+    <div class="p-grid">
+        <div class="p-col">
+    <p:button value="An Spielplatz anmelden" />
+    <p:button icon="pi pi-heart" styleClass="rounded-button ui-button-danger"/>
+       <p>Adresse: #{playgroundController.playground.location.postCode} #{playgroundController.playground.location.cityname}</p>
+       <p>Status: #{playgroundController.playground.status}</p>
+       <p>Beschreibung: #{playgroundController.playground.information}</p>
+       <p>Sauberkeit: #{playgroundController.playground.cleanliness}</p>
+       <p:button value="Geräte #{playgroundController.playground.device.size()}" />
+       <p:button value="Erweiterungen" /></div>
 
-</h:body>
+        <div class="p-col">
+    <ui:repeat value="#{playgroundController.playground.pictures}" var="picture">
+        <p:graphicImage url="#{picture.path}" width="250"/>
+    </ui:repeat></div>
+    </div>
+   </h:body>
 
-</html>
+   </html>

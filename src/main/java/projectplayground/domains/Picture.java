@@ -18,11 +18,9 @@ public class Picture extends BaseEntity {
 
     private String path;
 
-
-    @Lob
-    @Column(length = 1234234)
-    private byte[] pictureFiles;
-
     @ManyToOne
     private Playground playground;
+
+
+
 }

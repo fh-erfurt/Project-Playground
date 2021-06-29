@@ -5,16 +5,14 @@ import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import projectplayground.domains.Picture;
 import projectplayground.domains.Playground;
-import projectplayground.repositories.PictureRepository;
 import projectplayground.repositories.PlaygroundRepository;
+import projectplayground.repositories.picture.PictureRepository;
 
 import javax.annotation.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
 
 @ManagedBean
 @RequestScoped
@@ -42,12 +40,18 @@ public class PlaygroundController {
         if (searchPlayground != null)
         {
             playground = searchPlayground.get();
-            var searchPlaygroundPictures = pictureRepository.findById(ID);
+            var searchPlaygroundPictures = pictureRepository.findAllPicturesByPlaygroundId(playground.getId());
             if (searchPlaygroundPictures != null)
             {
                 if(playground.getPictures() == null)
                     playground.setPictures(new ArrayList<Picture>());
-                playground.addPicture(searchPlaygroundPictures.get());
+                System.out.println("Test123: " + searchPlaygroundPictures.size());
+                for (Picture picture : searchPlaygroundPictures)
+                {
+                    System.out.println("Test123: " + picture.getPath());
+                    playground.addPicture(picture);
+                }
+
             }
             return "playgroundDetails";
         }
