@@ -5,6 +5,7 @@ import projectplayground.domains.enums.Status;
 import lombok.*;
 import javax.persistence.Entity;
 import javax.persistence.*;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 /**
@@ -34,6 +35,20 @@ public class Playground extends BaseEntity {
     @Transient
     private List<Expansion> expansions;
 
+    @Transient
+    private List<Picture> pictures;
+
     @OneToMany
     private List<User> registeredUsers;
+
+
+
+    public void addPicture(Picture picture)
+    {
+        if(picture != null)
+            this.pictures.add(picture);
+
+    }
+
+
 }

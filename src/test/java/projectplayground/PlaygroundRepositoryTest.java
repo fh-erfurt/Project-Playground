@@ -45,6 +45,7 @@ class PlaygroundRepositoryTest {
                 50,
                 null,
                 null,
+                null,
                 null);
 
          Playground playground = playgroundRepository.save(given);
@@ -58,6 +59,7 @@ class PlaygroundRepositoryTest {
                 "Zweiter Neuer Spielplatz",
                 0,
                 50,
+                null,
                 null,
                 null,
                 null);

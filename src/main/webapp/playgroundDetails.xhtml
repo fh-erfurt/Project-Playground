@@ -13,8 +13,12 @@
 <h:body>
     <ui:include src="navbar.xhtml"/>
 
-    Spielplatzübersicht
-    <p:selectBooleanButton onLabel="Yes" offLabel="No" style="width:6rem"/>
+
+    <h1>Spielplatzname: #{playgroundController.playground.title}</h1>
+    <p:graphicImage url="/images/Glockengasse/Sandkasten.jpg" />
+    <!--    <ui:repeat value="#{playgroundController.playground.pictures}" var="picture">-->
+<!--    </ui:repeat>-->
+
 </h:body>
 
 </html>
