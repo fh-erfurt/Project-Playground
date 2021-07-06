@@ -11,26 +11,47 @@
 </h:head>
 
 <h:body>
+
+    <f:facet name="last">
+        <h:outputStylesheet library="css" name="default.css" />
+    </f:facet>
+
     <ui:include src="navbar.xhtml"/>
 
+<div class="card">
+    <h2>#{playgroundController.playground.title}</h2>
+    <div class="ui-g">
 
-    <h1>Spielplatzname: #{playgroundController.playground.title}</h1>
-    <div class="p-grid">
-        <div class="p-col">
-    <p:button value="An Spielplatz anmelden" />
-    <p:button icon="pi pi-heart" styleClass="rounded-button ui-button-danger"/>
-       <p>Adresse: #{playgroundController.playground.location.postCode} #{playgroundController.playground.location.cityname}</p>
-       <p>Status: #{playgroundController.playground.status}</p>
-       <p>Beschreibung: #{playgroundController.playground.information}</p>
-       <p>Sauberkeit: #{playgroundController.playground.cleanliness}</p>
-       <p:button value="Geräte #{playgroundController.playground.device.size()}" />
-       <p:button value="Erweiterungen" /></div>
+        <div class="ui-g-6">
+            <h:panelGrid columns="2">
+            <p:button value="An Spielplatz anmelden" />
+            <p:button icon="pi pi-heart" styleClass="rounded-button ui-button-danger"/></h:panelGrid>
+            <p>Adresse: #{playgroundController.playground.location.postCode} #{playgroundController.playground.location.cityname}</p>
+            <p>Status: #{playgroundController.playground.statusValue()}</p>
+            <p>Beschreibung: #{playgroundController.playground.information}</p>
+            <p>Sauberkeit: #{playgroundController.playground.cleanlinessValue()}</p>
 
-        <div class="p-col">
-    <ui:repeat value="#{playgroundController.playground.pictures}" var="picture">
-        <p:graphicImage url="#{picture.path}" width="250"/>
-    </ui:repeat></div>
+                <h:panelGrid columns="2">
+                    <p:commandButton value="Geräte #{playgroundController.playground.device.size()}" />
+                    <p:commandButton value="Erweiterungen" />
+                </h:panelGrid>
+        </div>
+        <div class="ui-g-6">
+            <p:carousel numVisible="1" value="#{playgroundController.playground.pictures}" circular="circular" var="picture"
+                        itemStyle="text-align:center" style="width: 600;">
+
+                <div class="product">
+                    <div class="product-grid-item p-p-5">
+                        <div class="product-grid-item-content">
+                            <p:graphicImage url="#{picture.path}" width="400"/>
+                        </div>
+
+                    </div>
+                </div>
+            </p:carousel>
+        </div>
     </div>
+</div>
    </h:body>
 
    </html>

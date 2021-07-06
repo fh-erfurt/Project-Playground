@@ -1,6 +1,7 @@
 package projectplayground.domains;
 
 import projectplayground.domains.enums.Cleanliness;
+import projectplayground.domains.enums.EnumValue;
 import projectplayground.domains.enums.Status;
 import lombok.*;
 import javax.persistence.Entity;
@@ -30,6 +31,19 @@ public class Playground extends BaseEntity {
     private String information;
     private int counterChildren;
     private int capacityPlayground;
+
+
+    public String statusValue()
+    {
+        String statusValue = EnumValue.statusValue(this.status);
+        return statusValue;
+    }
+
+    public String cleanlinessValue()
+    {
+        String cleanlinessValue = EnumValue.cleanlinessLevelValue(this.cleanliness);
+        return cleanlinessValue;
+    }
 
     @Transient
     private List<Device> device;

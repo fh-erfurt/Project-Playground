@@ -45,10 +45,8 @@ public class PlaygroundController {
             {
                 if(playground.getPictures() == null)
                     playground.setPictures(new ArrayList<Picture>());
-                System.out.println("Test123: " + searchPlaygroundPictures.size());
                 for (Picture picture : searchPlaygroundPictures)
                 {
-                    System.out.println("Test123: " + picture.getPath());
                     playground.addPicture(picture);
                 }
 

@@ -3,8 +3,11 @@ package projectplayground.domains;
 
 import lombok.*;
 import projectplayground.domains.enums.DeviceStatus;
+import projectplayground.domains.enums.EnumValue;
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 
 /**
  * maps the devices and contains their name and status
@@ -21,4 +24,7 @@ public class Device extends BaseEntity {
 
     @ManyToOne
     private Playground playground;
+    @Transient
+    private String deviceStatusValue = EnumValue.deviceStatusValue(this.deviceStatus);
+
 }

@@ -8,3 +8,4 @@ public enum Cleanliness {
     slightlyPolluted,
     polluted,
 }
+

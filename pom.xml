@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>projectplayground</groupId>
     <artifactId>Project-Playground</artifactId>
-    <version>1.0.2.10</version>
+    <version>1.0.2.11</version>
 
     <properties>
         <maven.compiler.source>14</maven.compiler.source>
@@ -133,6 +133,12 @@
             <groupId>com.sun.mail</groupId>
             <artifactId>javax.mail</artifactId>
             <version>1.6.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>

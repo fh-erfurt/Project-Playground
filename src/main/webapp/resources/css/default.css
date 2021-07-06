@@ -1,0 +1,11 @@
+.ui-widget, .ui-widget .ui-widget {
+    font-size: 150%;
+    font-family:Calibri;
+}
+.card p{
+    font-size: 125%;
+    font-family:Arial;
+}
+.ui-widget {
+    font-size: 100% !important;
+}
