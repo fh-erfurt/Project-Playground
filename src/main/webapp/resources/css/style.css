@@ -10,5 +10,22 @@
     font-size: 100% !important;
 }
 .ui-g-12 {
-    background-color: black;
+
+}
+
+
+.logo {
+
+    float: left;
+}
+.ui-menu-list, .ui-helper-reset {
+    float: right;
+
+}
+
+
+
+.ui-menuitem,  .ui-widget, .ui-corner-all {
+
+
 }

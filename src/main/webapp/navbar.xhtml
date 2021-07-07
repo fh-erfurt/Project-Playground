@@ -22,10 +22,13 @@
         xmlns:f="http://java.sun.com/jsf/core"
         xmlns:p="http://primefaces.org/ui"
         xmlns:ui="http://java.sun.com/jsf/facelets">
-    <div class="ui-g-12">
-        <h:form id="navigationBarForm">
-            <p:menubar>
-                <p:menuitem value="Home" icon="pi pi-home pi-align-left" action="#{navigationController.Index()}"
+
+    <div class="">
+        <h:form styleClass="" id="navigationForm">
+            <p:menubar styleClass="">
+                <p:menuitem value="Playground" styleClass="logo"  action="#{navigationController.Index()}"
+                />
+                <p:menuitem value="Home" styleClass="" icon="pi pi-home pi-align-left" action="#{navigationController.Index()}"
                             />
                 <p:menuitem value="Spielplatz suchen" icon="pi pi-search pi-align-left" action="#{playgroundController.Index()}"
                             />
