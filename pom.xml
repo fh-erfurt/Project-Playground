@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>projectplayground</groupId>
     <artifactId>Project-Playground</artifactId>
-    <version>1.0.2.11</version>
+    <version>1.0.2.12</version>
 
     <properties>
         <maven.compiler.source>14</maven.compiler.source>
@@ -39,7 +39,10 @@
             <artifactId>javax.servlet-api</artifactId>
             <scope>provided</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -65,7 +68,6 @@
             <artifactId>primefaces</artifactId>
             <version>10.0.0</version>
         </dependency>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

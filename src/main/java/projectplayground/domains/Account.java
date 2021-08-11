@@ -33,6 +33,4 @@ public class Account extends BaseEntity {
     @OneToOne
     private User user;
 
-    //validate Login
-    //
 }

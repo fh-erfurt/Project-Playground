@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html
-        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xml:lang="en" lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
-<head>
+<h:head>
+  <title>Login</title>
   <h:outputStylesheet library="css" name="style.css" />
-    <title>Login</title>
-</head>
-<body>
-<h:form>
-  <h3>JSF Login Logout</h3>
-  <h:outputText value="Username" />
-  <h:inputText id="username" value="#{login.user}"></h:inputText>
-  <h:message for="username"></h:message>
-  <br></br><br></br>
+</h:head>
 
-  <h:outputText value="Password" />
-  <h:inputSecret id="password" value="#{login.pwd}"></h:inputSecret>
-  <h:message for="password"></h:message>
-  <br></br><br></br>
+<h:body>
+  <h:form prependId="false">
 
-  <h:commandButton action="#{login.validateUsernamePassword}"
-                   value="Login"></h:commandButton>
-</h:form>
-</body>
+    <p:panelGrid columns="1" styleClass="ui-fluid center ui-noborder">
+      <h2>Bitte melden Sie sich an</h2>
+
+      <p:outputLabel value="Login fehlgeschlagen!" styleClass="red"
+                     rendered="${!empty param['error']}" />
+
+      <p:inputText id="username" placeholder="User name" />
+      <p:password id="password" placeholder="Password" />
+
+      <p:commandButton value="Login" ajax="false" />
+    </p:panelGrid>
+
+  </h:form>
+</h:body>
 </html>

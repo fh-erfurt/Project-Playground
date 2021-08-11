@@ -29,4 +29,6 @@ public class User extends BaseEntity {
 
     @OneToOne(optional = true)
     protected Playground currentPlayground;
+
+
 }
