@@ -12,10 +12,12 @@
 
 <h:body>
     <ui:include src="navbar.xhtml"/>
-    TestBean says:
-    #{indexController.showGreeting()}
-    <p:selectBooleanButton onLabel="Yes" offLabel="No" style="width:6rem"/>
-    <p:spinner />
+    <div style="align-items: center">
+        <div style="text-align: center"><h1> Willkommen in ihrem Playground! </h1></div>
+        <div style=" position: absolute; left: 35%"><img src="images/Spielplatz_Cover.jpg"></img>
+            <div style="text-align: center"><h3>#{indexController.showGreeting()}</h3></div></div></div>
+
+
 </h:body>
 
 </html>
