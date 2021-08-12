@@ -8,10 +8,9 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import projectplayground.domains.Location;
 import projectplayground.domains.Playground;
 import projectplayground.domains.enums.Cleanliness;
-import projectplayground.domains.enums.EnumValue;
 import projectplayground.domains.enums.Status;
 import projectplayground.repositories.LocationRepository;
-import projectplayground.repositories.PlaygroundRepository;
+import projectplayground.repositories.playground.PlaygroundRepository;
 
 
 

@@ -13,8 +13,16 @@
 <h:body>
     <ui:include src="navbar.xhtml"/>
 
-    Spielplatzübersicht
-    <p:selectBooleanButton onLabel="Yes" offLabel="No" style="width:6rem"/>
+    <h2>Spielplatzsuche</h2>
+    <h:form>
+        <p:inputText value="#{playgroundController.searchPlaygroundName}">Nach Spielplatznamen suchen: </p:inputText>
+        <br />
+        <p:inputText value="#{playgroundController.searchStreetName}">Nach Straßennamen suchen: </p:inputText>
+        <br />
+        <p:inputText value="#{playgroundController.searchCityName}">Nach Ort suchen: </p:inputText>
+        <br />
+        <p:commandButton value="Suchen" action="#{playgroundController.SearchPlayground()}" />
+    </h:form>
 </h:body>
 
 </html>

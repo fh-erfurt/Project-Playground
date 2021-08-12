@@ -14,10 +14,10 @@ INSERT INTO ACCOUNT VALUES
 insert into LOCATION (ID, CITYNAME, DISTRICT, HOUSE_NUMBER, POST_CODE, STREETNAME) values
 (1, 'Erfurt', 'Krämerbrücke', '5', '99084', 'Krämerbrücke'),
 (2, 'Erfurt', 'Glockengasse', '17', '99084', 'Glockengasse'),
-(3, 'Erfurt', 'Holzheienstraße', '8', '99084', 'Brühler Garten'),
-(4, 'Erfurt', 'Neuwerkstraße', '47', '99084', 'Hirschgarten'),
-(5, 'Erfurt', 'Tettaustraße', '4', '99094', 'Bella'),
-(6, 'Erfurt', 'Alfred-Hess-Straße', '36', '99094', 'Espach');
+(3, 'Erfurt', 'Brühler Garten', '8', '99084', 'Holzheienstraße'),
+(4, 'Erfurt', 'Hirschgarten', '47', '99084', 'Neuwerkstraße'),
+(5, 'Erfurt', 'Bella', '4', '99094', 'Tettaustraße'),
+(6, 'Erfurt', 'Espach', '36', '99094', 'Alfred-Hess-Straße');
 
 insert into PLAYGROUND (ID, CAPACITY_PLAYGROUND, CLEANLINESS, COUNTER_CHILDREN, INFORMATION, STATUS, TITLE, LOCATION_ID) values
 
