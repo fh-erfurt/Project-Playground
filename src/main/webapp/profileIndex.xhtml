@@ -12,17 +12,14 @@
 
 <h:body>
     <ui:include src="navbar.xhtml"/>
-    <div class="card">
+    <div style="text-align: center" class="card">
         <h2>Profilübersicht</h2>
-        <div class="ui-g">
-            <div class="ui-g-6">
+        <br></br>
                 <p>Accountname: #{profileController.account.username}</p>
                 <p>E-Mailadresse: #{profileController.account.email}</p>
                 <p>Kinderanzahl: #{profileController.account.getUser().getChildren()}</p>
                 <p>Passwort: #{profileController.account.password}</p>
                 <p>Nutzerrechte: #{profileController.account.user.accessLevel}</p>
-            </div>
-        </div>
     </div>
 </h:body>
 
