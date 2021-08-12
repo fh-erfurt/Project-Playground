@@ -1,7 +1,9 @@
 package projectplayground.repositories.account;
 
+import org.apache.commons.lang3.reflect.Typed;
 import org.springframework.stereotype.Repository;
 import projectplayground.domains.Account;
+import projectplayground.domains.Picture;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -40,5 +42,21 @@ public class AccountRepositoryImpl implements AccountRepositoryCustom
         if(result != null)
             return true;
         return false;
+    }
+
+    public Account findAccountByName(String accountName)
+    {
+        final CriteriaBuilder builder = this.entityManager.getCriteriaBuilder();
+        final CriteriaQuery<Account> query = builder.createQuery(Account.class);
+        final Root<Account> account = query.from(Account.class);
+        Predicate nameCondition = builder.equal(account.get("username"), accountName);
+        final CriteriaQuery<Account> findAccount = query.where(nameCondition);
+
+        Account result = entityManager.createQuery(findAccount).getSingleResult();
+
+        if(result != null)
+            return result;
+        else
+            return null;
     }
 }

@@ -5,10 +5,10 @@ insert into USER (ID, ACCESS_LEVEL, CHILDREN) values
 (3,2,3);
 
 INSERT INTO ACCOUNT VALUES
-(1, 'marvin', '12345', 'marvin.ruppert@fh-erfurt.de',1),
-(2, 'katja', '12345', 'katja.fischer@fh-erfurt.de',2),
-(3, 'mark', '12345', 'mark.nottrott@fh-erfurt.de',3),
-(4, 'fabian', '12345', 'fabian.seeber@fh-erfurt.de',3);
+(1, 'marvin.ruppert@fh-erfurt.de', '12345', 'marvin',1),
+(2, 'katja.fischer@fh-erfurt.de','12345', 'katja',2),
+(3, 'mark.nottrott@fh-erfurt.de', '12345', 'mark',3),
+(4, 'fabian.seeber@fh-erfurt.de','12345', 'fabian',3);
 
 
 insert into LOCATION (ID, CITYNAME, DISTRICT, HOUSE_NUMBER, POST_CODE, STREETNAME) values
