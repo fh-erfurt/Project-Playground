@@ -28,24 +28,30 @@ public class PlaygroundController {
     @Autowired
     private PictureRepository pictureRepository;
     public Playground playground;
+    public List<Playground> allPlaygrounds;
 
 
     //Informations needed to search for a playground in SearchPlayground() method
     public String searchPlaygroundName;
     public String searchStreetName;
-    public String searchCityName;
-    public int searchPostCode;
     public List<Playground> foundPlaygrounds;
+//    public long searchPlaygroundID;
 
 
     public String Index()
     {
+        allPlaygrounds = playgroundRepository.findAll();
         return "playgroundIndex";
     }
 
-    public String Details()
+    public String Search()
     {
-        long ID = 1;
+        return "playgroundSearch";
+    }
+
+    public String Details(long searchPlaygroundID)
+    {
+        long ID = searchPlaygroundID;
         var searchPlayground = playgroundRepository.findById(ID);
         if (searchPlayground != null)
         {
@@ -68,15 +74,15 @@ public class PlaygroundController {
 
     public String SearchPlayground()
     {
-        if(!searchPlaygroundName.isEmpty() || !searchStreetName.isEmpty() || !searchCityName.isEmpty())
+        if(!searchPlaygroundName.isEmpty() || !searchStreetName.isEmpty())
         {
-            List<Playground> searchPlaygrounds= playgroundRepository.findAllPlaygrounds(searchPlaygroundName, searchStreetName, searchCityName);
+            List<Playground> searchPlaygrounds= playgroundRepository.findAllPlaygrounds(searchPlaygroundName, searchStreetName);
             for (Playground playground: searchPlaygrounds )
             {
                 System.out.println(playground.getTitle());
             }
             this.foundPlaygrounds = searchPlaygrounds;
         }
-        return "";
+        return "playgroundSearch";
     }
 }

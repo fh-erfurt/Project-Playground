@@ -19,16 +19,15 @@ public class PlaygroundRepositoryImpl
     private EntityManager entityManager;
 
 
-    public List<Playground> findAllPlaygrounds(String playgroundName, String streetName, String cityName)
+    public List<Playground> findAllPlaygrounds(String playgroundName, String streetName)
     {
         final CriteriaBuilder builder = this.entityManager.getCriteriaBuilder();
         final CriteriaQuery<Playground> query = builder.createQuery(Playground.class);
         final Root<Playground> playground = query.from(Playground.class);
         Predicate name = builder.like(builder.upper(playground.get("title")), "%" + playgroundName.toUpperCase() + "%");
-        Predicate cityname = builder.like(builder.upper(playground.join("location").get("cityname")), "%" + cityName.toUpperCase() + "%");
         Predicate streetname = builder.like(builder.upper(playground.join("location").get("streetname")), "%" + streetName.toUpperCase() + "%");
 
-        final CriteriaQuery<Playground>    findPlayground = query.where(name, cityname, streetname);
+        final CriteriaQuery<Playground>    findPlayground = query.where(name, streetname);
 
         List<Playground> result = entityManager.createQuery(findPlayground).getResultList();
 
@@ -36,4 +35,5 @@ public class PlaygroundRepositoryImpl
             return result;
         return null;
     }
+
 }

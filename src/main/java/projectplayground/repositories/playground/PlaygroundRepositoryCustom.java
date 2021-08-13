@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface PlaygroundRepositoryCustom {
 
-    List<Playground> findAllPlaygrounds(String playgroundName, String streetName, String cityName);
+    List<Playground> findAllPlaygrounds(String playgroundName, String streetName);
 }

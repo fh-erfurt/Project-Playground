@@ -13,11 +13,20 @@
 <h:body>
     <ui:include src="navbar.xhtml"/>
 
-    <h2 style="text-align: center">Spielplatzliste</h2>
+    <h2 style="text-align: center">Spielplatzsuche</h2>
+    <h:form>
+        <p:inputText value="#{playgroundController.searchPlaygroundName}">Nach Spielplatznamen suchen: </p:inputText>
+        <br />
 
+        <p:inputText value="#{playgroundController.searchStreetName}">Nach Straßennamen suchen: </p:inputText>
+        <br />
+
+        <p:commandButton value="Suchen" action="#{playgroundController.SearchPlayground()}" update="playgroundTable"/>
+    </h:form>
+    <br /><br /><br /><br /><br /><br /><br />
     <h:form id="playgroundTable">
         <div class="card">
-            <p:dataTable var="playground" value="#{playgroundController.allPlaygrounds}">
+            <p:dataTable var="playground" value="#{playgroundController.foundPlaygrounds}">
                 <p:column headerText="Spielplatzname">
                     <h:outputText value="#{playground.title}" />
                 </p:column>
