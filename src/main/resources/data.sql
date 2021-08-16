@@ -53,4 +53,7 @@ insert into PLAYGROUND (ID, CAPACITY_PLAYGROUND, CLEANLINESS, COUNTER_CHILDREN, 
 insert into PICTURE (ID, NAME, PATH, PLAYGROUND_ID) values
 (1, 'Bild Krämerbrücke 01', '/images/Kikaninchen_Rutsche groß.jpg', 1),
 (2, 'Bild Krämerbrücke 01', '/images/Kikaninchen_Ausguck.jpg', 1),
-(3, 'Bild Krämerbrücke 01', '/images/Kikaninchen_Kikaninchen.jpg', 1);
+(3, 'Bild Krämerbrücke 01', '/images/Kikaninchen_Kikaninchen.jpg', 1),
+(4, 'Bild Glockengase 02', '/images/Glockengasse_Balancierschlange.jpg',2),
+(5, 'Bild Glockengasse 02', '/images/Glockengasse_Bruecke und Spielturm hinten.jpg', 2)
+;

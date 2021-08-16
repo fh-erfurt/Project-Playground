@@ -8,13 +8,14 @@
 
 <h:head>
     <h:outputStylesheet library="css" name="style.css" />
+    <title>Spielplatzsuche</title>
 </h:head>
 
 <h:body>
     <ui:include src="navbar.xhtml"/>
 
     <h2 style="text-align: center">Spielplatzsuche</h2>
-    <h:form>
+    <h:form style="background-color: blue">
         <p:inputText value="#{playgroundController.searchPlaygroundName}">Nach Spielplatznamen suchen: </p:inputText>
         <br />
 
@@ -24,8 +25,8 @@
         <p:commandButton value="Suchen" action="#{playgroundController.SearchPlayground()}" update="playgroundTable"/>
     </h:form>
     <br /><br /><br /><br /><br /><br /><br />
-    <h:form id="playgroundTable">
-        <div class="card">
+    <h:form style="background-color: green" id="playgroundTable">
+        <div style="text-align: center" class="card">
             <p:dataTable var="playground" value="#{playgroundController.foundPlaygrounds}">
                 <p:column headerText="Spielplatzname">
                     <h:outputText value="#{playground.title}" />
