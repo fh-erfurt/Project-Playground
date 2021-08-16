@@ -13,9 +13,65 @@
 
 <h:body>
     <ui:include src="navbar.xhtml"/>
-    Freundliste
-    <p:selectBooleanButton onLabel="Yes" offLabel="No" style="width:6rem"/>
-    <p:spinner />
+    <h2>Ihre Freundesliste</h2>
+
+    <h:form id="friendTable">
+        <div style="text-align: center" class="card">
+            <p:dataTable var="friend" value="#{friendController.userFriendList}">
+                <p:column headerText="Vorname">
+                    <h:outputText value="#{friend.firstName}" />
+                </p:column>
+
+                <p:column headerText="Nachname">
+                    <h:outputText value="#{friend.lastName}" />
+                </p:column>
+
+                <p:column headerText="Aktueller Spielplatz">
+                    <h:outputText value="#{friend.currentPlayground.title}" />
+                </p:column>
+            </p:dataTable>
+        </div>
+    </h:form>
+
+
+    <br /><br /><br /><br />
+
+
+    <h2 style="text-align: center">Nutzer suchen</h2>
+    <h:form>
+        <div style="position: absolute; width: 100%">
+            <div style="position: absolute; left: 23%; height: 40%">
+                <p:inputText value="#{friendController.searchFirstName}">Nach Vornamen suchen: </p:inputText>
+            </div>
+            <div style="position: relative; left: 55%; height: 30%">
+                <p:inputText value="#{friendController.searchLastName}">Nach Nachnamen suchen: </p:inputText>
+            </div>
+            <div style="position: absolute; left: 47%">
+                <p:commandButton value="Suchen" action="#{friendController.SearchFriend()}" update="searchFriendTable"/>
+            </div>
+        </div>
+    </h:form>
+    <br /><br /><br /><br /><br /><br />
+    <p:outputLabel value="Sie können einen Freund nicht zweimal hinzufügen!" style="color:red; position: absolute; left: 40%"
+                   rendered="${!empty friendController.userDoubleAddedError}" />
+    <br /><br /><br />
+    <h:form id="searchFriendTable">
+        <div style="text-align: center" class="card">
+            <p:dataTable var="friend" value="#{friendController.foundUsers}">
+                <p:column headerText="Vorname">
+                    <h:outputText value="#{friend.firstName}" />
+                </p:column>
+
+                <p:column headerText="Nachname">
+                    <h:outputText value="#{friend.lastName}" />
+                </p:column>
+
+                <p:column>
+                    <h:commandLink action="#{friendController.AddFriend(friend.id)}" update=":friendTable:content, searchFriendTable">Freund hinzufügen</h:commandLink>
+                </p:column>
+            </p:dataTable>
+        </div>
+    </h:form>
 </h:body>
 
 </html>

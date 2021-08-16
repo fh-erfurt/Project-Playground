@@ -5,15 +5,28 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.header.writers.DelegatingRequestMatcherHeaderWriter;
+
+import javax.sql.DataSource;
 
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    @Autowired
+    DataSource dataSource;
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        // require all requests to be authenticated except for the resources
-        http.authorizeRequests().antMatchers("/javax.faces.resources/**")
-                .permitAll().anyRequest().authenticated();
+        // not needed as JSF 2.2 is implicitly protected against CSRF
+        http.csrf().disable();
+
+        // require all requests to be authenticated except for the resource
+        http
+                .authorizeRequests()
+                .antMatchers("/javax.faces.resource/**").permitAll()
+                .antMatchers("/**").authenticated();
+
         // login
         http.formLogin().loginPage("/login.xhtml").permitAll()
                 .failureUrl("/login.xhtml?error=true");
@@ -22,14 +35,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .clearAuthentication(true)
                 .logoutSuccessUrl("/login.xhtml")
                 .invalidateHttpSession(true);
-        // not needed as JSF 2.2 is implicitly protected against CSRF
-        http.csrf().disable();
+
     }
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth)
             throws Exception {
         auth
+//                .jdbcAuthentication().passwordEncoder(new BCryptPasswordEncoder()).dataSource(dataSource)
+//                .usersByUsernameQuery("select username,password from user where username=?")
+//                .authoritiesByUsernameQuery("select username, 'ROLE_USER' from user where login=?");
                 .inMemoryAuthentication()
                 .withUser("marvin")
                 .password("{noop}12345").roles("ADMIN")

@@ -1,14 +1,5 @@
 
-insert into USER (ID, ACCESS_LEVEL, CHILDREN) values
-(1,1,3),
-(2,0,3),
-(3,2,3);
 
-INSERT INTO ACCOUNT VALUES
-(1, 'marvin.ruppert@fh-erfurt.de', '12345', 'marvin',1),
-(2, 'katja.fischer@fh-erfurt.de','12345', 'katja',2),
-(3, 'mark.nottrott@fh-erfurt.de', '12345', 'mark',3),
-(4, 'fabian.seeber@fh-erfurt.de','12345', 'fabian',3);
 
 
 insert into LOCATION (ID, CITYNAME, DISTRICT, HOUSE_NUMBER, POST_CODE, STREETNAME) values
@@ -105,3 +96,12 @@ insert into PICTURE (ID, NAME, PATH, PLAYGROUND_ID) values
 (47,    'Espach Spielhaus',                     '/images/Espach_Spielhaus.jpg',6),
 (48,    'Espachcafe',                           '/images/Espach_Espachcafe.jpg',6)
 ;
+
+
+
+insert into USER (ID, ACCESS_LEVEL, CHILDREN, EMAIL, FIRST_NAME, LAST_NAME, PASSWORD, USERNAME, CURRENT_PLAYGROUND_ID)
+values
+    (1,1,3, 'marvin.ruppert@fh-erfurt.de', 'Marvin', 'Ruppert', '12345', 'marvin', 1),
+    (2,1,3, 'marvin.ruppert@fh-erfurt.de', 'Mark', 'Nottrott', '12345', 'mark', 2),
+    (3,1,3, 'marvin.ruppert@fh-erfurt.de', 'Fabian', 'Seeber', '12345', 'fabian', 3),
+    (4,1,3, 'marvin.ruppert@fh-erfurt.de', 'Katja', 'Fischer', '12345', 'katja', 4);

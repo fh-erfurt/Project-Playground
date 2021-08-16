@@ -17,18 +17,29 @@ import java.util.UUID;
 @Setter
 public class User extends BaseEntity {
 
+    private String username;
+    private String password;
+    private String email;
+
+    private String firstName;
+    private String lastName;
+    @Transient
+    private String message;
+
     @Column
-    protected Accesslevel accessLevel;
-    protected int children;
+    private Accesslevel accessLevel;
+    private int children;
 
     @OneToMany
-    protected List<Playground> playgroundFavorites;
+    private List<Playground> playgroundFavorites;
 
     @OneToMany
-    protected List<User> friends;
+    private List<User> friends;
 
     @OneToOne(optional = true)
-    protected Playground currentPlayground;
-
+    private Playground currentPlayground;
 
 }
+
+
+

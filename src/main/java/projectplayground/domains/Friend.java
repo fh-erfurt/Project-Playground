@@ -15,8 +15,7 @@ import javax.persistence.JoinTable;
 
 @Getter
 @Setter
-
-public class Friends
+public class Friend
 {
     @JoinTable()
     public User user ;

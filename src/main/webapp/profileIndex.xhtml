@@ -16,11 +16,12 @@
     <div style="text-align: center" class="card">
         <h2>Profilübersicht</h2>
         <br></br>
+                <p>Name: #{profileController.account.firstName} #{profileController.account.lastName}</p>
                 <p>Accountname: #{profileController.account.username}</p>
                 <p>E-Mailadresse: #{profileController.account.email}</p>
-                <p>Kinderanzahl: #{profileController.account.getUser().getChildren()}</p>
+                <p>Kinderanzahl: #{profileController.account.children}</p>
                 <p>Passwort: #{profileController.account.password}</p>
-                <p>Nutzerrechte: #{profileController.account.user.accessLevel}</p>
+                <p>Nutzerrechte: #{profileController.account.accessLevel}</p>
     </div>
 </h:body>
 

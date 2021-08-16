@@ -7,8 +7,8 @@ import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import projectplayground.domains.Account;
-import projectplayground.repositories.account.AccountRepository;
+import projectplayground.domains.User;
+import projectplayground.repositories.user.UserRepository;
 
 import javax.annotation.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -25,14 +25,14 @@ public class ProfileController {
     private EntityManager entityManager;
 
     @Autowired
-    private AccountRepository accountRepository;
+    private UserRepository userRepository;
 
-    public Account account;
+    public User account;
 
     public String Index()
     {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        Account findAccount = accountRepository.findAccountByName(authentication.getName());
+        User findAccount = userRepository.findUserByUsername(authentication.getName());
         this.account = findAccount;
 
         return "profileIndex";
