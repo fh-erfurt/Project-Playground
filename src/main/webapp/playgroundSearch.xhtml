@@ -15,14 +15,18 @@
     <ui:include src="navbar.xhtml"/>
 
     <h2 style="text-align: center">Spielplatzsuche</h2>
-    <h:form style="background-color: blue">
+    <h:form>
+        <div style="position: absolute; width: 100%">
+            <div style="position: absolute; left: 23%; height: 40%">
         <p:inputText value="#{playgroundController.searchPlaygroundName}">Nach Spielplatznamen suchen: </p:inputText>
-        <br />
-
+        </div>
+        <div style="position: relative; left: 55%; height: 30%">
         <p:inputText value="#{playgroundController.searchStreetName}">Nach Straßennamen suchen: </p:inputText>
-        <br />
-
+        </div>
+        <div style="position: absolute; left: 47%">
         <p:commandButton value="Suchen" action="#{playgroundController.SearchPlayground()}" update="playgroundTable"/>
+        </div>
+        </div>
     </h:form>
     <br /><br /><br /><br /><br /><br /><br />
     <h:form style="background-color: green" id="playgroundTable">
