@@ -36,7 +36,8 @@
                 </p:column>
 
                 <p:column>
-                    <h:commandLink action="#{playgroundController.Details(playground.id)}">Spielplatz einsehen</h:commandLink>
+                    <p:commandButton value="Spielplatz einsehen" icon="pi pi-map" action="#{playgroundController.Details(playground.id)}"/>
+
                 </p:column>
             </p:dataTable>
         </div>
