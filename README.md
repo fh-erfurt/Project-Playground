@@ -334,7 +334,7 @@ Nicht zum Projektumfang gehören:
 - Erste Tests des neuen Branch
 
 **2. Zwischenpräsentation**
-- [Zwischenpräsentation](https://github.com/fh-erfurt/Project-Playground/blob/main/share/presentations/Java_2/Java2_Zwischenpraesentation.pdf)
+- [Zwischenpräsentation](https://github.com/fh-erfurt/Project-Playground/share/presentations/Java_2/Java2_Zwischenpraesentation.pdf)
 
 
 ### Besprechung 11.05.2021
