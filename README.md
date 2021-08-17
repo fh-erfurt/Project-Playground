@@ -293,7 +293,7 @@ Nicht zum Projektumfang gehören:
 - Designanpassungen und einfügen des Bilderkarussels
 
 **2. Zwischenpräsentation**
-- [Zwischenpräsentation](https://github.com/fh-erfurt/Project-Playground/blob/main/share/presentations/Java_2/Java_2_Abschlusspraesentation.pdf)
+- [Zwischenpräsentation](https://github.com/fh-erfurt/Project-Playground/blob/main/share/presentations/Java_2/Java_2_Abschlusspaesentation.pdf)
 
 ### Besprechung 22.06.2021
 
