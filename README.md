@@ -11,9 +11,10 @@
 
 | USER | username | password |  
 |---|---|---|
-| ADMIN | Mail | 123 |  
-| MODERATOR | Mail | 123 |  
-| BENUTZER | Mail | 123 | 
+| ADMIN | marvin| 12345 |  
+| MODERATOR | mark | 12345 |  
+| MODERATOR | fabian | 12345 | 
+| MODERATOR | katja | 12345 | 
 
 # Übersicht über die Spielplätze im Großraum Erfurt
 Im Rahmen des Projektes zum Thema Programmierung JAVA 1 & 2 haben wir uns entschieden eine Übersicht über die Spielplätze mit Vernetzungsmöglichkeiten (analog zu sozialen Netzwerken) zu Programmieren.
@@ -41,8 +42,8 @@ Die Eltern können sich direkt untereinander vernetzen. Wir zeigen ihnen die Spi
 
 
 ## Funktionsweise
-Sie können einen Zeitslot eintragen, in dem sie mit dem Kind den Spielplatz besuchen wollen, um bei hoher Frequentierung eventuell auf einen anderen Spielplatz auszuweichen. Die Hauptnutzungszeiten werden/können durch die Analyse der vergangenen Tage analysiert werden.
-Sie können Defekte an Spielgeräten und den hygienischen Zustand der Spielplätze dokumentieren und melden.
+Sie können sich an einem Spielplatz den sie besuchen wollen anmelden und so ihren Freunden anzeigen wo sie am liebsten mit den Kindern die Freizeit verbringen.
+Sie können Defekte an Spielgeräten und den hygienischen Zustand der Spielplätze einsehen.
 
 ## Anforderungsbeschreibung(Grob)
 Die Grobziele wurden anhand der Anforderungsanalyse ermittelt.
@@ -264,7 +265,87 @@ Nicht zum Projektumfang gehören:
 <summary> Java 2 </summary>
 <br>
 
-    Hier kommen später alle Sachen zu Java 2 rein
+### Besprechung 18.08.2021
+
+---
+
+**1. Projektänderungen**
+- Überarbeitung der Datenbankeinträge
+- Implementierung der Freundesliste (Freunde hinzufügen, Anzeige der Freunde, Anzeige des Spielplatzes der Nutzer)
+- Designanpassungen der hinzugekommenen Features
+
+
+### Besprechung 13.08.2021
+
+---
+
+**1. Projektänderungen**
+- Login + Profilübersicht eingefügt
+- Spielplatzsuche implementiert und an Design angepasst
+- Designanpassungen und Änderungen in der Navbar
+
+### Besprechung 12.07.2021
+
+---
+
+**1. Projektänderungen**
+- Datenbankabfragen angepasst
+- Designanpassungen und einfügen des Bilderkarussels
+
+**2. Zwischenpräsentation**
+- [Zwischenpräsentation](https://github.com/fh-erfurt/Project-Playground/blob/main/share/presentations/Java_2/Abschlusspraesentation.pdf)
+
+### Besprechung 22.06.2021
+
+---
+
+**1. Projektänderungen**
+- Bilder der Spielplätze hinzugefügt
+- Controller und Ansichten erstellt
+- Vorbereitung der ersten Ansichten
+
+
+### Besprechung 08.06.2021
+
+---
+
+**1. Projektänderungen**
+- Repositorys hinzugefügt
+- Anpassung der Datenbank
+- erste Testdaten in DB eingetragen
+
+
+
+### Besprechung 01.06.2021
+
+---
+
+**1. Projektänderungen**
+- Änderungen der Passwortklassen
+- DB Klassen überarbeitet und Verbindung hergestellt
+
+
+### Besprechung 18.05.2021
+
+---
+
+**1. Projektänderungen**
+- Spielplatz Repository geändert
+- Erste Tests des neuen Branch
+
+**2. Zwischenpräsentation**
+- [Zwischenpräsentation](https://github.com/fh-erfurt/Project-Playground/blob/main/share/presentations/Java_2/Java2_Zwischenpraesentation.pdf)
+
+
+### Besprechung 11.05.2021
+
+---
+
+**1. Änderung der Struktur**
+- Spring - Datenbank vorbereitet
+- Lombok hinzugefügt
+- Anpassungen in der Projektstruktur / Ordnerstruktur
+
 
 <br>
 </details>
@@ -301,8 +382,10 @@ Nicht zum Projektumfang gehören:
 <summary> Java 2 </summary>
 <br>
 
-- Hier werden zukünftig unsere Erfahrungen aus Java2 dokumentiert.
-
+- 4 Teammitglieder zu koodinieren gestaltete sich bis zum Schluss schwierig
+- Am Ende hat auch der letzte den Umgang mit der Versionskontrolle verinnerlicht
+- Primefaces ist manchmal Geschenk aber meistens Fluch
+- Über Design und Style lässt sich streiten
 
 </details>
 <br>
@@ -322,19 +405,16 @@ Nicht zum Projektumfang gehören:
 
 </details>
 <details>
-<summary> Ausblick in Java2 </summary>
+<summary> Weiterer Ausblick </summary>
 <br>
 
 "Nach der Arbeit ist vor der Arbeit", oder "ein Projekt endet nie". 
-Das Projekt wird fortgesetzt und die Gedanken für die Weiterführung sind bereits da. Nach dem Backend, aus dem Teilprojekt
-Java 1, wird das Frontend unser Projekt an den Mann, oder besser, an die Eltern bringen. 
-Folgende Punkte sind zur Realisierung geplant. Umsetzung ausstehend, Änderungen möglich und wahrscheinlich.
+Das Projekt kann weiter fortgesetzt werden und die Gedanken für die Weiterführung sind bereits da. Nach dem Backend, aus dem Teilprojekt
+Java 1, wurde das Frontend unseres Projektes an den Mann, oder besser, an die Eltern gebracht. 
+Folgende Punkte sind zur Realisierung geplant. Umsetzung ausstehend, Änderungen möglich und warscheinlich.
 
-- grafische Oberfläche
 - Auslagerung der Projekts in eine cloudbasierte Umgebung - evtl. Heroku.
-- Aufbau und Befüllen der Datenbank mit Texten, Bildern, Karten - rundum allen Informationen zu den Spielplätzen
-- Login durch 'Kunden'
-- Abhängigkeiten zwischen Nutzerlogin und Funktionen, des Benutzers, programmieren
+- Wechsel des MVC Modells zu einem getrennten Frontend und Backend
 - Testbetrieb
 - Code verfeinern, falls möglich
 - Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Daten zu den externen Bearbeitern geschickt werden können

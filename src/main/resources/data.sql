@@ -102,6 +102,8 @@ insert into PICTURE (ID, NAME, PATH, PLAYGROUND_ID) values
 insert into USER (ID, ACCESS_LEVEL, CHILDREN, EMAIL, FIRST_NAME, LAST_NAME, PASSWORD, USERNAME, CURRENT_PLAYGROUND_ID)
 values
     (1,1,3, 'marvin.ruppert@fh-erfurt.de', 'Marvin', 'Ruppert', '12345', 'marvin', 1),
-    (2,1,3, 'marvin.ruppert@fh-erfurt.de', 'Mark', 'Nottrott', '12345', 'mark', 2),
-    (3,1,3, 'marvin.ruppert@fh-erfurt.de', 'Fabian', 'Seeber', '12345', 'fabian', 3),
-    (4,1,3, 'marvin.ruppert@fh-erfurt.de', 'Katja', 'Fischer', '12345', 'katja', 4);
+    (2,1,2, 'mark.nottrott@fh-erfurt.de', 'Mark', 'Nottrott', '12345', 'mark', 2),
+    (3,1,3, 'fabian.seeber@fh-erfurt.de', 'Fabian', 'Seeber', '12345', 'fabian', 3),
+    (4,1,3, 'katja.fischer@fh-erfurt.de', 'Katja', 'Fischer', '12345', 'katja', 4);
+
+
