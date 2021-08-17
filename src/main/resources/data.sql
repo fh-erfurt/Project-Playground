@@ -107,3 +107,16 @@ values
     (4,1,3, 'katja.fischer@fh-erfurt.de', 'Katja', 'Fischer', '12345', 'katja', 4);
 
 
+insert into DEVICE (ID, DESCRIPTION, DEVICE_CAPACITY, DEVICE_STATUS, TITLE, PLAYGROUND_ID)
+values (1, 'Schaukel_im_Klettergerüst', 2, 1, 'Schaukel', 1 ),
+       (2, 'geraet', 2, 1, 'geraet1', 1 ),
+       (3, 'geraet', 2, 1, 'geraet1', 1 ),
+       (4, 'geraet', 2, 1, 'geraet1', 1 ),
+       (5, 'geraet', 2, 1, 'geraet1', 1 );
+
+
+insert into EXPANSION (ID, DESCRIPTION, NUMBER_OF_PERSONS, TITLE, PLAYGROUND_ID)
+values ( 1, 'Erweiterung Toilette', 5, 'Toilette1', 1),
+       ( 2, 'Erweiterung Toilette', 5, 'Toilette1', 1),
+       ( 3, 'Erweiterung Toilette', 5, 'Toilette1', 1),
+       ( 4, 'Erweiterung Toilette', 5, 'Toilette1', 1);
