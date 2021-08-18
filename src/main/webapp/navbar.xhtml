@@ -25,19 +25,22 @@
         xmlns:ui="http://java.sun.com/jsf/facelets">
 
     <div class="">
-        <h:form styleClass="" id="navigationForm">
+        <h:form id="navigationForm">
             <p:menubar styleClass="">
-                <p:menuitem value="#{indexController.showGreeting()}" styleClass="" icon="pi pi-home pi-align-left"/>
-                <p:menuitem rendered="${!empty indexController.showCurrentPlayground()}" value="#{indexController.showCurrentPlayground()}" styleClass="" icon="pi pi-home pi-align-left"/>
-                <p:menuitem value="Home" styleClass="" icon="pi pi-home pi-align-left" action="#{indexController.Index()}"
+
+                <p:menuitem value="Home" styleClass="" icon="pi pi-home" action="#{indexController.Index()}"
                 />
-                <p:menuitem value="Alle Spielplätze anzeigen" icon="pi pi-fw pi-align-justify" action="#{playgroundController.Index()}"
+                <p:menuitem value="Alle Spielplätze anzeigen" icon="pi pi-align-justify" action="#{playgroundController.Index()}"
                 />
-                <p:menuitem value="Spielplatz suchen" icon="pi pi-search pi-align-left" action="#{playgroundController.Search()}"
+                <p:menuitem value="Spielplatz suchen" icon="pi pi-search" action="#{playgroundController.Search()}"
                 />
-                <p:menuitem value="Freunde" icon="pi pi-users pi-align-left" action="#{friendController.Index()}"
+                <p:menuitem value="Freunde" icon="pi pi-users" action="#{friendController.Index()}"
                 />
-                <p:menuitem value="Profil" icon="pi pi-user pi-align-left" action="#{profileController.Index()}"
+                <p:menuitem value="Profil" icon="pi pi-user" action="#{profileController.Index()}"
+                />
+                <p:menuitem value="#{indexController.showGreeting()}" styleClass="" icon="pi pi-user-plus"
+                />
+                <p:menuitem rendered="${!empty indexController.showCurrentPlayground()}" value="#{indexController.showCurrentPlayground()}" styleClass="" icon="pi pi-star-o"
                 />
                 <p:menuitem value="Logout" icon="pi pi-sign-out" url="/logout"
                 />
