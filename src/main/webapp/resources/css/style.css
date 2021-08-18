@@ -4,15 +4,20 @@
 }
 .card p{
     font-size: 125%;
-    font-family:Arial;
+    font-family:Calibri;
 }
 .ui-widget {
     font-size: 100% !important;
 }
-.ui-g-12 {
-
+div.ui-g-6 {
+    font-family: Calibri;
 }
-
+div {
+    font-family: Calibri;
+}
+body {
+    font-family: Calibri;
+}
 .logo {
 
     float: left;
@@ -34,7 +39,63 @@
 
 }
 
+
+h1{
+    font-family: Calibri;
+}
 h2{
     font-family:Calibri;
     text-align:center;
+}
+h3{
+    font-family: Calibri;
+
+}
+div.front{
+    text-align: center;
+    font-family: Calibri;
+}
+div.h1{
+    width: 100%;
+}
+div.login{
+    position: relative;
+    left: 40%;
+}
+div.img{
+    width: 100%;
+}
+
+div.text{
+    position: relative;
+    width: 100%;
+}
+div.search{
+
+}
+div.name1{
+    position: relative;
+    text-align: center;
+    font-family: Calibri;
+}
+div.name2 {
+    position: relative;
+    text-align: center;
+    margin-top: 15px;
+    font-family: Calibri;
+
+}
+div.bttn{
+    position: relative;
+    text-align: center;
+    margin-top: 30px;
+    font-family: Calibri;
+
+
+}
+div.fehler{
+    color:red;
+    position: absolute;
+    left: 40%;
+    font-family: Calibri;
 }

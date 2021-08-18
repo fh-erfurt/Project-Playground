@@ -12,11 +12,12 @@
 </h:head>
 
 <h:body>
+    <div>
     <ui:include src="navbar.xhtml"/>
     <h2>Ihre Freundesliste</h2>
 
     <h:form id="friendTable">
-        <div style="text-align: center" class="card">
+        <div class="card"><div class="front">
             <p:dataTable var="friend" value="#{friendController.userFriendList}">
                 <p:column headerText="Vorname">
                     <h:outputText value="#{friend.firstName}" />
@@ -32,35 +33,39 @@
                 <p:column>
                     <h:commandLink action="#{friendController.RemoveFriend(friend.id)}" update=":friendTable:content, searchFriendTable"><i class="pi pi-times" /></h:commandLink>
                 </p:column>
-            </p:dataTable>
+            </p:dataTable></div>
         </div>
     </h:form>
 
 
-    <br /><br /><br /><br />
+
 
 
     <h2>Nutzer suchen</h2>
     <h:form>
-        <div style="position: absolute; width: 100%">
-            <div style="position: absolute; left: 23%; height: 40%">
+        <div class="search">
+            <div class="name1" >
                 <p:inputText value="#{friendController.searchFirstName}">Nach Vornamen suchen: </p:inputText>
             </div>
-            <div style="position: relative; left: 55%; height: 30%">
+            <div class="name2" >
                 <p:inputText value="#{friendController.searchLastName}">Nach Nachnamen suchen: </p:inputText>
             </div>
-            <div style="position: absolute; left: 47%">
+            <div class="bttn" >
                 <p:commandButton value="Suchen" action="#{friendController.SearchFriend()}" update="searchFriendTable"/>
             </div>
         </div>
     </h:form>
-    <br /><br /><br /><br /><br /><br />
-    <p:outputLabel value="Sie können einen Freund nicht zweimal hinzufügen!" style="color:red; position: absolute; left: 40%"
-                   rendered="${!empty friendController.userDoubleAddedError}" />
 
-    <br /><br /><br />
+    <div class="fehler">
+    <p:outputLabel value="Sie können einen Freund nicht zweimal hinzufügen!"
+                   rendered="${!empty friendController.userDoubleAddedError}" /></div><br></br><br/>
+
+
+
+
+
     <h:form id="searchFriendTable">
-        <div style="text-align: center" class="card">
+        <div  class="card"> <div class="front">
             <p:dataTable var="friend" value="#{friendController.foundUsers}">
                 <p:column headerText="Vorname">
                     <h:outputText value="#{friend.firstName}" />
@@ -73,9 +78,9 @@
                 <p:column>
                     <p:commandButton value="Freund hinzufügen" update="@all" icon="pi pi-plus" action="#{friendController.AddFriend(friend.id)}"/>
                 </p:column>
-            </p:dataTable>
+            </p:dataTable></div>
         </div>
-    </h:form>
+    </h:form></div>
 </h:body>
 
 </html>

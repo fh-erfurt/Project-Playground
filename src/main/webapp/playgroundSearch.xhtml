@@ -14,23 +14,24 @@
 <h:body>
     <ui:include src="navbar.xhtml"/>
 
-    <h2 style="text-align: center">Spielplatzsuche</h2>
+    <h2>Spielplatzsuche</h2>
+    <div>
     <h:form>
-        <div style="position: absolute; width: 100%">
-            <div style="position: absolute; left: 23%; height: 40%">
+        <div class="search">
+            <div class="name1">
         <p:inputText value="#{playgroundController.searchPlaygroundName}">Nach Spielplatznamen suchen: </p:inputText>
         </div>
-        <div style="position: relative; left: 55%; height: 30%">
+        <div class="name2">
         <p:inputText value="#{playgroundController.searchStreetName}">Nach Straßennamen suchen: </p:inputText>
         </div>
-        <div style="position: absolute; left: 47%">
+        <div class="bttn">
         <p:commandButton value="Suchen" action="#{playgroundController.SearchPlayground()}" update="playgroundTable"/>
         </div>
         </div>
     </h:form>
-    <br /><br /><br /><br /><br /><br /><br />
+
     <h:form id="playgroundTable">
-        <div style="text-align: center" class="card">
+        <div  class="card"><div class="front">
             <p:dataTable var="playground" value="#{playgroundController.foundPlaygrounds}">
                 <p:column headerText="Spielplatzname">
                     <h:outputText value="#{playground.title}" />
@@ -51,9 +52,9 @@
                 <p:column>
                     <h:commandLink action="#{playgroundController.Details(playground.id)}"><i class="pi pi-search" /></h:commandLink>
                 </p:column>
-            </p:dataTable>
+            </p:dataTable></div>
         </div>
-    </h:form>
+    </h:form></div>
 </h:body>
 
 </html>
