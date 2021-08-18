@@ -37,7 +37,6 @@ class PlaygroundRepositoryTest {
 
         Playground given = new Playground(
                 "Kikaninchen",
-                Status.open,
                 Cleanliness.clean,
                 kikaninchen,
                 "Neuer Spielplatz",
@@ -53,7 +52,6 @@ class PlaygroundRepositoryTest {
 
         Playground secondGiven = new Playground(
                 "Zweiter",
-                Status.open,
                 Cleanliness.clean,
                 kikaninchen,
                 "Zweiter Neuer Spielplatz",

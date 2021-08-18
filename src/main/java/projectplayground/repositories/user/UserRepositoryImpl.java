@@ -71,6 +71,13 @@ public class UserRepositoryImpl implements UserRepositoryCustom
 
     }
 
+    @Transactional
+    public void removeFriend(User currentUser, User toBeDeletedFriend)
+    {
+        entityManager.createNativeQuery("DELETE FROM USER_FRIENDS WHERE USER_ID = :a AND FRIENDS_ID = :b")
+                .setParameter("a", currentUser.getId())
+                .setParameter("b", toBeDeletedFriend.getId()).executeUpdate();
+    }
 
     public List<Long> findAllFriends(User currentUser)
     {

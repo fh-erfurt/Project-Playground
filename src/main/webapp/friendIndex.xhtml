@@ -29,6 +29,9 @@
                 <p:column headerText="Aktueller Spielplatz">
                     <h:outputText value="#{friend.currentPlayground.title}" />
                 </p:column>
+                <p:column>
+                    <h:commandLink action="#{friendController.RemoveFriend(friend.id)}" update=":friendTable:content, searchFriendTable"><i class="pi pi-times" /></h:commandLink>
+                </p:column>
             </p:dataTable>
         </div>
     </h:form>

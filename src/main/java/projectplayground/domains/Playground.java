@@ -6,9 +6,8 @@ import projectplayground.domains.enums.Status;
 import lombok.*;
 import javax.persistence.Entity;
 import javax.persistence.*;
-import java.util.Arrays;
 import java.util.List;
-import java.util.UUID;
+
 /**
  * is the basic class to map a playground
  * is used as the data base for the user acces
@@ -21,7 +20,6 @@ import java.util.UUID;
 public class Playground extends BaseEntity {
 
     private String title;
-    private Status status;
     private Cleanliness cleanliness;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
@@ -35,8 +33,24 @@ public class Playground extends BaseEntity {
 
     public String statusValue()
     {
-        String statusValue = EnumValue.statusValue(this.status);
-        return statusValue;
+
+        double percentageChildren = this.counterChildren / (double) this.capacityPlayground * 100;
+        if (percentageChildren < 40) // bis 40%
+        {
+            return EnumValue.statusValue(Status.open);
+        }
+        else if (percentageChildren < 90) // bis 90%
+        {
+            return EnumValue.statusValue(Status.wellVisited);
+        }
+        else if (percentageChildren <= 100) // bis 100%
+        {
+            return EnumValue.statusValue(Status.full);
+        }
+        else // > 100%
+        {
+            return EnumValue.statusValue(Status.overfilled);
+        }
     }
 
     public String cleanlinessValue()
@@ -46,7 +60,7 @@ public class Playground extends BaseEntity {
     }
 
     @Transient
-    private List<Device> device;
+    private List<Device> devices;
 
     @Transient
     private List<Expansion> expansions;
@@ -63,6 +77,19 @@ public class Playground extends BaseEntity {
     {
         if(picture != null)
             this.pictures.add(picture);
+
+    }
+    public void addDevice(Device device)
+    {
+        if(device != null)
+            this.devices.add(device);
+
+    }
+
+    public void addExpansion(Expansion expansion)
+    {
+        if(expansion != null)
+            this.expansions.add(expansion);
 
     }
 

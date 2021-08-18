@@ -3,6 +3,8 @@ package projectplayground.controller;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
+import projectplayground.domains.Device;
+import projectplayground.domains.Expansion;
 import projectplayground.domains.Picture;
 import projectplayground.domains.Playground;
 import projectplayground.repositories.playground.PlaygroundRepository;
@@ -48,25 +50,64 @@ public class PlaygroundController {
     {
         return "playgroundSearch";
     }
+    public void SetupPlaygroundDetails(Playground playground)
+    {
+        var searchPlaygroundPictures = pictureRepository.findAllPicturesByPlaygroundId(playground.getId());
+        if (searchPlaygroundPictures != null)
+        {
+            if(playground.getPictures() == null)
+                playground.setPictures(new ArrayList<Picture>());
+            for (Picture picture : searchPlaygroundPictures)
+            {
+                playground.addPicture(picture);
+            }
 
+        }
+
+        var searchPlaygroundDevices = playgroundRepository.findAllDevicesByPlaygroundID(playground.getId());
+        if (searchPlaygroundDevices != null)
+        {
+            if(playground.getDevices() == null)
+                playground.setDevices(new ArrayList<Device>());
+            for (Device device : searchPlaygroundDevices)
+            {
+                playground.addDevice(device);
+            }
+        }
+
+        var searchPlaygroundExpansions = playgroundRepository.findAllExpansionsByPlaygroundID(playground.getId());
+        if (searchPlaygroundExpansions != null)
+        {
+            if(playground.getExpansions() == null)
+                playground.setExpansions(new ArrayList<Expansion>());
+            for (Expansion expansion : searchPlaygroundExpansions)
+            {
+                playground.addExpansion(expansion);
+            }
+        }
+
+
+
+    }
     public String Details(long searchPlaygroundID)
     {
         long ID = searchPlaygroundID;
         var searchPlayground = playgroundRepository.findById(ID);
         if (searchPlayground != null)
         {
-            playground = searchPlayground.get();
-            var searchPlaygroundPictures = pictureRepository.findAllPicturesByPlaygroundId(playground.getId());
-            if (searchPlaygroundPictures != null)
-            {
-                if(playground.getPictures() == null)
-                    playground.setPictures(new ArrayList<Picture>());
-                for (Picture picture : searchPlaygroundPictures)
-                {
-                    playground.addPicture(picture);
-                }
 
+            playground = searchPlayground.get();
+            SetupPlaygroundDetails(playground);
+
+            for (var device: playground.getDevices())
+            {
+                System.out.println("qwertz: " + device.getTitle());
             }
+            for (var expansion: playground.getExpansions())
+            {
+                System.out.println("qwertz: " + expansion.getTitle());
+            }
+
             return "playgroundDetails";
         }
         return "Error";
@@ -77,10 +118,6 @@ public class PlaygroundController {
         if(!searchPlaygroundName.isEmpty() || !searchStreetName.isEmpty())
         {
             List<Playground> searchPlaygrounds= playgroundRepository.findAllPlaygrounds(searchPlaygroundName, searchStreetName);
-            for (Playground playground: searchPlaygrounds )
-            {
-                System.out.println(playground.getTitle());
-            }
             this.foundPlaygrounds = searchPlaygrounds;
         }
         return "playgroundSearch";

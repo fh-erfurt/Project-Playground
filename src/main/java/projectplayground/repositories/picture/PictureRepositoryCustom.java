@@ -1,5 +1,6 @@
 package projectplayground.repositories.picture;
 
+import projectplayground.domains.Device;
 import projectplayground.domains.Picture;
 
 import java.util.List;

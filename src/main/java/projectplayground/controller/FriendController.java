@@ -84,7 +84,18 @@ public class FriendController {
         catch(Exception ex)
         {
             this.userDoubleAddedError = "Sie können ein Freund nicht zwei Mal hinzufügen.";
+
             return "Error";
         }
+    }
+
+    public String RemoveFriend(long ID)
+    {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        User currentUser = userRepository.findUserByUsername(authentication.getName());
+        User toBeDeletedFriend = userRepository.findById(ID).get();
+        this.userFriendList.removeIf(u -> u.getId().equals(ID));
+        userRepository.removeFriend(currentUser, toBeDeletedFriend);
+        return "friendIndex";
     }
 }

@@ -10,35 +10,35 @@ insert into LOCATION (ID, CITYNAME, DISTRICT, HOUSE_NUMBER, POST_CODE, STREETNAM
 (5, 'Erfurt', 'Bella',          '4',    '99094', 'Tettaustraße'),
 (6, 'Erfurt', 'Espach',         '36',   '99094', 'Alfred-Hess-Straße');
 
-insert into PLAYGROUND (ID, CAPACITY_PLAYGROUND, CLEANLINESS, COUNTER_CHILDREN, INFORMATION, STATUS, TITLE, LOCATION_ID) values
+insert into PLAYGROUND (ID, CAPACITY_PLAYGROUND, CLEANLINESS, COUNTER_CHILDREN, INFORMATION, TITLE, LOCATION_ID) values
 
-(1, 20, 0, 0,   'Gelegen inmitten der Altstadt, hinter der Krämerbrücke und unweit des "Klein-Venedig" von Erfurt, ist der Spielplatz mit seinem Maskottchen, dem Kikaninchen. ' ||
+(1, 20, 0, 5,   'Gelegen inmitten der Altstadt, hinter der Krämerbrücke und unweit des "Klein-Venedig" von Erfurt, ist der Spielplatz mit seinem Maskottchen, dem Kikaninchen. ' ||
                 'Er wurde erst Anfang 2021 komplett neu aufgebaut und die alten Holzspielzeuge wurden durch eine moderne und langlebige Metallkonstruktion ersetzt. '
                 'Neben der beliebten Doppelschaukel und dem Ausguck, inklusive Fernrohr, ist besonders der Wasserspielberg im Sommer beliebt und hoch frequentiert. '
                 'Für die Eltern werden viele Sitzplätze geboten und unweit des Spielplatzes kann man sich mit Eis und Bratwurst den Aufenthalt so angenehm wie möglich gestalten.'
-                , 1, 'Spielplatz Krämerbrücke', 1),
-(2, 20, 0, 0,   'Versteckt und nicht jedem bekannt liegt der Spielplatz zwischen den historischen Gassen der Altstadt. Der Neuaufbau des Spielplatzes erfolgte 2018. '
+                ,  'Spielplatz Krämerbrücke', 1),
+(2, 20, 0, 15,   'Versteckt und nicht jedem bekannt liegt der Spielplatz zwischen den historischen Gassen der Altstadt. Der Neuaufbau des Spielplatzes erfolgte 2018. '
                 'Besonders schön ist der große Spielturm mit Hängebrücke und breiter Rutsche. Der große Sandkasten lädt zum Spielen ein und kann mit bereits dort vorhandenem Spielzeug genutzt werden. '
                 'Dieser liebevoll gestaltete Spielplatz ist übersichtlich und besonders für kleinere KInder geeignet, da die Eltern immer den Überblick behalten können.'
-                , 1, 'Spielplatz Glockengasse', 2),
-(3, 20, 2, 0,   'Der Brühler Garten Spielplatz ist einer von wenigen schattigen Spielplätzen in Erfurt. Er bietet auch im Hochsommer durch seine großen Bäume immer Schutz vor der Sonne. '
+                ,  'Spielplatz Glockengasse', 2),
+(3, 20, 2, 20,   'Der Brühler Garten Spielplatz ist einer von wenigen schattigen Spielplätzen in Erfurt. Er bietet auch im Hochsommer durch seine großen Bäume immer Schutz vor der Sonne. '
                 'Der nahe gelegene Brühler Garten ist manchmal Schauplatz für kleinere Konzerte und Familienfeste im Sommer. Hier ist der Spielplatz als Auszeit für die Kinder sehr beliebt. '
                 'Kinder jeden Alters finden hier immer eine altersgerechte Beschäftigung. Rutsche und Schaukel sind für alle nutzbar und die gut gebauten Wege im Brühler Garten begeistern kleine Rennfahrer mit ihren Rollern und Rädern. '
-                , 1, 'Spielplatz Brühler Garten', 3),
-(4, 20, 1, 0,   'Im Zuge der Buga wurde dieser Spielplatz 2018 komplett neu gebaut. Er ist inmitten der Innenstadt und unweit des berühtem Angerbrunnens. '
+                ,  'Spielplatz Brühler Garten', 3),
+(4, 20, 1, 21,   'Im Zuge der Buga wurde dieser Spielplatz 2018 komplett neu gebaut. Er ist inmitten der Innenstadt und unweit des berühtem Angerbrunnens. '
                 'Die Spielgeräte sind modern und eher für ältere Kinder geeignet. Besonders die drei Trampoline finden großen Anklang bei den Kindern. '
                 'Für die Kleineren gibt es einen großen Sandkasten und eine Babyschaukel. Im Sommer sollte man jedoch auf einen Sonnenschutz achten, da hier keine Bäume sind. '
                 'Ausreichend Sitzplätze für die Eltern sind ebenso wie eine nahegelegene Eisdiele vorhanden.'
-                , 1, 'Spielplatz Hirschgarten', 4),
+                ,  'Spielplatz Hirschgarten', 4),
 (5, 20, 1, 0,   'Als einziger barrierefreier Spielplatz wurde er 2018 fertiggestellt und ist seither sehr beliebt bei den Kindern aller Altersklassen. '
                 'Bei diesem tollen Spielplatz treffen Inklusion auf Tolleranz und Spaß auf Abwechslung. Für die Kinder sind besonders die Königinnenschaukel und der riesige Spielturm interessant. '
                 'Jugendliche spielen hingegen oft im angrenzenden Ballsportbereich, welcher durch einen Käfig räumlich abgetrennt ist. '
                 'Das Rollstuhlkarussell ist für Kinder mit und ohne Beeinträchtung nutzbar. Ein Sinnes-Lernspiel zeit den Kindern die Natur mit all ihren Facetten und gibt einen kurzen Einblick in die Blindenschrift.'
-                , 1, 'Spielplatz Bella', 5),
-(6, 20, 1, 0,   'Im bekannten Espach-Park ist dieser kleine aber feine Spielplatz gelegen und wird vor allem durch Kinder genutzt, die im Espachcafe mit ihren Eltern einen ruhigen Nachmittag verbringen. '
+                , 'Spielplatz Bella', 5),
+(6, 20, 1, 1,   'Im bekannten Espach-Park ist dieser kleine aber feine Spielplatz gelegen und wird vor allem durch Kinder genutzt, die im Espachcafe mit ihren Eltern einen ruhigen Nachmittag verbringen. '
                 'Hier gibt es neben den typischen Gerichten auch wechselnde saisonale Angebote. ' ||
                 'Für die Kinder ist das große Piratenschiff eine spannende Alternative zu den anderen Spielplätzen und der große Drehturm erfreut die Kinder und fordert die Fitness der Väter und Mütter.'
-                , 1, 'Spielplatz Espach', 6);
+                ,  'Spielplatz Espach', 6);
 
 
 insert into PICTURE (ID, NAME, PATH, PLAYGROUND_ID) values

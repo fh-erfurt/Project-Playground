@@ -35,10 +35,44 @@
             <p>Beschreibung: #{playgroundController.playground.information}</p>
             <p>Sauberkeit: #{playgroundController.playground.cleanlinessValue()}</p>
 
-                <h:panelGrid columns="2">
-                    <p:commandButton value="Geräte #{playgroundController.playground.device.size()}" />
-                    <p:commandButton value="Erweiterungen" />
-                </h:panelGrid>
+            <br /><br /><br /><br />
+            <p:panel id="deviceList" header="Geräteliste" toggleable="true" closable="false" toggleSpeed="500"
+                     closeSpeed="500" widgetVar="panel" collapsed="true">
+
+                <p class="p-m-0">
+                    <p:dataTable value="#{playgroundController.playground.devices}" var="device">
+                        <p:column headerText="Gerätebezeichnung">
+                            <h:outputText value="#{device.title}" />
+                        </p:column>
+
+                        <p:column headerText="Beschreibung">
+                            <h:outputText value="#{device.description}" />
+                        </p:column>
+
+                        <p:column headerText="Zustand">
+                            <h:outputText value="#{device.deviceStatusValue}" />
+                        </p:column>
+                    </p:dataTable>
+                </p>
+            </p:panel>
+
+            <p:panel  id="expansionList" header="Erweiterungen" toggleable="true" closable="false" toggleSpeed="500"
+                     closeSpeed="500" widgetVar="panel2View" collapsed="true">
+                <p class="p-m-0">
+                    <p:dataTable value="#{playgroundController.playground.expansions}" var="expansion">
+                        <p:column headerText="Erweiterungsbezeichnung">
+                            <h:outputText value="#{expansion.title}" />
+                        </p:column>
+
+                        <p:column headerText="Beschreibung">
+                            <h:outputText value="#{expansion.description}" />
+                        </p:column>
+                        <p:column headerText="Personenanzahl">
+                            <h:outputText value="#{expansion.numberOfPersons}" />
+                        </p:column>
+                    </p:dataTable>
+                </p>
+            </p:panel>
         </div>
         <div class="ui-g-6">
             <p:carousel numVisible="1" value="#{playgroundController.playground.pictures}" circular="circular" var="picture"

@@ -23,8 +23,13 @@
 
 }
 
+.pi-times {
+    color:red;
+}
 
-
+.pi-search {
+    color:black;
+}
 .ui-menuitem,  .ui-widget, .ui-corner-all {
 
 
