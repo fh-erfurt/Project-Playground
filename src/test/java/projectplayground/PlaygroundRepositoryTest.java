@@ -8,8 +8,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import projectplayground.domains.Location;
 import projectplayground.domains.Playground;
 import projectplayground.domains.enums.Cleanliness;
-import projectplayground.domains.enums.Status;
-import projectplayground.repositories.LocationRepository;
 import projectplayground.repositories.playground.PlaygroundRepository;
 
 
@@ -18,8 +16,6 @@ import projectplayground.repositories.playground.PlaygroundRepository;
 class PlaygroundRepositoryTest {
     @Autowired
     private PlaygroundRepository playgroundRepository;
-    @Autowired
-    private LocationRepository locationRepository;
 
     @BeforeEach
     public void beforeEach() {

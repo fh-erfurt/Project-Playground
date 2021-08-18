@@ -1,4 +1,10 @@
 projectplayground
-projectplayground.enums
-projectplayground.exceptions
-projectplayground.interfaces
+projectplayground.controller
+projectplayground.core
+projectplayground.domains
+projectplayground.domains.enums
+projectplayground.repositories
+projectplayground.repositories.picture
+projectplayground.repositories.playground
+projectplayground.repositories.user
+projectplayground.utils

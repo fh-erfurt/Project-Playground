@@ -8,6 +8,10 @@ import javax.persistence.Entity;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
+/**
+ * class to access the pictureFiles via database
+ * */
+
 @Entity
 @Getter
 @Setter
