@@ -71,7 +71,7 @@
                 </p:column>
 
                 <p:column>
-                    <h:commandLink action="#{friendController.AddFriend(friend.id)}" update=":friendTable:content, searchFriendTable">Freund hinzufügen</h:commandLink>
+                    <p:commandButton value="Freund hinzufügen" update="@all" icon="pi pi-plus" action="#{friendController.AddFriend(friend.id)}"/>
                 </p:column>
             </p:dataTable>
         </div>
