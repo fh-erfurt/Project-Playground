@@ -13,7 +13,6 @@
 
 }
 
-
 .logo {
 
     float: left;
@@ -36,5 +35,6 @@
 }
 
 h2{
+    font-family:Calibri;
     text-align:center;
 }
