@@ -24,11 +24,12 @@
         xmlns:p="http://primefaces.org/ui"
         xmlns:ui="http://java.sun.com/jsf/facelets">
 
-    <div class="">
+    <div class="nav">
         <h:form id="navigationForm">
-            <p:menubar styleClass="">
+            <div class="nav">
+            <p:menubar>
 
-                <p:menuitem value="Home" styleClass="" icon="pi pi-home" action="#{indexController.Index()}"
+                <p:menuitem value="Home" styleClass="nav" icon="pi pi-home" action="#{indexController.Index()}"
                 />
                 <p:menuitem value="Alle Spielplätze anzeigen" icon="pi pi-align-justify" action="#{playgroundController.Index()}"
                 />
@@ -45,7 +46,7 @@
                 <p:menuitem value="Logout" icon="pi pi-sign-out" url="/logout"
                 />
 
-            </p:menubar>
+            </p:menubar></div>
         </h:form>
     </div>
 </ui:composition>

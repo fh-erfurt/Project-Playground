@@ -23,9 +23,9 @@ body {
     float: left;
 }
 .ui-menu-list, .ui-helper-reset {
-    float: right;
-
+    float: left;
 }
+
 
 .pi-times {
     color:red;
@@ -34,9 +34,10 @@ body {
 .pi-search {
     color:black;
 }
-.ui-menuitem,  .ui-widget, .ui-corner-all {
 
-
+nav{
+    background-color: blue;
+    color: orange;
 }
 
 
