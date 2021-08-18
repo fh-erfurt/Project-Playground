@@ -3,12 +3,12 @@ package projectplayground.controller;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
-import projectplayground.domains.Device;
-import projectplayground.domains.Expansion;
-import projectplayground.domains.Picture;
-import projectplayground.domains.Playground;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import projectplayground.domains.*;
 import projectplayground.repositories.playground.PlaygroundRepository;
 import projectplayground.repositories.picture.PictureRepository;
+import projectplayground.repositories.user.UserRepository;
 
 import javax.annotation.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -25,19 +25,21 @@ public class PlaygroundController {
 
     @PersistenceContext
     private EntityManager entityManager;
+
     @Autowired
     private PlaygroundRepository playgroundRepository;
     @Autowired
     private PictureRepository pictureRepository;
+    @Autowired
+    private UserRepository userRepository;
+
     public Playground playground;
     public List<Playground> allPlaygrounds;
-
 
     //Informations needed to search for a playground in SearchPlayground() method
     public String searchPlaygroundName;
     public String searchStreetName;
     public List<Playground> foundPlaygrounds;
-//    public long searchPlaygroundID;
 
 
     public String Index()
@@ -50,6 +52,8 @@ public class PlaygroundController {
     {
         return "playgroundSearch";
     }
+
+
     public void SetupPlaygroundDetails(Playground playground)
     {
         var searchPlaygroundPictures = pictureRepository.findAllPicturesByPlaygroundId(playground.getId());
@@ -61,7 +65,6 @@ public class PlaygroundController {
             {
                 playground.addPicture(picture);
             }
-
         }
 
         var searchPlaygroundDevices = playgroundRepository.findAllDevicesByPlaygroundID(playground.getId());
@@ -85,9 +88,6 @@ public class PlaygroundController {
                 playground.addExpansion(expansion);
             }
         }
-
-
-
     }
     public String Details(long searchPlaygroundID)
     {
@@ -95,19 +95,8 @@ public class PlaygroundController {
         var searchPlayground = playgroundRepository.findById(ID);
         if (searchPlayground != null)
         {
-
             playground = searchPlayground.get();
             SetupPlaygroundDetails(playground);
-
-            for (var device: playground.getDevices())
-            {
-                System.out.println("qwertz: " + device.getTitle());
-            }
-            for (var expansion: playground.getExpansions())
-            {
-                System.out.println("qwertz: " + expansion.getTitle());
-            }
-
             return "playgroundDetails";
         }
         return "Error";
@@ -121,5 +110,34 @@ public class PlaygroundController {
             this.foundPlaygrounds = searchPlaygrounds;
         }
         return "playgroundSearch";
+    }
+
+    public String LoginPlayground(long playgroundID)
+    {
+        Playground playground = playgroundRepository.findById(playgroundID).get();
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        User currentUser = userRepository.findUserByUsername(authentication.getName());
+        if(currentUser.getCurrentPlayground() != null)
+        {
+            if(currentUser.getCurrentPlayground().getId().equals(playgroundID))
+            {
+                return "loggedInTwice";
+            }
+            playgroundRepository.deductPlaygroundCounter(currentUser.getCurrentPlayground(), currentUser.getChildren());
+        }
+        userRepository.loginUserToPlayground(currentUser, playground);
+        playgroundRepository.addPlaygroundCounter(playground, currentUser.getChildren());
+        return "loginPlaygroundSuccess";
+    }
+
+    public String LogoutPlayground()
+    {
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            User currentUser = userRepository.findUserByUsername(authentication.getName());
+            if(currentUser.getCurrentPlayground() == null)
+                return "logoutPlaygroundError";
+            playgroundRepository.deductPlaygroundCounter(currentUser.getCurrentPlayground(), currentUser.getChildren());
+            userRepository.logoutUserFromPlayground(currentUser);
+            return "logoutPlaygroundSuccess";
     }
 }

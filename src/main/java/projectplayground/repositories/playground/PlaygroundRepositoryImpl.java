@@ -12,6 +12,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Locale;
 
@@ -67,6 +68,20 @@ public class PlaygroundRepositoryImpl
         if(result != null)
             return result;
         return null;
+    }
+
+    @Transactional
+    public void deductPlaygroundCounter(Playground playground, int children)
+    {
+        playground.setCounterChildren(playground.getCounterChildren() - children);
+        entityManager.merge(playground);
+    }
+
+    @Transactional
+    public void addPlaygroundCounter(Playground playground, int children)
+    {
+        playground.setCounterChildren(playground.getCounterChildren() + children);
+        entityManager.merge(playground);
     }
 
 }

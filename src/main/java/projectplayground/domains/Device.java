@@ -18,13 +18,18 @@ import javax.persistence.Transient;
 @Entity
 public class Device extends BaseEntity {
     private String title;
-    private DeviceStatus deviceStatus;
+    public DeviceStatus deviceStatus;
     private String description;
     private int deviceCapacity;
 
     @ManyToOne
     private Playground playground;
+
     @Transient
-    private String deviceStatusValue = EnumValue.deviceStatusValue(this.deviceStatus);
+    public String deviceStatusValue()
+    {
+        String deviceStatusValue = EnumValue.deviceStatusValue(this.deviceStatus);
+        return deviceStatusValue;
+    }
 
 }

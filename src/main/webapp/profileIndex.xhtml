@@ -15,14 +15,16 @@
     <ui:include src="navbar.xhtml"/>
     <div style="text-align: center" class="card">
         <h2>Profilübersicht</h2>
-        <br></br>
-                <p>Name: #{profileController.account.firstName} #{profileController.account.lastName}</p>
-                <p>Accountname: #{profileController.account.username}</p>
-                <p>E-Mailadresse: #{profileController.account.email}</p>
-                <p>Kinderanzahl: #{profileController.account.children}</p>
-                <p>Passwort: #{profileController.account.password}</p>
-                <p>Nutzerrechte: #{profileController.account.accessLevel}</p>
+        <br></br><hr />
+                <p:panel>Name: #{profileController.account.firstName} #{profileController.account.lastName}</p:panel>
+                <p:panel>Accountname: #{profileController.account.username}</p:panel>
+                <p:panel>E-Mailadresse: #{profileController.account.email} </p:panel>
+                <p:panel>Kinderanzahl: #{profileController.account.children}</p:panel>
+                <p:panel>Passwort: #{profileController.account.password}       </p:panel>
+                <p:panel>Nutzerrechte: #{profileController.account.accessLevel}</p:panel>
+                <p:panel rendered="${!empty profileController.account.currentPlayground.title}">Aktueller Spielplatz: #{profileController.account.currentPlayground.title}</p:panel>
+        <br />
+        <p:commandButton rendered="${!empty profileController.account.currentPlayground.title}" value="Vom Spielplatz abmelden" icon="pi pi-map" action="#{playgroundController.LogoutPlayground()}"/>
     </div>
 </h:body>
-
 </html>

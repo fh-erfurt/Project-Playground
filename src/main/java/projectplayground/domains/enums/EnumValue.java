@@ -21,6 +21,26 @@ public final class EnumValue {
         return "Kein Sauberkeitsstatus vorhanden";
     }
 
+
+    public static String statusValue(Status status)
+    {
+        if(status != null) {
+            switch (status) {
+                case open:
+                    return "Offen";
+                case wellVisited:
+                    return "Gut besucht";
+                case full:
+                    return "Voll";
+                case overfilled:
+                    return "Überfüllt";
+                default:
+                    return "Kein Status vorhanden";
+            }
+        }
+        return "Kein Status vorhanden";
+    }
+
     public static String deviceStatusValue(DeviceStatus deviceStatus)
     {
         if (deviceStatus != null) {
@@ -40,24 +60,5 @@ public final class EnumValue {
             }
         }
         return "Kein Gerätestatus vorhanden";
-    }
-
-    public static String statusValue(Status status)
-    {
-        if(status != null) {
-            switch (status) {
-                case open:
-                    return "Offen";
-                case wellVisited:
-                    return "Gut besucht";
-                case full:
-                    return "Voll";
-                case overfilled:
-                    return "Überfüllt";
-                default:
-                    return "Kein Status vorhanden";
-            }
-        }
-        return "Kein Status vorhanden";
     }
 }

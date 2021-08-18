@@ -44,6 +44,13 @@ public class FriendController {
 
     public String Index()
     {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        User currentUser = userRepository.findUserByUsername(authentication.getName());
+        List<Long> allFriendsIDs = userRepository.findAllFriends(currentUser);
+        userFriendList = new ArrayList<User>();
+        for (var friendID : allFriendsIDs) {
+            userFriendList.add(userRepository.findById(friendID).get());
+        }
         this.userDoubleAddedError = "";
         return "friendIndex";
     }

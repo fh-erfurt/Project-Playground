@@ -79,6 +79,20 @@ public class UserRepositoryImpl implements UserRepositoryCustom
                 .setParameter("b", toBeDeletedFriend.getId()).executeUpdate();
     }
 
+    @Transactional
+    public void loginUserToPlayground(User user, Playground playground)
+    {
+        user.setCurrentPlayground(playground);
+        entityManager.merge(user);
+    }
+
+    @Transactional
+    public void logoutUserFromPlayground(User user)
+    {
+        user.setCurrentPlayground(null);
+        entityManager.merge(user);
+    }
+
     public List<Long> findAllFriends(User currentUser)
     {
 

@@ -54,5 +54,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .withUser("katja").password("{noop}12345").roles("ADMIN")
                 .and()
                 .withUser("fabian").password("{noop}12345").roles("ADMIN");
+
+        //jdbc auth didnt work, thatswhy we're using hardcoded logins...
     }
 }
