@@ -11,6 +11,12 @@ import projectplayground.repositories.user.UserRepository;
 import javax.annotation.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
+/**
+ *  The IndexController with its class IndexController is used to show the greeting to the user and conntects the userRepository to the Controller.
+ *  It is possible to show on which playground the user is logged in at the moment.
+ * */
+
+
 @ManagedBean
 @RequestScoped
 public class IndexController {

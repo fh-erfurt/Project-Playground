@@ -20,6 +20,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ *  The FriendController with its class FriendController is important to manage the user accounts, friend lists and content.
+ *  It checks the friend list and manages errors.
+ *  You can add and remove friends.
+ * */
+
 @Getter
 @Setter
 @ManagedBean

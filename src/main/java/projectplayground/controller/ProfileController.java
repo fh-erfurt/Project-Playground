@@ -13,6 +13,11 @@ import javax.faces.bean.RequestScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+/**
+ *  The ProfileController with its class ProfileController manages the user account and gives the user the possibility to authenticate at the Playground website.
+ * */
+
+
 @ManagedBean
 @RequestScoped
 @Getter

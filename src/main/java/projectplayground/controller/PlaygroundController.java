@@ -17,6 +17,13 @@ import javax.persistence.PersistenceContext;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *  The PlaygroundController with its class PlaygroundController is used to manage and list the playgrounds.
+ *  It's important to handle the searching, show details, find the playground by name or street and show pictures from the playground.
+ *  It is used to Login and Logoff at a playground by the user.
+ * */
+
+
 @ManagedBean
 @RequestScoped
 @Getter
