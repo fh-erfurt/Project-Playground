@@ -219,7 +219,7 @@ Nicht zum Projektumfang gehören:
 - Admin/Benutzer hinzugefügt
 
 **3. Klassendiagramm**
-- [Klassendiagramm](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/UMLDiagramm.png)
+- [Klassendiagramm](https://github.com/fh-erfurt/Project-Playground/blob/Java2/Klassendiagramm-0.png)
 
 ### Besprechung 08.12.2020
 
