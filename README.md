@@ -415,6 +415,7 @@ Java 1, wurde das Frontend unseres Projektes an den Mann, oder besser, an die El
 Folgende Punkte sind zur Realisierung geplant. Umsetzung ausstehend, Änderungen möglich und warscheinlich.
 
 - Auslagerung der Projekts in eine cloudbasierte Umgebung - evtl. Heroku.
+- Eine Registrierung der Kunden muss noch umgesetzt werden
 - Wechsel des MVC Modells zu einem getrennten Frontend und Backend
 - Testbetrieb
 - Code verfeinern, falls möglich
