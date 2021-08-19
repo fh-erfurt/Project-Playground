@@ -1,283 +1,120 @@
 @startuml
 skinparam shadowing false
 
-class Spielplatz {
+class Playground {
   +ID:UUID
-  -bezeichnung:String
+  -title:String
   -status:Status
-  -sauberkeit:SauberkeitStatus
-  -standort:Standort
+  -cleanliness:Cleanliness
+  -location:Location
   -information:String
-  -anzahlKinder:int
-  -kapazitaetSpielplatz:int
-  +List<Geraet> geraete
-  +List<Erweiterung> erweiterungen
-  +List<Benutzer> angemeldeteBenutzer
+  -counterChildren:int
+  -capacityPlayground:int
+  +List<Device> devices
+  +List<Expansion> expansions
+  +List<User> registeredUsers
 
-  +Spielplatz()
-  +Spielplatz(String bezeichnung, Status status, SauberkeitStatus sauberkeit, String information, int anzahlKinder)
-  +setErweiterungen(List<Erweiterung> erweiterungen)
-  +getErweiterungen():List<Erweiterung>
-  +getBezeichnung():String
-  +setBezeichnung(String Bezeichnung)
-  +getStatus():Status
-  +setStatus(Status Status)
-  +getAnzahlKinder():int
-  +setAnzahlKinder(int AnzahlKinder)
-  +getStandort():Standort
-  +setStandort(Standort standort)
-  +getID():UUID
-  +setID(UUID ID)
-  +getSauberkeit():SauberkeitStatus
-  +setSauberkeit(SauberkeitStatus sauberkeit)
-  +getInformation():String
-  +setInformation(String information)
-  +getKapazitaetSpielplatz():int
-  +setKapazitaetSpielplatz(int kapazitaetSpielplatz)
-  +getGeraet(String geraeteName):Geraet
-  +pruefeStatus()
-  +aktualisiereSpielplatzKapazitaet()
+  +Playground()
+  +Getter()
+  +Setter()
+  +addPicture(Picture picture)
+  +addDevice(Device device)
+  +addExpansion(Expansion expansion)
+  +statusValue()
+  +cleanlinessValue()
 }
 
-class Standort{
- -name:String
- -strassenname:String
- -hausnummer:int
- -postleitzahl:int
- -stadtname:String
- -stadtteil:String
+class Location{
+ -streetname:String
+ -houseNumber:int
+ -postCode:int
+ -cityname:String
+ -district:String
 
- +Standort(int hausnummer, String strassenname, int postleitzahl, String stadtname, String name, String stadtteil)
- +getStrassenname():String
- +setStrassenname(String strassenname)
- +getHausnummer():int
- +setHausnummer(int hausnummer)
- +getPostleitzahl():int
- +setPostleitzahl(int postleitzahl)
- +getStadtname():String
- +setStadtname(String stadtname)
- +getName():String
- +setName(String name)
- +getStadtteil:String
- +setStadtteil(String stadtteil)
+ +Location()
+ +Getter()
+ +Setter()
 }
 
-class Geraet{
--spielplatzID:UUID
--bezeichnung:String
--geraeteStatus:GeraeteStatus
--beschreibung:String
+class Device{
+-Playground:playground
+-title:String
+-deviceStatus:DeviceStatus
+-description:String
+-deviceCapacity:DeviceCapacity
 
-+Geraet(UUID spielplatzID, String bezeichnung, GeraeteStatus status, String beschreibung,int kapazitaetGeraet)
-+getGeraeteStatus():GeraeteStatus
-+setGeraeteStatus(GeraeteStatus geraeteStatus)
-+getSpielplatzID():UUID
-+setSpielplatzID(UUID spielplatzID)
-+getBezeichnung():String
-+setBezeichnung(String bezeichnung)
-+getBeschreibung():String
-+setBeschreibung(String beschreibung)
-+getKapazitaetGeraet():int
-+setKapazitaetGeraet(int kapazitaetGeraet)
++Device()
++Getter()
++Setter()
++deviceStatusValue()
 }
 
-abstract class Profil{
-#benutzername:String
-#passwort:String
-#email:String
-#zugriff:Zugriff
-#istEingeloggt:boolean
+abstract class User{
+-username:String
+-password:String
+-email:String
+-firstName:String
+-lastName:String
+-message:String
+-children:int
+-friends:List<User>
+-currentPlayground:Playground;
 
-+getBenutzername():String
-+setBenutzername(String benutzername)
-+getPasswort():String
-+setPasswort(String passwort)
-+getEmail():String
-+setEmail(String email)
-+setIstEingeloggt(boolean istEingeloggt)
-+getIstEingeloggt():boolean
-+PasswortAendern(Profil profil,String altesPasswort,String neuesPasswort)
-+removeProfil(Profil profil,String benutzername)
-+profilVerwalten(Profil profil, Profil neuerProfilEintrag)
-+login(String benutzername,String password, List<Profil> benutzerListe):String
-+logout(List<Profil> benutzerListe):String
-+passwordVergessen(List<Profil> profilListe
+#accessLevel:Accesslevel
+
++User()
++Getter()
++Setter()
 }
 
-class Benutzer{
-#eigeneKinder:int
-#aufenthaltsort:Standort
-#List<Spielplatz>spielplatzFavoriten
-#List<Benutzer> freunde
-#aktuellerSpielplatz:UUID;
 
-+Benutzer()
-+Benutzer(String benutzername, String email, String passwort, int anzahlKinder)
-+getSpielplatzFavoriten():List<Spielplatz>
-+setSpielplatzFavoriten(List<Spielplatz> spielplatzFavoriten)
-+getEigeneKinder():int
-+setEigeneKinder(int eigeneKinder)
-+getAufenthaltsort():Standort
-+setAufenthaltsort(Standort aufenthaltsort)
-+getFreunde():List<Benutzer>
-+setFreunde(List<Benutzer> freunde)
-+freundHinzufuegen(Benutzer neuerFreund)
-+freundEntfernen(Benutzer freund)
-+spielplatzFavoritHinzufuegen(Spielplatz neuerSpielplatz)
-+spielplatzFavoritEntfernen(Spielplatz spielplatz)
-+getAktuellenSpielplatz(List<Spielplatz> alleSpielplaetze):Spielplatz
-+setAktuellenSpielplatz(UUID spielplatzID)
-+geraetMelden(String geraetName, List<Spielplatz> alleSpielplaetze)
+abstract class Expansion{
+-title:String
+-numberOfPersons:int
+-description:String
+-playground:Playground
+
++Expansion()
++Getter()
++Setter()
 }
 
-class Admin{
-+Admin(String benutzername, String passwort, String email)
-+benutzerZuModerator(Benutzer benutzer):Moderator
-+moderatorZuBenutzer(Moderator moderator):Benutzer
-+passwortZuruecksetzen(Profil profil)
-+spielplatzLoeschen(List<Spielplatz> spielplatzListe,Spielplatz spielplatz)
-+geraeteLoeschen(List<Geraet> geraete, Geraet geraet)
-}
+enum DeviceStatus{
+    cleanAndWorking,
+    pollutedDevice,
+    brokenDevice,
+    riskOfInjury,
+    toBeChecked
 
-class Moderator{
-+Moderator(String benutzername, String email, String passwort, int anzahlKinder, Standort aufenthaltsort)
-+geraetHinzufuegen(Spielplatz spielplatz, Geraet geraet)
-+geraetEntfernen(Spielplatz spielplatz, Geraet geraet
-+geraeteStatusAendern(Geraet geraet, GeraeteStatus neuerGeraeteStatus)
-+spielplatzHinzufuegen(List<Spielplatz> alleSpielplaetze, Spielplatz spielplatz)
-+spielplatzEntfernen(List<Spielplatz> alleSpielplaetze, Spielplatz spielplatz)
-+erweiterungHinzufuegen(Erweiterung erweiterung, Spielplatz spielplatz)
-+erweiterungEntfernen(Erweiterung erweiterung, Spielplatz spielplatz)
-+spielplatzVerwalten(Spielplatz spielplatz, Spielplatz neuerSpielplatzEintrag)
-}
-
-class Passwort{
-+passwortGenerator():String
-}
-
-class Mail{
-+versendeEmailPasswortVergessen(Profil profil, String neuesPasswort)
-}
-
-class Restaurant{
--HashMap<String, Double> speisekarte
--telefonNummer:String
--hatWickeltisch:boolean
--essenAbholbar:boolean
--essenLieferbar:boolean
-
-+Restaurant(int anzahlPersonen, String bezeichnung,String telefonNummer)
-+Restaurant(int anzahlPersonen, String bezeichnung,String telefonNummer, boolean hatWickeltisch
-                                  ,boolean essenAbholbar,boolean essenLieferbar)
-+fuegeSpeiseHinzu(String speisenName, Double preis)
-+entferneSpeise(String speisenName)
-+zeigeSpeisekarteAn()
-+getHatWickeltisch():boolean
-+setHatWickeltisch(boolean hatWickeltisch)
-+getEssenAbholbar():boolean
-+setEssenAbholbar(boolean essenAbholbar)
-+getEssenLieferbar():boolean
-+setEssenLieferbar(boolean essenLieferbar)
-+getTelefonNummer():String
-+setTelefonNummer(String telefonNummer)
-+wickelTisch():String
-+toilettenGang():String
-+haendeWaschen():String
-+essenGehen():String
-+essenBestellenUndAbholen():String
-+essenLiefern():String
-}
-
-abstract class Erweiterung{
-#bezeichnung:String
-#personenAnzahl:int
-
-+getBezeichnung():String
-+setBezeichnung(String bezeichnung)
-+getPersonenAnzahl:int
-+setPersonenAnzahl(int personenAnzahl)
-}
-
-class Sitzgelegenheit{
-+Sitzgelegenheit(String bezeichnung, int personenAnzahl)
-+sitzen():String
-}
-
-class Toilette{
--hatWickeltisch:boolean
-
-+Toilette(int anzahlPersonen)
-+Toilette(int anzahlPersonen, boolean hatWickeltisch)
-+getHatWickeltisch():boolean
-+setHatWickeltisch(boolean hatWickeltisch)
-+toilettenGang():String
-+haendeWaschen():String
-+wickelTisch():String
-}
-
-enum GeraeteStatus{
-    inTaktesGeraet,
-    verschmutztesGeraet,
-    kaputtesGeraet,
-    verletzungsgefahr,
-    zuPruefen
 }
 enum Status{
- offen,
- gutBesucht,
- voll,
- ueberfuellt
-}
-enum SauberkeitStatus{
-    sauber,
-    leichtVerschmutzt,
-    starkVerschmutzt
-}
-enum Zugriff{
- administrator,
- moderator,
- benutzer
+ open,
+ wellVisited,
+ full,
+ overfilled
 }
 
-interface IRestaurant{
-+essenGehen():String
-+essenBestellenUndAbholen():String
-+essenLiefern():String
+enum Cleanliness{
+    clean,
+    slightlyPolluted,
+    polluted
+}
+enum Accesslevel{
+ Administrator,
+ Moderator,
+ User
 }
 
-interface IToilette{
-+toilettenGang:String
-+haendeWaschen:String
-}
+Playground "1" *-- "1" Location
+Playground "1" *-- "1" Status
+Playground "1" *-- "1" Cleanliness
 
-interface IWickeltisch{
-+wickelTisch:String
-}
+Playground "1" --{ "0..n" User
+User "1" o-- Location
+Accesslevel "1" --* "1" User
+Device "0..n" }-- "1" Playground
+Device "1" *-- "1" DeviceStatus
+Expansion "0..n" }-- "1" Playground
 
-Profil <|--Benutzer
-Profil <|--Admin
-Benutzer <|--Moderator
-Erweiterung <|-- Restaurant
-Erweiterung <|-- Sitzgelegenheit
-Erweiterung <|-- Toilette
-
-Spielplatz "1" *-- "1" Standort
-Spielplatz "1" *-- "1" Status
-Spielplatz "1" *-- "1" SauberkeitStatus
-
-Spielplatz "1" --{ "0..n" Benutzer
-Profil "1" o-- Standort
-Zugriff "1" --* "1" Profil
-Passwort "1" --* "1" Profil
-Geraet "0..n" }-- "1" Spielplatz
-Geraet "1" *-- "1" GeraeteStatus
-Erweiterung "0..n" }-- "1" Spielplatz
-
-class Restaurant implements IRestaurant
-class Restaurant implements IToilette
-class Restaurant implements IWickeltisch
-
-class Toilette implements IToilette
-class Toilette implements IWickeltisch
 
 @enduml

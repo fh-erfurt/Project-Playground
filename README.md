@@ -9,12 +9,12 @@
 
 ## Login: (Java 2)
 
-| USER | username | password |  
-|---|---|---|
-| ADMIN | marvin| 12345 |  
-| MODERATOR | mark | 12345 |  
-| MODERATOR | fabian | 12345 | 
-| MODERATOR | katja | 12345 | 
+username | password |  
+---|---|
+ marvin| 12345 |  
+ mark | 12345 |  
+ fabian | 12345 | 
+ katja | 12345 | 
 
 # Übersicht über die Spielplätze im Großraum Erfurt
 Im Rahmen des Projektes zum Thema Programmierung JAVA 1 & 2 haben wir uns entschieden eine Übersicht über die Spielplätze mit Vernetzungsmöglichkeiten (analog zu sozialen Netzwerken) zu Programmieren.
@@ -85,29 +85,16 @@ Nicht zum Projektumfang gehören:
 
 ![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Benutzer-Use-Case.jpg)
 
-**Moderator-Use-Case-Diagramm**
-
-![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Moderator-Use-Case.jpg)
-
-**Admin-Use-Case-Diagramm**
-
-![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Admin-Use-Case.jpg)
 </details>
 <details>
 <summary> Aktivitätsdiagramme </summary>
 <br>
-	
-**Aktivitätsdiagramm - Gerät hinzufügen**
 
-![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/geraetHinzufuegen-Aktivit%C3%A4tsdiagramm.png)
 
 **Aktivitätsdiagramm - Spielplatz Anmeldung**
 
 ![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/spielplatzAnmeldung-Aktivit%C3%A4tsdiagramm.png)
 
-**Aktivitätsdiagramm - Passwort zurücksetzen**
-
-![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/share/images/Passwortzuruecksetzen-Aktivit%C3%A4tsdiagramm.png)
 <br>
 </details>
 <br>
@@ -265,6 +252,14 @@ Nicht zum Projektumfang gehören:
 <summary> Java 2 </summary>
 <br>
 
+### Besprechung 19.08.2021
+
+---
+
+**1. Projektänderungen**
+- Abschließende Einsicht und Korrektur der Dokumentation
+- Aktualisierung der Diagramme
+
 ### Besprechung 18.08.2021
 
 ---
@@ -385,7 +380,7 @@ Nicht zum Projektumfang gehören:
 
 - 4 Teammitglieder zu koodinieren gestaltete sich bis zum Schluss schwierig
 - Am Ende hat auch der letzte den Umgang mit der Versionskontrolle verinnerlicht
-- Primefaces ist manchmal Geschenk aber meistens Fluch
+- Primefaces bietet solide Struktur, Verfeinerung gestaltet sich jedoch schwierig
 - Über Design und Style lässt sich streiten
 
 </details>
@@ -414,12 +409,12 @@ Das Projekt kann weiter fortgesetzt werden und die Gedanken für die Weiterführ
 Java 1, wurde das Frontend unseres Projektes an den Mann, oder besser, an die Eltern gebracht. 
 Folgende Punkte sind zur Realisierung geplant. Umsetzung ausstehend, Änderungen möglich und warscheinlich.
 
-- Auslagerung der Projekts in eine cloudbasierte Umgebung - evtl. Heroku.
-- Eine Registrierung der Kunden muss noch umgesetzt werden
+- Umsetzung der Registrierung und das damit verbundene Login (aus der DB) steht noch aus
+- Umsetzung der Nutzer- und Rollenverwaltung steht noch aus
 - Wechsel des MVC Modells zu einem getrennten Frontend und Backend
 - Testbetrieb
 - Code verfeinern, falls möglich
-- Hier werden lediglich Schnittstellen bereitgestellt, damit die erforderlichen Daten zu den externen Bearbeitern geschickt werden können
+- denkbar wäre eine Karte zu implementieren, um die geographische Lage der Spielplätze visuell ansprechender darzustellen
 
 </details>
 <details>
