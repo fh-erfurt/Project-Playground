@@ -74,7 +74,7 @@ Nicht zum Projektumfang gehören:
 	
 **Klassendiagramm**
 
-![alt text](https://github.com/fh-erfurt/Project-Playground/blob/main/Klassendiagramm-0.png)
+![alt text](https://github.com/fh-erfurt/Project-Playground/blob/Java2/Klassendiagramm-0.png)
 
 </details>
 <details>
